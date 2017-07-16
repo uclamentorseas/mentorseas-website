@@ -3,7 +3,9 @@ import './StaffPage.scss';
 
 class StaffPage extends React.Component {
   constructor() {
-    
+    this.state = {
+
+    };
   }
 
 
