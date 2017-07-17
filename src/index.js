@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { HashRouter } from 'react-router-dom'
 
 import registerServiceWorker from './registerServiceWorker';
-import routes from 'routes';
+import App from './app';
 
 ReactDOM.render((
-  <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
-    {routes}
-  </Router>
+  <HashRouter>
+    <App />
+  </HashRouter>
 ), document.getElementById('root'));
 
 registerServiceWorker();

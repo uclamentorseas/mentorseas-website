@@ -4,9 +4,9 @@ import './HomePage.scss';
 export default class HomePage extends React.Component {
   render() {
     return (
-      <div className='page landing_page'>
+      <div className='page home_page'>
         This is the home page.
       </div>
-    )
+    );
   }
 }
