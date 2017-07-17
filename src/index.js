@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import UnderConstructionPage from './UnderConstructionPage';
-import registerServiceWorker from './registerServiceWorker';
+import { Router, Route, hashHistory } from 'react-router';
 
-ReactDOM.render(<UnderConstructionPage />, document.getElementById('root'));
+import registerServiceWorker from './registerServiceWorker';
+import routes from 'routes';
+
+ReactDOM.render((
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
+    {routes}
+  </Router>
+), document.getElementById('root'));
+
 registerServiceWorker();
