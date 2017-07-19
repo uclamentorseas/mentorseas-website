@@ -1,0 +1,21 @@
+@import '~scss/Variables';
+
+.section-header {
+  @media (max-width: $breakpoint_small - 1) {
+    font-size: $font-size-medium;
+  }
+  @media (min-width: $breakpoint_small) {
+    font-size: $font-size-large;
+  }
+  color: $color-royal-blue;
+  text-align: center;
+  margin-top: 25px;
+  width: 100%;
+  .title {
+    font-weight: bold;
+  }
+}
+
+.title-header {
+  overflow: hidden;
+}
