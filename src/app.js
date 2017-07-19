@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Skeleton from 'views/Skeleton';
 
 import {
   HomePage,
@@ -22,15 +23,17 @@ const pages = [
 ];
 
 export default () => (
-  <Switch>
-    {
-      pages.map((p) => (
-        p.exactPath ?
-        <Route exact path={p.path} component={p.component} /> :
-        <Route path={p.path} component={p.component} />
-      ))
-    }
-  </Switch>
+  <Skeleton>
+    <Switch>
+      {
+        pages.map((p) => (
+          p.exactPath ?
+          <Route key={p.path} exact path={p.path} component={p.component} /> :
+          <Route key={p.path} path={p.path} component={p.component} />
+        ))
+      }
+    </Switch>
+  </Skeleton>
 );
 
 export { pages }
