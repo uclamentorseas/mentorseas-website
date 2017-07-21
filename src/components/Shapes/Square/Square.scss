@@ -1,0 +1,25 @@
+@import '~scss/Variables';
+
+$side-length: 50px;
+$stroke-width: $side-length * 0.1;
+
+.square {
+  width: $side-length;
+  height: $side-length;
+
+  .fill {
+    fill: none;
+  }
+
+  .stroke {
+    stroke: $color-royal-blue;
+    stroke-width: $stroke-width;
+  }
+
+  .shape {
+    x: $stroke-width;
+    y: $stroke-width;
+    width: $side-length - (2 * $stroke-width);
+    height: $side-length - (2 * $stroke-width);
+  }
+}
