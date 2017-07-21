@@ -1,0 +1,18 @@
+@import '~scss/Variables';
+
+.social-icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .icon-wrapper {
+    padding: 10px;
+    i {
+      color: $color-royal-blue;
+      transition: all 0.25s ease;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}

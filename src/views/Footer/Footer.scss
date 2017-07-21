@@ -1,11 +1,15 @@
 @import '~scss/Variables';
 
 .footer {
-  position: relative;
-  top: $navbar-height;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  background-color: $color-cream;
-  color: $color-royal-blue;
+  background-color: $color-royal-blue;
+  color: $color-cream;
+
+  .social-icons {
+    i {
+      color: $color-cream;
+    }
+  }
 }

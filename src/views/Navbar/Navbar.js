@@ -11,14 +11,14 @@ export default class Navbar extends React.Component {
       panelOpen: false
     };
 
-    this.navItems = this.props.items.map(item => (
+    this.navItems = this.props.navItems.map(item => (
       <NavItem
         key={item.path}
         item={item}
       />
     ));
 
-    this.panelItems = this.props.items.map(item => (
+    this.panelItems = this.props.navItems.map(item => (
       <NavItem
         key={item.path}
         item={item}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Skeleton from 'views/Skeleton';
-
+import Navbar from 'views/Navbar';
+import Footer from 'views/Footer';
+import 'scss/General.scss';
 import {
   HomePage,
   StaffPage
@@ -22,18 +23,28 @@ const pages = [
   }
 ];
 
-export default () => (
-  <Skeleton>
-    <Switch>
-      {
-        pages.map((p) => (
-          p.exactPath ?
-          <Route key={p.path} exact path={p.path} component={p.component} /> :
-          <Route key={p.path} path={p.path} component={p.component} />
-        ))
-      }
-    </Switch>
-  </Skeleton>
-);
+export { pages };
 
-export { pages }
+export default () => (
+  <div className='app'>
+
+    <Navbar navItems={pages} />
+
+    <div className='page_wrapper'>
+
+      <Switch>
+        {
+          pages.map((p) => (
+            p.exactPath ?
+            <Route key={p.path} exact path={p.path} component={p.component} /> :
+            <Route key={p.path} path={p.path} component={p.component} />
+          ))
+        }
+      </Switch>
+
+      <Footer />
+
+    </div>
+
+  </div>
+);
