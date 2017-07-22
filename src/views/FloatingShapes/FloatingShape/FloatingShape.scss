@@ -1,0 +1,22 @@
+@import '~scss/Variables';
+
+.floating-shape {
+  position: absolute;
+  transform-origin: center;
+  .shape {
+    .stroke { stroke: rgba($color-cream, 0.2); }
+    @keyframes floating-shape {
+      0% {
+        left: -20%;
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        left: 120%;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

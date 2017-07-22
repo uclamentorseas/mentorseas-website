@@ -1,8 +1,10 @@
 import React from 'react';
-import { STROKE_WIDTH_FACTOR } from '../constants';
+import constants from '../constants';
 import './Square.scss';
 
 export default function Square(props) {
+
+  const { STROKE_WIDTH_FACTOR } = constants;
 
   const width = props.size;
   const strokeWidth = width * STROKE_WIDTH_FACTOR;
@@ -10,20 +12,14 @@ export default function Square(props) {
 
   return (
     <svg
-      className='square'
+      className='square shape'
       viewBox={`0 0 ${width} ${width}`}
       width={`${width}px`}
       height={`${width}px`}
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g
-        className='fill'
-        fill='none'
-      >
-          <g
-            className='stroke'
-            strokeWidth={strokeWidth}
-          >
+      <g className='fill' fill='none'>
+          <g className='stroke' strokeWidth={strokeWidth}>
               <rect
                 className='shape'
                 x={strokeWidth}
