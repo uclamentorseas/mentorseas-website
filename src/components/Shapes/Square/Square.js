@@ -1,10 +1,11 @@
 import React from 'react';
+import { STROKE_WIDTH_FACTOR } from '../constants';
 import './Square.scss';
 
 export default function Square(props) {
 
   const width = props.size;
-  const strokeWidth = width * 0.05;
+  const strokeWidth = width * STROKE_WIDTH_FACTOR;
   const shapeWidth = width - (2 * strokeWidth);
 
   return (

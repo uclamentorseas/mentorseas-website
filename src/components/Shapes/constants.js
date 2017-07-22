@@ -1,0 +1,5 @@
+const STROKE_WIDTH_FACTOR = 0.09;
+
+export {
+  STROKE_WIDTH_FACTOR 
+}

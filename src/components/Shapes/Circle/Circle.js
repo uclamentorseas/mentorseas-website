@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { STROKE_WIDTH_FACTOR } from '../constants';
 import './Circle.scss';
 
 export default function Circle(props) {
@@ -7,7 +7,7 @@ export default function Circle(props) {
   const diameter = props.size;
   const radius = diameter / 2;
 
-  const strokeWidth = diameter * 0.05;
+  const strokeWidth = diameter * STROKE_WIDTH_FACTOR;
 
   return (
     <svg

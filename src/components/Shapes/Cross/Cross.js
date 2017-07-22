@@ -1,15 +1,13 @@
 import React from 'react';
-
+import { STROKE_WIDTH_FACTOR } from '../constants';
 import './Cross.scss';
 
 export default function Cross(props) {
 
-  function Point(x, y) {
-    return { x: x, y: y }
-  }
+  const Point = (x, y) => ({ x: x, y: y });
 
   const length = props.size;
-  const strokeWidth = length * 0.07;
+  const strokeWidth = length * STROKE_WIDTH_FACTOR;
   const strokeWidthRoot2 = strokeWidth * Math.sqrt(2);
   const halfLength = length / 2;
 
@@ -27,7 +25,6 @@ export default function Cross(props) {
     Point(strokeWidthRoot2, length - 2 * strokeWidthRoot2),
     Point(halfLength - strokeWidthRoot2, halfLength)
   ];
-
 
   let crossPath = `M${points[0].x},${points[0].y} `;
   points.slice(1).forEach(point => {

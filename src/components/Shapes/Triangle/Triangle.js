@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { STROKE_WIDTH_FACTOR } from '../constants';
 import './Triangle.scss';
 
 export default function Triangle(props) {
 
   const length = props.size;
-  const strokeWidth = length * 0.05;
+  const strokeWidth = length * STROKE_WIDTH_FACTOR;
 
   const root5 = Math.sqrt(5);
 
