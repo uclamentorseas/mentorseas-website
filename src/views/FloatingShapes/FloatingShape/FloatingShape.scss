@@ -4,7 +4,7 @@
   position: absolute;
   transform-origin: center;
   .shape {
-    .stroke { stroke: rgba($color-cream, 0.2); }
+    .stroke { stroke: rgba($color-cream, 0.1); }
     @keyframes floating-shape {
       0% {
         left: -20%;
