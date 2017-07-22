@@ -2,7 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from 'views/Navbar';
 import Footer from 'views/Footer';
+
 import 'scss/General.scss';
+
 import {
   HomePage,
   StaffPage
