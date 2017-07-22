@@ -18,9 +18,6 @@ export default function Triangle(props) {
   const x3 = ((strokeWidth * (1 + root5)) / 2);
   const y3 = length - strokeWidth;
 
-
-  // Need to actually do some more complex trig calculations for this value
-
   return (
     <svg
       className='triangle'
@@ -41,7 +38,7 @@ export default function Triangle(props) {
                   x={strokeWidth}
                   y={strokeWidth}
                   className='shape'
-                  d={`M${x1},${y1} L${x2},${y2} L${x3},${y3} L${x1},${y1} Z`}
+                  d={`M${x1},${y1} L${x2},${y2} L${x3},${y3} Z`}
                 />
             </g>
         </g>
