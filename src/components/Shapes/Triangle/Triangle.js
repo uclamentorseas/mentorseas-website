@@ -4,17 +4,29 @@ import './Triangle.scss';
 
 export default function Triangle(props) {
 
-  const width = props.width;
-  const strokeWidth = width * 0.1;
+  const length = props.size;
+  const strokeWidth = length * 0.05;
+
+  const root5 = Math.sqrt(5);
+
+  const x1 = 0.5 * length;
+  const y1 = strokeWidth * root5;
+
+  const x2 = length - ((strokeWidth * (1 + root5)) / 2);
+  const y2 = length - strokeWidth;
+
+  const x3 = ((strokeWidth * (1 + root5)) / 2);
+  const y3 = length - strokeWidth;
+
+
   // Need to actually do some more complex trig calculations for this value
-  const shapeWidth = width - (2 * strokeWidth);
 
   return (
     <svg
       className='triangle'
-      viewBox={`0 0 ${width} ${width}`}
-      width={`${width}px`}
-      height={`${width}px`}
+      viewBox={`0 0 ${length} ${length}`}
+      width={`${length}px`}
+      height={`${length}px`}
       xmlns='http://www.w3.org/2000/svg'
     >
         <g
@@ -28,10 +40,8 @@ export default function Triangle(props) {
                 <path
                   x={strokeWidth}
                   y={strokeWidth}
-                  width={shapeWidth}
-                  height={shapeWidth}
                   className='shape'
-                  d="M25,4.47213595 L3.23606798,48 L46.763932,48 L25,4.47213595 Z"
+                  d={`M${x1},${y1} L${x2},${y2} L${x3},${y3} L${x1},${y1} Z`}
                 />
             </g>
         </g>

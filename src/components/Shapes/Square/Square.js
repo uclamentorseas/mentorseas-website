@@ -2,15 +2,14 @@ import React from 'react';
 import './Square.scss';
 
 export default function Square(props) {
-  
-  const width = props.width;
-  const strokeWidth = width * 0.1;
+
+  const width = props.size;
+  const strokeWidth = width * 0.05;
   const shapeWidth = width - (2 * strokeWidth);
 
   return (
     <svg
       className='square'
-      viewBox='0 0 50 50'
       viewBox={`0 0 ${width} ${width}`}
       width={`${width}px`}
       height={`${width}px`}
