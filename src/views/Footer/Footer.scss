@@ -1,0 +1,15 @@
+@import '~scss/Variables';
+
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: $color-royal-blue;
+  color: $color-cream;
+
+  .social-icons {
+    i {
+      color: $color-cream;
+    }
+  }
+}

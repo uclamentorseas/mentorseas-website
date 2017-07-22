@@ -1,3 +1,9 @@
+@import '~scss/Variables';
+
+.page_wrapper {
+  position: relative;
+  top: $navbar-height;
+  
 html, body {
   margin: 0;
   width: 100%;
