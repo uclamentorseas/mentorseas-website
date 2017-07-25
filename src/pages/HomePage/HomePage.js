@@ -8,6 +8,7 @@ export default class HomePage extends React.Component {
     return (
       <div className='page home_page'>
         <Hero />
+        <div>This is the homepage text.</div>
       </div>
     );
   }

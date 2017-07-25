@@ -3,20 +3,34 @@
 .floating-shape {
   position: absolute;
   transform-origin: center;
+  transition: all 1.0s ease;
+  .shape .stroke { transition: stroke 2.0s ease; }
+
+  &:hover {
+    transform: scale(2.0) rotateX(190deg);
+    .shape .stroke {
+      stroke: rgba($color-cream, 0.6);
+    }
+  }
+
   .shape {
-    .stroke { stroke: rgba($color-cream, 0.1); }
-    @keyframes floating-shape {
-      0% {
-        left: -20%;
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(180deg);
-      }
-      100% {
-        left: 120%;
-        transform: rotate(360deg);
-      }
+    .stroke { stroke: rgba($color-cream, 0.2); }
+    filter: drop-shadow(5px 5px 0px rgba($color-black, 0.7));
+
+  }
+
+
+}
+
+.floating-shape.from-user-click {
+  .shape {
+    .stroke {
+      stroke: rgba($color-red, 0.2);
+    }
+  }
+  &:hover {
+    .shape .stroke {
+      stroke: rgba($color-red, 0.6);
     }
   }
 }
