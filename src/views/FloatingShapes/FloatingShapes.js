@@ -47,7 +47,7 @@ class FloatingShapes extends React.Component {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
       shapeElements: [],
-      resizing: false,
+      resizing: false
     }
 
     this.floatingShapeKeyframes = Radium.keyframes({
@@ -65,6 +65,41 @@ class FloatingShapes extends React.Component {
   componentWillMount() {
     window.addEventListener('resize', this.adjustToResize.bind(this));
     this.setState({ shapeElements: this.createInitialShapes() });
+  }
+
+  // --- Event Handlers --- //
+
+  createShapeWhereClicked(clickEvent) {
+
+    if (this.state.shapeElements.length > this.getMaximumNumberOfShapes()) {
+      return;
+    }
+
+    const { pageX, pageY } = clickEvent;
+    const shapeSize = this.getShapeSize() * CLICKED_SHAPE_SIZE_FACTOR;
+    const RandomShape = this.getRandomShape();
+    const duration = this.getRandomDuration()
+    const delay = this.getAnimationDelayFor(pageX, duration);
+
+    // Unavoidable use case of JS-injected styles
+    const shapeStyles = {
+      top: `${pageY}px`,
+      left: `${pageX}px`,
+      animation: `x ${duration}s linear ${delay}s infinite none running`,
+      animationName: this.floatingShapeKeyframes
+    }
+
+    const newShape = (
+      <FloatingShape
+        key={`${Math.random()}`}
+        style={shapeStyles}
+        className={'floating-shape from-user-click'}
+      >
+        <RandomShape size={shapeSize} />
+      </FloatingShape>
+    );
+
+    this.addShapeToView(newShape);
   }
 
   // --- Getter Methods --- //
@@ -165,39 +200,6 @@ class FloatingShapes extends React.Component {
     );
   }
 
-  createShapeWhereClicked(clickEvent) {
-
-    if (this.state.shapeElements.length > this.getMaximumNumberOfShapes()) {
-      return;
-    }
-
-    const { pageX, pageY } = clickEvent;
-    const shapeSize = this.getShapeSize() * CLICKED_SHAPE_SIZE_FACTOR;
-    const RandomShape = this.getRandomShape();
-    const duration = this.getRandomDuration()
-    const delay = this.getAnimationDelayFor(pageX, duration);
-
-    // Unavoidable use case of JS-injected styles
-    const shapeStyles = {
-      top: `${pageY}px`,
-      left: `${pageX}px`,
-      animation: `x ${duration}s linear ${delay}s infinite none running`,
-      animationName: this.floatingShapeKeyframes
-    }
-
-    const newShape = (
-      <FloatingShape
-        key={`${Math.random()}`}
-        style={shapeStyles}
-        className={'floating-shape from-user-click'}
-      >
-        <RandomShape size={shapeSize} />
-      </FloatingShape>
-    );
-
-    this.addShapeToView(newShape);
-  }
-
   addShapeToView(shape) {
     if (this.state.shapeElements.length <= this.getMaximumNumberOfShapes()) {
       const newShapes = this.state.shapeElements.slice(0);
@@ -209,7 +211,10 @@ class FloatingShapes extends React.Component {
   render() {
     return (
       <div className='floating-shapes-wrapper'>
-        <div className='floating-shapes' onClick={this.createShapeWhereClicked.bind(this)}>
+        <div
+          className='floating-shapes'
+          onClick={this.createShapeWhereClicked.bind(this)}
+        >
           { !this.state.resizing && this.state.shapeElements }
         </div>
       </div>
