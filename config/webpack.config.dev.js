@@ -218,11 +218,6 @@ module.exports = {
         test: /\.scss$/,
         include: paths.appSrc,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
-
-        // NOTE: Tutorials said to use style, css, sass, but had to append
-        // loader to them to match the npm modules I installed
-
-        // loaders: ["file?name=static/css/bundle.css", "extract", "raw", "sass"]
       },
 
       // ** STOP ** Are you adding a new loader?
