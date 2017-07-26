@@ -1,8 +1,9 @@
 import React from 'react';
+import Radium from 'radium';
 
 import './FloatingShape.scss';
 
-export default class FloatingShape extends React.Component {
+class FloatingShape extends React.Component {
   render() {
     return (
       <div
@@ -14,3 +15,5 @@ export default class FloatingShape extends React.Component {
     );
   }
 }
+
+export default Radium(FloatingShape);

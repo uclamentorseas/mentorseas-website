@@ -3,7 +3,6 @@
 .navbar {
   width: 100%;
   height: $navbar-height;
-  font-family: $font-family;
 
   display: flex;
   justify-content: space-between;
@@ -13,7 +12,6 @@
   top: 0;
   left: 0;
   z-index: $z-navbar;
-  background: $color-royal-blue;
 
   a {
     color: $color-cream;
