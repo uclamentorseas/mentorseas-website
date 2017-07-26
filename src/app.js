@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { StyleRoot } from 'radium';
 import Navbar from 'views/Navbar';
 import Footer from 'views/Footer';
 
@@ -25,28 +26,35 @@ const pages = [
   }
 ];
 
+const styleRootStyles = {
+  width: '100%',
+  height: '100%'
+}
+
 export { pages };
 
 export default () => (
-  <div className='app'>
+  <StyleRoot style={styleRootStyles}>
+    <div className='app'>
 
-    <Navbar navItems={pages} />
+      <Navbar navItems={pages} />
 
-    <div className='page_wrapper'>
+      <div className='page_wrapper'>
 
-      <Switch>
-        {
-          pages.map((p) => (
-            p.exactPath ?
-            <Route key={p.path} exact path={p.path} component={p.component} /> :
-            <Route key={p.path} path={p.path} component={p.component} />
-          ))
-        }
-      </Switch>
+        <Switch>
+          {
+            pages.map((p) => (
+              p.exactPath ?
+              <Route key={p.path} exact path={p.path} component={p.component} /> :
+              <Route key={p.path} path={p.path} component={p.component} />
+            ))
+          }
+        </Switch>
 
-      <Footer />
+        <Footer />
+
+      </div>
 
     </div>
-
-  </div>
+  </StyleRoot>
 );
