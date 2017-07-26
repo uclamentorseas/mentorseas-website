@@ -1,0 +1,17 @@
+@import '~scss/Variables';
+
+.logo {
+
+  .stroke {
+    stroke: $color-cream;
+  }
+
+  .mentor-text,
+  .SEAS-text {
+    fill: $color-cream;
+  }
+
+  .SEAS-text {
+    font-weight: bold;
+  }
+}
