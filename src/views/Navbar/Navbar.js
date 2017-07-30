@@ -2,6 +2,8 @@ import React from 'react';
 import NavItem from './NavItem';
 import NavLogo from './NavLogo';
 
+import {pages as navItems} from 'app';
+
 import './Navbar.scss';
 
 export default class Navbar extends React.Component {
@@ -11,14 +13,14 @@ export default class Navbar extends React.Component {
       panelOpen: false
     };
 
-    this.navItems = this.props.navItems.map(item => (
+    this.navItems = navItems.map(item => (
       <NavItem
         key={item.path}
         item={item}
       />
     ));
 
-    this.panelItems = this.props.navItems.map(item => (
+    this.panelItems = navItems.map(item => (
       <NavItem
         key={item.path}
         item={item}

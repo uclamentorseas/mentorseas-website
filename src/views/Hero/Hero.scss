@@ -32,14 +32,16 @@
     position: relative;
     text-align: center;
 
-    .logo img {
-      margin-bottom: 10px;
-      width: 80%;
-      max-width: 300px;
+    .logo {
+      img {
+        margin-bottom: 10px;
+        max-height: 40vh;
+      }
     }
 
     .subtitle {
-      font-size: $font-size-medium;
+      font-size: $font-size-large;
+      font-weight: bold;
       color: $color-cream;
     }
   }

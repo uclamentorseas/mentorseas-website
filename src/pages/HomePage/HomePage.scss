@@ -1,10 +1,43 @@
 @import '~scss/Variables';
 
 .home_page {
-  background-color: $color-cream;
 
-  .home_page_contents {
-    height: 400px;
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .home_page_titled_paragraphs {
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 80px;
+    }
+    @media (max-width: $breakpoint-medium - 1) {
+      padding: 50px 20px;
+    }
+
+    &:nth-child(odd) {
+      background-color: $color-cream;
+      .title {
+        color: $color-red;
+      }
+      .paragraphs {
+        color: $color-black;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $color-mint;
+      .title {
+        color: $color-royal-blue;
+      }
+      .paragraphs {
+        color: $color-black;
+      }
+    }
+
+
   }
 
 }

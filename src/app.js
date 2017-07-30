@@ -37,8 +37,6 @@ export default () => (
   <StyleRoot style={styleRootStyles}>
     <div className='app'>
 
-      <Navbar navItems={pages} />
-
       <div className='page_wrapper'>
 
         <Switch>

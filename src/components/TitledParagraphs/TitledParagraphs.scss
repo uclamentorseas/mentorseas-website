@@ -1,0 +1,14 @@
+@import '~scss/Variables';
+
+.titled-paragraphs {
+  font-family: $font-family;
+  .title {
+    font-size: $font-size-large;
+    line-height: $line-height-normal * $font-size-large;
+    font-weight: bold;
+  }
+  .paragraphs {
+    font-size: $font-size-medium;
+    line-height: $line-height-high * $font-size-medium;
+  }
+}

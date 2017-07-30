@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Hero.scss';
 import FloatingShapes from 'views/FloatingShapes';
-import Logo from 'components/Logo';
+import AlternateLogo from 'components/AlternateLogo';
 
 export default class Hero extends React.Component {
   render() {
@@ -13,10 +13,10 @@ export default class Hero extends React.Component {
             <FloatingShapes />
           </div>
           <div className='hero-text-overlay'>
-            <Logo />
+            <AlternateLogo />
 
             <div className='subtitle'>
-              {`UCLA School of Engineering's Mentorship Program`}
+              {`Welcome to the family. 😀`}
             </div>
           </div>
         </div>
