@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import './FloatingShapes.scss';
-import ShapesList from 'components/Shapes';
+import Shapes from 'components/Shapes';
 import FloatingShape from './FloatingShape';
 
 // Pixels/second measure, based on 20 second-traversal on a 1280px screen
@@ -120,7 +120,7 @@ class FloatingShapes extends React.Component {
   }
 
   getRandomShape() {
-    return ShapesList[randIntInRange(0, ShapesList.length)];
+    return Shapes[randIntInRange(0, Shapes.length)];
   }
 
   getRandomDuration() {
