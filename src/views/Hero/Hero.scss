@@ -1,4 +1,5 @@
 @import '~scss/Variables';
+@import '~scss/Animations';
 
 .hero_wrapper {
   width: 100%;
@@ -21,6 +22,7 @@
   }
 
   .hero-text-overlay {
+    animation: zoomIn 1.0s ease;
     pointer-events:none;
     width: 100%;
     height: 100%;

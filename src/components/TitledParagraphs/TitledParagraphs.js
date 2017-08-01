@@ -11,7 +11,7 @@ export default function TitledParagraphs(props) {
       <div className='paragraphs'>
         {
           props.paragraphs.map((paragraph) => (
-            <div className='paragraph'>{paragraph}</div>
+            <div key={paragraph} className='paragraph'>{paragraph}</div>
           ))
         }
       </div>
