@@ -53,14 +53,14 @@ export default class Navbar extends React.Component {
         </div>
 
         <div
-          className={`navbar-hamburger ${this.state.panelOpen ? 'panel-open' : 'panel-closed'}`}
+          className={`navbar-hamburger ${this.state.panelOpen ? 'open' : 'closed'}`}
           onClick={this.togglePanel.bind(this)}
         >
           <div/><div/><div/>
         </div>
 
         <div
-          className={`nav-panel ${this.state.panelOpen ? 'panel-open' : 'panel-closed'}`}
+          className={`nav-panel ${this.state.panelOpen ? 'open' : 'closed'}`}
         >
           {this.panelItems}
         </div>
