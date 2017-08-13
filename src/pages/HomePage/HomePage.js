@@ -17,25 +17,26 @@ export default class HomePage extends React.Component {
         <Navbar />
 
         <Hero />
+        
         <div className='home-page-contents'>
           {
-            copy.paragraphs.map((p,i) => {
-              return (
+            copy.paragraphs.map((p,i) => (
+              <div key={p.title} className='home-page-copy-row'>
+
                 <div
-                  key={p.title}
-                  className='home-page-copy-row'
-                >
+                  className='picture'
+                  style={{
+                    background: `url(${uclaImages[i]}) center/cover no-repeat`
+                  }}
+                />
 
-                  <img src={uclaImages[i]} alt='generic ucla landscape'/>
-                
-                  <TitledParagraphs
-                    title={p.title}
-                    paragraphs={p.paragraphs}
-                  />
+                <TitledParagraphs
+                  title={p.title}
+                  paragraphs={p.paragraphs}
+                />
 
-                </div>
-              );
-            })
+              </div>
+            ))
           }
         </div>
       </div>

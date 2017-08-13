@@ -4,10 +4,15 @@ import './TitledParagraphs.scss';
 
 export default function TitledParagraphs(props) {
   return (
-    <div className={`titled-paragraphs ${props.className}`}>
-      <div className='title'>
-        {props.title}
-      </div>
+    <div
+      className={`
+        titled-paragraphs
+        ${props.className}
+      `}
+    >
+
+      <div className='title'>{props.title}</div>
+
       <div className='paragraphs'>
         {
           props.paragraphs.map((paragraph) => (
@@ -15,6 +20,7 @@ export default function TitledParagraphs(props) {
           ))
         }
       </div>
+
     </div>
   );
 }

@@ -1,14 +1,31 @@
 @import '~scss/Variables';
+@import '~scss/Mixins';
 
 .titled-paragraphs {
   font-family: $font-family;
   .title {
-    font-size: $font-size-large;
-    line-height: $line-height-normal * $font-size-large;
     font-weight: bold;
   }
-  .paragraphs {
-    font-size: $font-size-medium;
-    line-height: $line-height-high * $font-size-medium;
+
+  // Small screens
+  @media (max-width: $breakpoint-medium - 1) {
+    .title {
+      @include fontSizeStyles($font-size-medium, $line-height-normal);
+      margin-bottom: 20px;
+    }
+    .paragraphs {
+      @include fontSizeStyles($font-size-small, $line-height-high);
+    }
+  }
+
+  // Large screens
+  @media (min-width: $breakpoint-medium ) {
+    .title {
+      @include fontSizeStyles($font-size-large, $line-height-normal);
+      margin-bottom: 10px;
+    }
+    .paragraphs {
+      @include fontSizeStyles($font-size-medium, $line-height-high);
+    }
   }
 }

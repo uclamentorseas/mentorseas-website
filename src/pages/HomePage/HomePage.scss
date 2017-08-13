@@ -14,10 +14,21 @@ $image-width-percentage: 40%;
     display: flex;
     flex-flow: row nowrap;
 
+    // Small screens
+    @media (max-width: $breakpoint-medium - 1) {
+      .picture {
+        display: none;
+      }
+      .titled-paragraphs {
+        // !important overrides large-screen alternating text alignment
+        text-align: left !important;
+      }
+    }
+
     &:nth-child(odd) {
       background-color: $color-cream;
 
-      img { order: 1; }
+      .picture { order: 1; }
 
       .titled-paragraphs {
         order: 2;
@@ -35,12 +46,12 @@ $image-width-percentage: 40%;
     &:nth-child(even) {
       background-color: $color-mint;
 
-      img { order: 2; }
+      .picture { order: 2; }
 
       .titled-paragraphs {
         order: 1;
         text-align: left;
-        
+
         .title {
           color: $color-royal-blue;
         }
@@ -51,18 +62,18 @@ $image-width-percentage: 40%;
       }
     }
 
-    img {
-      height: 100%;
+    .picture {
       width: $image-width-percentage;
+      object-fit: cover;
+      flex: 0 0 auto;
     }
 
     .titled-paragraphs {
-      padding: 50px;
+      padding: 100px 50px;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
     }
   }
-
 
 }
