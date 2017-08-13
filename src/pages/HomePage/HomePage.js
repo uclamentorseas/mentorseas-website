@@ -3,7 +3,6 @@ import React from 'react';
 import './HomePage.scss';
 import copy from './copy';
 import Hero from 'views/Hero';
-import Navbar from 'views/Navbar';
 import TitledParagraphs from 'components/TitledParagraphs';
 import { getSomeUclaImages } from 'images';
 
