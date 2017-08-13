@@ -14,10 +14,9 @@ export default class HomePage extends React.Component {
 
     return (
       <div className='page home-page'>
-        <Navbar />
 
         <Hero />
-        
+
         <div className='home-page-contents'>
           {
             copy.paragraphs.map((p,i) => (

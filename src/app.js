@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { StyleRoot } from 'radium';
+import Navbar from 'views/Navbar';
 import Footer from 'views/Footer';
 
 import 'scss/General.scss';
@@ -37,6 +38,8 @@ export default () => (
     <div className='app'>
 
       <div className='page_wrapper'>
+
+        <Navbar />
 
         <Switch>
           {
