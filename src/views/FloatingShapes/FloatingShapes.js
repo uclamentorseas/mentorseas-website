@@ -210,13 +210,11 @@ class FloatingShapes extends React.Component {
 
   render() {
     return (
-      <div className='floating-shapes-wrapper'>
-        <div
-          className='floating-shapes'
-          onClick={this.createShapeWhereClicked.bind(this)}
-        >
-          { !this.state.resizing && this.state.shapeElements }
-        </div>
+      <div
+        className='floating-shapes'
+        onClick={this.createShapeWhereClicked.bind(this)}
+      >
+        { !this.state.resizing && this.state.shapeElements }
       </div>
     );
   }

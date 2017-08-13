@@ -1,19 +1,16 @@
-import copy from './copy';
-import './HomePage.scss';
 import React from 'react';
 
+import './HomePage.scss';
+import copy from './copy';
 import Hero from 'views/Hero';
 import Navbar from 'views/Navbar';
 import TitledParagraphs from 'components/TitledParagraphs';
-
-import uclaImage1 from 'images/ucla1.jpg';
-import uclaImage2 from 'images/ucla2.jpg';
-import uclaImage3 from 'images/ucla3.jpg';
-
-const uclaImages = [uclaImage1, uclaImage2, uclaImage3];
+import { getSomeUclaImages } from 'images';
 
 export default class HomePage extends React.Component {
   render() {
+
+    const uclaImages = getSomeUclaImages(copy.paragraphs.length);
 
     return (
       <div className='page home-page'>

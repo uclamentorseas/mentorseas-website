@@ -1,23 +1,26 @@
 @import '~scss/Variables';
 @import '~scss/Animations';
 
-.hero_wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
 .hero {
   width: 100%;
   height: 100vh;
   user-select: none;
+  position: relative;
 
-  .hero-floating-shapes {
+  .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: $z-hero-floating-shapes;
   }
 
