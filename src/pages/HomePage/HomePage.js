@@ -23,17 +23,16 @@ export default class HomePage extends React.Component {
               return (
                 <div
                   key={p.title}
-                  className='image-overlay-paragraphs'
+                  className='home-page-copy-row'
                 >
-                  <div className='picture'>
-                    <img src={uclaImages[i]} alt='generic ucla landscape'/>
-                  </div>
-                  <div className='home-page-paragraphs'>
-                    <TitledParagraphs
-                      title={p.title}
-                      paragraphs={p.paragraphs}
-                    />
-                  </div>
+
+                  <img src={uclaImages[i]} alt='generic ucla landscape'/>
+                
+                  <TitledParagraphs
+                    title={p.title}
+                    paragraphs={p.paragraphs}
+                  />
+
                 </div>
               );
             })

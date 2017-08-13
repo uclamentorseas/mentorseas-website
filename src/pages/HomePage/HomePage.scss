@@ -10,78 +10,57 @@ $image-width-percentage: 40%;
     left: 0;
   }
 
-  .image-overlay-paragraphs {
-
-    // Small screens
-    @media (max-width: $breakpoint-medium - 1) {
-      .picture { display: none; }
-    }
-
-    // Large screens
-    @media (min-width: $breakpoint-medium) {
-      display: grid;
-      grid-column-gap: 25px;
-      grid-row-gap: 25px;
-
-      &:nth-child(odd) {
-        grid-template-columns: $image-width-percentage auto;
-        grid-template-areas:
-          "picture paragraphs";
-      }
-      &:nth-child(even) {
-        grid-template-columns: auto $image-width-percentage;
-        grid-template-areas:
-          "paragraphs picture";
-      }
-
-      .picture {
-        grid-area: picture;
-        width: 100%;
-        height: 100%;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-
-    // ----
-    // Screen-size independent styles
-    // ----
-
-    .home-page-paragraphs {
-      grid-area: paragraphs;
-
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .titled-paragraphs {
-        padding: 50px;
-      }
-    }
+  .home-page-copy-row {
+    display: flex;
+    flex-flow: row nowrap;
 
     &:nth-child(odd) {
       background-color: $color-cream;
-      .title {
-        color: $color-red;
-      }
-      .paragraphs {
-        color: $color-black;
+
+      img { order: 1; }
+
+      .titled-paragraphs {
+        order: 2;
+        text-align: right;
+
+        .title {
+          color: $color-red;
+        }
+        .paragraphs {
+          color: $color-black;
+        }
       }
     }
 
     &:nth-child(even) {
       background-color: $color-mint;
-      .title {
-        color: $color-royal-blue;
+
+      img { order: 2; }
+
+      .titled-paragraphs {
+        order: 1;
+        text-align: left;
+        
+        .title {
+          color: $color-royal-blue;
+        }
+        .paragraphs {
+          color: $color-black;
+        }
+
       }
-      .paragraphs {
-        color: $color-black;
-      }
+    }
+
+    img {
+      height: 100%;
+      width: $image-width-percentage;
+    }
+
+    .titled-paragraphs {
+      padding: 50px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
     }
   }
 
