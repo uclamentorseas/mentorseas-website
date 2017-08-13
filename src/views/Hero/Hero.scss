@@ -1,26 +1,31 @@
 @import '~scss/Variables';
-
-.hero_wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+@import '~scss/Animations';
 
 .hero {
   width: 100%;
   height: 100vh;
   user-select: none;
+  position: relative;
 
-  .hero-floating-shapes {
+  .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: $z-hero-floating-shapes;
   }
 
   .hero-text-overlay {
+    animation: zoomIn 1.0s ease;
     pointer-events:none;
     width: 100%;
     height: 100%;
@@ -32,14 +37,14 @@
     position: relative;
     text-align: center;
 
-    .logo img {
+    .alternate-logo {
       margin-bottom: 10px;
-      width: 80%;
-      max-width: 300px;
+      max-height: 40vh;
     }
 
     .subtitle {
-      font-size: $font-size-medium;
+      font-size: $font-size-large;
+      font-weight: bold;
       color: $color-cream;
     }
   }

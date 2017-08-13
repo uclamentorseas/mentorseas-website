@@ -1,33 +1,36 @@
 @import '~scss/Variables';
 
+$shape_opacity: 0.3;
+$shape_opacity_on_hover: 0.8;
+
 .floating-shape {
   position: absolute;
   transform-origin: center;
   transition: all 1.0s ease;
+
   .shape .stroke { transition: stroke 2.0s ease; }
 
-  &:hover {
-    transform: scale(2.0) rotateX(190deg);
-    .shape .stroke {
-      stroke: rgba($color-cream, 0.6);
-    }
+  .shape {
+    .stroke { stroke: rgba($color-mint, $shape_opacity); }
+    filter: drop-shadow(5px 5px 0px rgba($color-black, 0.7));
   }
 
-  .shape {
-    .stroke { stroke: rgba($color-cream, 0.2); }
-    filter: drop-shadow(5px 5px 0px rgba($color-black, 0.7));
+  &:hover {
+    .shape .stroke {
+      stroke: rgba($color-mint, $shape_opacity_on_hover);
+    }
   }
 }
 
 .floating-shape.from-user-click {
   .shape {
     .stroke {
-      stroke: rgba($color-red, 0.2);
+      stroke: rgba($color-red, $shape_opacity);
     }
   }
   &:hover {
     .shape .stroke {
-      stroke: rgba($color-red, 0.6);
+      stroke: rgba($color-red, $shape_opacity_on_hover);
     }
   }
 }

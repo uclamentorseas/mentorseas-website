@@ -1,10 +1,79 @@
 @import '~scss/Variables';
 
-.home_page {
-  background-color: $color-cream;
+$image-width-percentage: 40%;
 
-  .home_page_contents {
-    height: 400px;
+.home-page {
+
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .home-page-copy-row {
+    display: flex;
+    flex-flow: row nowrap;
+
+    // Small screens
+    @media (max-width: $breakpoint-medium - 1) {
+      .picture {
+        display: none;
+      }
+      .titled-paragraphs {
+        // !important overrides large-screen alternating text alignment
+        text-align: left !important;
+      }
+    }
+
+    &:nth-child(odd) {
+      background-color: $color-cream;
+
+      .picture { order: 1; }
+
+      .titled-paragraphs {
+        order: 2;
+        text-align: right;
+
+        .title {
+          color: $color-red;
+        }
+        .paragraphs {
+          color: $color-black;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $color-mint;
+
+      .picture { order: 2; }
+
+      .titled-paragraphs {
+        order: 1;
+        text-align: left;
+
+        .title {
+          color: $color-royal-blue;
+        }
+        .paragraphs {
+          color: $color-black;
+        }
+
+      }
+    }
+
+    .picture {
+      width: $image-width-percentage;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+
+    .titled-paragraphs {
+      padding: 100px 50px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
   }
 
 }

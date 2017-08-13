@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import './FloatingShapes.scss';
-import ShapesList from 'components/Shapes';
+import Shapes from 'components/Shapes';
 import FloatingShape from './FloatingShape';
 
 // Pixels/second measure, based on 20 second-traversal on a 1280px screen
@@ -13,17 +13,17 @@ const MAX_FLOAT_SPEED_FACTOR = 1.15;
 
 // 0: no shapes,
 // 1: enough shapes to completely fill the screen if placed side-by-side
-const SHAPES_DENSITY = 0.2;
+const SHAPES_DENSITY = 0.8;
 
-// Width of initial-spawn shapes
-const SHAPE_SIZE = 100;
+// Percentage of min(screenwidth, screenheight)
+const SHAPE_SIZE_FACTOR = 0.6
 
 // How much larger/smaller the user-clicked shapes are than spawn shapes
 const CLICKED_SHAPE_SIZE_FACTOR = 0.5;
 
 // How far from the sides of the component the shapes will come in from and
 // go out to
-const DISAPPEAR_BUFFER = 0.1;
+const DISAPPEAR_BUFFER = 0.3;
 
 // Multiple of initial number of shapes that may be added via user clicks
 const MAX_USER_SHAPES_RATIO = 1.0;
@@ -116,11 +116,11 @@ class FloatingShapes extends React.Component {
   }
 
   getShapeSize() {
-    return SHAPE_SIZE;
+    return SHAPE_SIZE_FACTOR * Math.min(this.state.windowWidth, this.state.windowHeight);
   }
 
   getRandomShape() {
-    return ShapesList[randIntInRange(0, ShapesList.length)];
+    return Shapes[randIntInRange(0, Shapes.length)];
   }
 
   getRandomDuration() {
@@ -210,13 +210,11 @@ class FloatingShapes extends React.Component {
 
   render() {
     return (
-      <div className='floating-shapes-wrapper'>
-        <div
-          className='floating-shapes'
-          onClick={this.createShapeWhereClicked.bind(this)}
-        >
-          { !this.state.resizing && this.state.shapeElements }
-        </div>
+      <div
+        className='floating-shapes'
+        onClick={this.createShapeWhereClicked.bind(this)}
+      >
+        { !this.state.resizing && this.state.shapeElements }
       </div>
     );
   }

@@ -8,12 +8,12 @@ export default function SocialIcons(props) {
     <div className='social-icons'>
       <div className='icon-wrapper'>
         <a href='https://www.facebook.com/mentorSEAS'>
-          <i className='fa fa-facebook fa-lg'></i>
+          <i className='fa fa-facebook fa-2x'></i>
         </a>
       </div>
       <div className='icon-wrapper'>
         <a href='https://www.github.com/uclamentorseas/'>
-          <i className='fa fa-github fa-lg'></i>
+          <i className='fa fa-github fa-2x'></i>
         </a>
       </div>
     </div>
