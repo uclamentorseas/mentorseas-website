@@ -6,17 +6,14 @@ import FloatingShape from './FloatingShape';
 
 // Pixels/second measure of shape animation speed
 const FLOAT_SPEED = 48;
-
-// Range of speeds from FLOAT_SPEED for randomization
-const MIN_FLOAT_SPEED_FACTOR = 0.85;
-const MAX_FLOAT_SPEED_FACTOR = 1.15;
+const FLOAT_SPEED_VARIANCE = 0.05;
 
 // 0: no shapes,
 // 1: enough shapes to completely fill the screen if placed side-by-side
-const SHAPES_DENSITY = 0.25;
+const SHAPES_DENSITY = 0.35;
 
 // Percentage of max(screenwidth, screenheight)
-const SHAPE_SIZE_FACTOR = 0.15
+const SHAPE_SIZE_FACTOR = 0.1
 
 // How much larger/smaller the user-clicked shapes are than spawn shapes
 const CLICKED_SHAPE_SIZE_FACTOR = 0.5;
@@ -39,6 +36,7 @@ class FloatingShapes extends React.Component {
   // --- React Lifecycle Methods --- //
   constructor(props) {
     super(props);
+
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
@@ -48,11 +46,11 @@ class FloatingShapes extends React.Component {
 
     this.floatingShapeKeyframes = Radium.keyframes({
       '0%': {
-        left: `${0 - (this.getDisappearBuffer() * 100)}%`,
+        left: `${0 - (this.getAppearBuffer() * 100)}%`,
         transform: 'rotate(0deg)'
       },
       '100%': {
-        left: `${100 + (this.getDisappearBuffer() * 100)}%`,
+        left: '100%',
         transform: 'rotate(360deg)'
       }
     }, 'floating-shape');
@@ -72,8 +70,8 @@ class FloatingShapes extends React.Component {
     }
 
     this.addShapeToView(this.createShape({
-      x: clickEvent.pageX,
-      y: clickEvent.pageY,
+      x: clickEvent.nativeEvent.offsetX,
+      y: clickEvent.nativeEvent.offsetY,
       creator: 'user'
     }));
   }
@@ -102,8 +100,8 @@ class FloatingShapes extends React.Component {
   getRandomDuration() {
     const baseDuration = (1 / FLOAT_SPEED) * this.state.windowWidth;
     return randIntInRange(
-      baseDuration * MIN_FLOAT_SPEED_FACTOR,
-      baseDuration * MAX_FLOAT_SPEED_FACTOR
+      baseDuration * 1 - FLOAT_SPEED_VARIANCE,
+      baseDuration * 1 + FLOAT_SPEED_VARIANCE
     );
   }
 
@@ -114,7 +112,7 @@ class FloatingShapes extends React.Component {
     }
   }
 
-  getDisappearBuffer() {
+  getAppearBuffer() {
     return (this.getShapeSize() / this.state.windowWidth) * 1.2;
   }
 
@@ -132,8 +130,8 @@ class FloatingShapes extends React.Component {
   }
 
   getAnimationDelayFor(left, duration) {
-    const animationWidth = this.state.windowWidth * (1 + (2 * this.getDisappearBuffer()));
-    const animationLeft = (this.state.windowWidth * this.getDisappearBuffer()) + left;
+    const animationWidth = this.state.windowWidth * (1 + this.getAppearBuffer());
+    const animationLeft = (this.state.windowWidth * this.getAppearBuffer()) + left;
     return -(animationLeft / animationWidth) * duration;
   }
 
@@ -150,13 +148,19 @@ class FloatingShapes extends React.Component {
           resizing: false,
           windowWidth: window.innerWidth,
           windowHeight: window.innerHeight,
-          shapeElements: this.createInitialShapes()
+        }, () => {
+          // Only create initial shapes once window dimensions in state
+          // have been updated
+          this.setState({ shapeElements: this.createInitialShapes() });
         });
       }
     }
 
-    // Check if innerWidth and innerHeight have stayed constant for X seconds
-    setTimeout(checkDimensions.bind(null, window.innerWidth, window.innerHeight), RESIZE_WAIT_TIME);
+    // Check if innerWidth and innerHeight have stayed constant for some time
+    setTimeout(
+      checkDimensions.bind(null, window.innerWidth, window.innerHeight),
+      RESIZE_WAIT_TIME
+    );
   }
 
   createInitialShapes() {
@@ -180,16 +184,29 @@ class FloatingShapes extends React.Component {
     const columnSize = this.state.windowWidth / (numHorizontalShapes - 1);
     const rowSize = this.state.windowHeight / (numVerticalShapes - 1);
 
+    const STRAY_FROM_CENTER = 0.5;
+
     for (let i = 0; i < numHorizontalShapes; i++) {
       for (let j = 0; j < numVerticalShapes; j++) {
-        const randX = randIntInRange(i * columnSize, (i+1) * columnSize);
-        const randY = randIntInRange(j * rowSize, (j+1) * rowSize);
+        const columnCenter = (i + 0.5) * columnSize;
+        const randX = randIntInRange(
+          columnCenter - ((columnSize / 2) * STRAY_FROM_CENTER),
+          columnCenter + ((columnSize / 2) * STRAY_FROM_CENTER)
+        );
+
+        const rowCenter = (j + 0.5) * rowSize;
+        const randY = randIntInRange(
+          rowCenter - ((rowSize / 2) * STRAY_FROM_CENTER),
+          rowCenter + ((rowSize / 2) * STRAY_FROM_CENTER),
+        );
+
         shapesToRender.push(this.createShape({
           x: randX,
           y: randY
         }));
       }
     }
+
     return shapesToRender;
   }
 
@@ -215,7 +232,11 @@ class FloatingShapes extends React.Component {
           animationDuration: animationDuration,
           animationDelay: this.getAnimationDelayFor(x, animationDuration)
         })}
-        className={`floating-shape ${creator}`}
+        className={`
+          floating-shape
+          creator-${creator}
+          ${Math.random() > 0.5 ? 'color-1' : 'color-2'}
+        `}
       >
         <Shape size={size} />
       </FloatingShape>
@@ -235,6 +256,7 @@ class FloatingShapes extends React.Component {
       <div
         className='floating-shapes'
         onClick={this.addShapeWhereClicked.bind(this)}
+        ref={(div) => this.floatingShapesDiv = div}
       >
         { !this.state.resizing && this.state.shapeElements }
       </div>

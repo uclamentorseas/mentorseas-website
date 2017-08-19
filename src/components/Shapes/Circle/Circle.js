@@ -6,7 +6,7 @@ export default function Circle(props) {
 
   const { STROKE_WIDTH_FACTOR, CIRCLE } = constants;
 
-  const diameter = props.size / CIRCLE.SHRINK_FACTOR;
+  const diameter = props.size;
   const radius = diameter / 2;
 
   const strokeWidth = diameter * STROKE_WIDTH_FACTOR;

@@ -10,7 +10,7 @@ export default class Hero extends React.Component {
 
     const styles = {
       background: {
-        // backgroundImage: `url(${uclaImage})`,
+        backgroundImage: `url(${uclaImage})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -19,26 +19,28 @@ export default class Hero extends React.Component {
     };
 
     return (
-      <div className='hero'>
+      <div
+        style={styles.hero}
+        className='hero'
+        onClick={this.someoneClicked}
+      >
 
         <div
-
+          style={styles.background}
           className='background'
         />
 
         <FloatingShapes />
 
 
-        <div className='hero-text-overlay-wrapper'>
-          <div className='hero-text-overlay'>
-            <AlternateLogo />
+        <div className='hero-text-overlay'>
+          <AlternateLogo />
 
-            <div className='subtitle'>
-              {`Welcome to the family. 😀`}
-            </div>
+          <div className='subtitle'>
+            {`Welcome to the family. 😀`}
           </div>
         </div>
-        
+
       </div>
     );
   }
