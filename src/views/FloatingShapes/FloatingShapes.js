@@ -10,7 +10,7 @@ const FLOAT_SPEED_VARIANCE = 0.05;
 
 // 0: no shapes,
 // 1: enough shapes to completely fill the screen if placed side-by-side
-const SHAPES_DENSITY = 0.35;
+const SHAPES_DENSITY = 0.25;
 
 // Percentage of max(screenwidth, screenheight)
 const SHAPE_SIZE_FACTOR = 0.1
@@ -19,7 +19,7 @@ const SHAPE_SIZE_FACTOR = 0.1
 const CLICKED_SHAPE_SIZE_FACTOR = 0.5;
 
 // Multiple of initial number of shapes that may be added via user clicks
-const MAX_USER_SHAPES_RATIO = 1.0;
+const MAX_USER_SHAPES_RATIO = 0.75;
 
 // Number of milliseconds to wait before spawning shapes after resize
 const RESIZE_WAIT_TIME = 300;
@@ -70,8 +70,8 @@ class FloatingShapes extends React.Component {
     }
 
     this.addShapeToView(this.createShape({
-      x: clickEvent.nativeEvent.offsetX,
-      y: clickEvent.nativeEvent.offsetY,
+      x: clickEvent.nativeEvent.offsetX - this.getShapeSize() / 2,
+      y: clickEvent.nativeEvent.offsetY - this.getShapeSize() / 2,
       creator: 'user'
     }));
   }

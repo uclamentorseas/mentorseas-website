@@ -20,8 +20,7 @@ $shape_opacity_on_hover: 0.8;
     }
   }
 
-  &.color-2,
-  &.creator-user {
+  &.color-2 {
     .shape {
       .stroke {
         stroke: rgba($color-red, $shape_opacity);
@@ -30,6 +29,19 @@ $shape_opacity_on_hover: 0.8;
     &:hover {
       .shape .stroke {
         stroke: rgba($color-red, $shape_opacity_on_hover);
+      }
+    }
+  }
+
+  &.creator-user {
+    .shape {
+      .stroke {
+        stroke: rgba($color-royal-blue, $shape_opacity);
+      }
+    }
+    &:hover {
+      .shape .stroke {
+        stroke: rgba($color-royal-blue, $shape_opacity_on_hover);
       }
     }
   }
