@@ -1,7 +1,7 @@
 @import '~scss/Variables';
 
-$shape_opacity: 0.3;
-$shape_opacity_on_hover: 0.8;
+$shape_opacity: 1.0;
+$shape_opacity_on_hover: 1.0;
 
 .floating-shape {
   position: absolute;
@@ -11,18 +11,17 @@ $shape_opacity_on_hover: 0.8;
   .shape .stroke { transition: stroke 2.0s ease; }
 
   .shape {
-    .stroke { stroke: rgba($color-mint, $shape_opacity); }
-    filter: drop-shadow(5px 5px 0px rgba($color-black, 0.7));
+    .stroke { stroke: rgba($color-royal-blue, $shape_opacity); }
   }
 
   &:hover {
     .shape .stroke {
-      stroke: rgba($color-mint, $shape_opacity_on_hover);
+      stroke: rgba($color-royal-blue, $shape_opacity_on_hover);
     }
   }
 }
 
-.floating-shape.from-user-click {
+.floating-shape.user {
   .shape {
     .stroke {
       stroke: rgba($color-red, $shape_opacity);

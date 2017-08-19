@@ -8,6 +8,7 @@
   position: relative;
 
   .background {
+    background-color: $color-mint;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,11 +25,19 @@
     z-index: $z-hero-floating-shapes;
   }
 
+  .hero-text-overlay-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
   .hero-text-overlay {
     animation: zoomIn 1.0s ease;
     pointer-events:none;
-    width: 100%;
-    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +45,7 @@
     z-index: $z-hero-text-overlay;
     position: relative;
     text-align: center;
+    background-color: $color-royal-blue;
 
     .alternate-logo {
       margin-bottom: 10px;
