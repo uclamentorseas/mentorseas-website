@@ -4,7 +4,7 @@ import './Circle.scss';
 
 export default function Circle(props) {
 
-  const { STROKE_WIDTH_FACTOR, CIRCLE } = constants;
+  const { STROKE_WIDTH_FACTOR } = constants;
 
   const diameter = props.size;
   const radius = diameter / 2;

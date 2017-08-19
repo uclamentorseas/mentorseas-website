@@ -15,9 +15,6 @@ const SHAPES_DENSITY = 0.25;
 // Percentage of max(screenwidth, screenheight)
 const SHAPE_SIZE_FACTOR = 0.1
 
-// How much larger/smaller the user-clicked shapes are than spawn shapes
-const CLICKED_SHAPE_SIZE_FACTOR = 0.5;
-
 // Multiple of initial number of shapes that may be added via user clicks
 const MAX_USER_SHAPES_RATIO = 0.75;
 
@@ -43,17 +40,6 @@ class FloatingShapes extends React.Component {
       shapeElements: [],
       resizing: false
     }
-
-    this.floatingShapeKeyframes = Radium.keyframes({
-      '0%': {
-        left: `${0 - (this.getAppearBuffer() * 100)}%`,
-        transform: 'rotate(0deg)'
-      },
-      '100%': {
-        left: '100%',
-        transform: 'rotate(360deg)'
-      }
-    }, 'floating-shape');
   }
 
   componentWillMount() {
@@ -121,11 +107,23 @@ class FloatingShapes extends React.Component {
 
     const { x, y, animationDuration, animationDelay } = options;
 
+    const floatingShapeKeyframes = Radium.keyframes({
+      '0%': {
+        left: `${0 - (this.getAppearBuffer() * 100)}%`,
+        transform: 'rotate(0deg)'
+      },
+      '100%': {
+        left: '100%',
+        transform: 'rotate(360deg)'
+      }
+    }, 'floating-shape');
+
     return {
       top: `${y}px`,
       left: `${x}px`,
       animation: `x ${animationDuration}s linear ${animationDelay}s infinite none running`,
-      animationName: this.floatingShapeKeyframes
+      animationName: floatingShapeKeyframes,
+      transformOrigin: 'center'
     };
   }
 
@@ -256,7 +254,6 @@ class FloatingShapes extends React.Component {
       <div
         className='floating-shapes'
         onClick={this.addShapeWhereClicked.bind(this)}
-        ref={(div) => this.floatingShapesDiv = div}
       >
         { !this.state.resizing && this.state.shapeElements }
       </div>
