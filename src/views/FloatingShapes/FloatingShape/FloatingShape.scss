@@ -5,32 +5,44 @@ $shape_opacity_on_hover: 0.8;
 
 .floating-shape {
   position: absolute;
-  transform-origin: center;
-  transition: all 1.0s ease;
 
-  .shape .stroke { transition: stroke 2.0s ease; }
+  .shape .stroke { transition: stroke 1.0s ease; }
 
-  .shape {
-    .stroke { stroke: rgba($color-mint, $shape_opacity); }
-    filter: drop-shadow(5px 5px 0px rgba($color-black, 0.7));
-  }
+  &.color-1 {
+    .shape {
+      .stroke { stroke: rgba($color-mint, $shape_opacity); }
+    }
 
-  &:hover {
-    .shape .stroke {
-      stroke: rgba($color-mint, $shape_opacity_on_hover);
+    &:hover {
+      .shape .stroke {
+        stroke: rgba($color-mint, $shape_opacity_on_hover);
+      }
     }
   }
-}
 
-.floating-shape.from-user-click {
-  .shape {
-    .stroke {
-      stroke: rgba($color-red, $shape_opacity);
+  &.color-2 {
+    .shape {
+      .stroke {
+        stroke: rgba($color-red, $shape_opacity);
+      }
+    }
+    &:hover {
+      .shape .stroke {
+        stroke: rgba($color-red, $shape_opacity_on_hover);
+      }
     }
   }
-  &:hover {
-    .shape .stroke {
-      stroke: rgba($color-red, $shape_opacity_on_hover);
+
+  &.creator-user {
+    .shape {
+      .stroke {
+        stroke: rgba($color-royal-blue, $shape_opacity);
+      }
+    }
+    &:hover {
+      .shape .stroke {
+        stroke: rgba($color-royal-blue, $shape_opacity_on_hover);
+      }
     }
   }
 }
