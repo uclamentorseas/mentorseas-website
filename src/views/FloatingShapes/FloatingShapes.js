@@ -56,8 +56,8 @@ class FloatingShapes extends React.Component {
     }
 
     this.addShapeToView(this.createShape({
-      x: clickEvent.nativeEvent.offsetX - this.getShapeSize() / 2,
-      y: clickEvent.nativeEvent.offsetY - this.getShapeSize() / 2,
+      x: clickEvent.nativeEvent.offsetX,
+      y: clickEvent.nativeEvent.offsetY,
       creator: 'user'
     }));
   }
@@ -76,7 +76,8 @@ class FloatingShapes extends React.Component {
   }
 
   getShapeSize() {
-    return SHAPE_SIZE_FACTOR * Math.max(this.state.windowWidth, this.state.windowHeight);
+    return SHAPE_SIZE_FACTOR *
+      Math.max(this.state.windowWidth, this.state.windowHeight);
   }
 
   getRandomShape() {
@@ -195,7 +196,7 @@ class FloatingShapes extends React.Component {
         const rowCenter = (j + 0.5) * rowSize;
         const randY = randIntInRange(
           rowCenter - ((rowSize / 2) * STRAY_FROM_CENTER),
-          rowCenter + ((rowSize / 2) * STRAY_FROM_CENTER),
+          rowCenter + ((rowSize / 2) * STRAY_FROM_CENTER)
         );
 
         shapesToRender.push(this.createShape({
@@ -221,14 +222,17 @@ class FloatingShapes extends React.Component {
       creator = 'automatic'
     } = options;
 
+    // We want to spawn the shape so its CENTER is at the specified coordinates
+    const [ centerX, centerY ] = [ x - size / 2, y - size / 2];
+
     return (
       <FloatingShape
         key={`(${x}, ${y})`}
         style={this.createShapeStyles({
-          x: x,
-          y: y,
+          x: centerX,
+          y: centerY,
           animationDuration: animationDuration,
-          animationDelay: this.getAnimationDelayFor(x, animationDuration)
+          animationDelay: this.getAnimationDelayFor(centerX, animationDuration)
         })}
         className={`
           floating-shape
