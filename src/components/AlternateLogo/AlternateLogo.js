@@ -1,13 +1,12 @@
-import React from 'react';
+// @flow
 
-import alternateLogo from './alternate-logo.png';
+import React from 'react'
+import alternateLogo from './alternate-logo.png'
 
-export default function AlternateLogo(props) {
-  return (
-    <img
-      className='alternate-logo'
-      src={alternateLogo}
-      alt='alternate logo'
-    />
-  );
-}
+export default (): React.Element<*> => (
+  <img
+    className='alternate-logo'
+    src={alternateLogo}
+    alt='alternate logo'
+  />
+)

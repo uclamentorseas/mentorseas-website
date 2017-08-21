@@ -42,7 +42,7 @@ There is a three-tiered hierarchy of React components, in order from smallest to
 * `src/app.js` default exports a `Switch` component that routes between the site's pages, which are exported as `{ pages }` from `src/app.js` as well. As such, the following import is possible.
 
 ```js
-import App, { pages } from 'app';
+import App, { pages } from 'app'
 ```
 
 * `src/index.js` imports the `Switch` from `src/app.js` and renders it into the DOM

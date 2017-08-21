@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './StaffPage.scss';
 
 export default class StaffPage extends React.Component {

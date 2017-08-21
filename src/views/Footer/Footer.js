@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+// @flow
 
-import SocialIcons from 'components/SocialIcons';
+import React from 'react'
+import SocialIcons from 'components/SocialIcons'
+import './Footer.scss'
 
-import './Footer.scss';
-
-export default class Footer extends Component {
-  render() {
-    return (
-      <div className='footer'>
-        <SocialIcons />
-      </div>
-    );
-  }
-}
+export default (): React.Element<*> => (
+  <div className='footer'>
+    <SocialIcons />
+  </div>
+)

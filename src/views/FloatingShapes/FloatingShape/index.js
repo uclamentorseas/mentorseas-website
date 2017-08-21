@@ -1,1 +1,1 @@
-export { default } from './FloatingShape';
+export { default } from './FloatingShape'

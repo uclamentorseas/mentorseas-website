@@ -1,1 +1,1 @@
-export { default } from './Squiggle';
+export { default } from './Squiggle'

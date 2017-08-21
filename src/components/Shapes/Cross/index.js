@@ -1,1 +1,1 @@
-export { default } from './Cross';
+export { default } from './Cross'
