@@ -5,10 +5,12 @@
   "scripts": {
     "start": "yarn && node scripts/start.js",
     "build": "yarn && node scripts/build.js",
-    "test": "yarn && node scripts/test.js --env=jsdom",
-    "deploy": "yarn && yarn build&&gh-pages -d build",
+    "test": "yarn && yarn lint && yarn flow",
+    "deploy": "yarn && yarn test && yarn build&&gh-pages -d build",
     "lint": "eslint src/",
-    "flow": "flow status"
+    "flow": "flow status",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   },
   "dependencies": {
     "autoprefixer": "7.1.1",
@@ -63,6 +65,7 @@
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.53.1",
     "gh-pages": "^1.0.0",
+    "husky": "^0.14.3",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"

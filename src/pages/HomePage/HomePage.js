@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 
 import Hero from 'views/Hero'
 import TitledParagraphs from 'components/TitledParagraphs'
@@ -19,7 +19,7 @@ export default (): React.Element<*> => {
       <div className='home-page-contents'>
         {
           copy.paragraphs.map((
-            p: Array<string>,
+            p: TitledParagraphsType,
             i: number
           ): React.Element<*> => (
             <div key={p.title} className='home-page-copy-row'>

@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { StyleRoot } from 'radium'
 import Navbar from 'views/Navbar'

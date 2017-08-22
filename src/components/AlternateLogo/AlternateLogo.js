@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import alternateLogo from './alternate-logo.png'
 
 export default (): React.Element<*> => (

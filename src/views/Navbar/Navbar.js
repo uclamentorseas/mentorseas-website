@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import { pages } from 'app'
 import NavItem from './NavItem'
 import NavLogo from './NavLogo'
@@ -9,15 +9,21 @@ import './Navbar.scss'
 
 type PropsType = {};
 
-export default class Navbar extends React.Component {
+type StateType = {
+  panelOpen: boolean
+};
+
+export default class Navbar extends React.Component<PropsType, StateType> {
+  navItems: Array<React.Element<typeof NavItem>>
+  panelItems: Array<React.Element<typeof NavItem>>
+
   constructor(props: PropsType) {
     super(props)
     this.state = {
       panelOpen: false
     }
 
-    this.closePanel = this.closePanel.bind(this)
-    this.togglePanel = this.togglePanel.bind(this)
+    this.handleBurgerClick = this.handleBurgerClick.bind(this)
 
     this.navItems = pages.map((page: PageType): React.Element<*> => (
       <NavItem
@@ -33,6 +39,10 @@ export default class Navbar extends React.Component {
         onClick={this.closePanel}
       />
     ))
+  }
+
+  handleBurgerClick = () => {
+    this.togglePanel()
   }
 
   openPanel() {
@@ -62,7 +72,7 @@ export default class Navbar extends React.Component {
 
         <div
           className={`navbar-hamburger ${this.state.panelOpen ? 'open' : 'closed'}`}
-          onClick={this.togglePanel}
+          onClick={this.handleBurgerClick}
           role='button'
           tabIndex='0'
         >

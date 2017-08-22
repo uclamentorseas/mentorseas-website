@@ -58,6 +58,46 @@ module.exports = {
         'extensions': [ '.js', '.jsx']
       }
     ],
+    'react/require-default-props': [
+      1
+    ],
+    'react/sort-comp': [
+      1,
+      {
+        order: [
+          'type-annotations',
+          'static-methods',
+          'lifecycle',
+          'everything-else',
+          'render'
+        ],
+        groups: {
+          lifecycle: [
+            'displayName',
+            'propTypes',
+            'contextTypes',
+            'childContextTypes',
+            'mixins',
+            'statics',
+            'defaultProps',
+            'constructor',
+            'getDefaultProps',
+            'getInitialState',
+            'state',
+            'getChildContext',
+            'componentWillMount',
+            'componentDidMount',
+            'componentWillReceiveProps',
+            'shouldComponentUpdate',
+            'componentWillUpdate',
+            'componentDidUpdate',
+            'componentWillUnmount'
+          ]
+        }
+      }
+    ],
+
+    // JSX rules
     'jsx-quotes': [0],
 
     // JSX-a11y rules
@@ -86,10 +126,11 @@ module.exports = {
     ],
     "flowtype/require-parameter-type": 2,
     "flowtype/require-return-type": [
-      2,
+      1,
       "always",
       {
-        "annotateUndefined": "never"
+        "annotateUndefined": "never",
+        "excludeArrowFunctions": true
       }
     ],
     "flowtype/require-valid-file-annotation": 2,

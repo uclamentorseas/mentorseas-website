@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import constants from '../constants'
 import './Triangle.scss'
 

@@ -98,7 +98,7 @@ declare module 'radium' {
   };
 
   declare type FunctionComponent<P, Context> = (props: P, context: Context) => ?React$Element<any>;
-  declare type ClassComponent<Def, P, St> = Class<React$Component<Def, P, St>>;
+  declare type ClassComponent<P, St> = Class<React$Component<P, St>>;
 
   declare class ConfiguredRadium {
       <P, Context>(component: FunctionComponent<P, Context>): FunctionComponent<P, Context>;
@@ -113,7 +113,7 @@ declare module 'radium' {
     (config: RadiumConfig): ConfiguredRadium;
     Plugins: Object;
     Style: ClassComponent<any, any, any>;
-    StyleRoot: ClassComponent<any, any, any>;
+    StyleRoot: ClassComponent<any, any>;
     getState(state: Object, elementKey: string, value: ':active' | ':hover' | ':focus'): boolean;
     keyframes(animationObject: Object, name?: string): string;
   }

@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import 'scss/fa/font-awesome.scss'
 import './SocialIcons.scss'
 

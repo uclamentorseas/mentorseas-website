@@ -1,4 +1,10 @@
+// @flow
+
 /* eslint-disable */
+
+import * as React from 'react'
+
+declare var window: any
 
 type ShapeProps = {
   size: number

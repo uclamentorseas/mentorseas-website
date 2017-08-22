@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import './StaffMember.scss';
 
 class StaffMember from React.Component {

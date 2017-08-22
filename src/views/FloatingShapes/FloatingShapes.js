@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import Radium from 'radium'
 import Shapes from 'components/Shapes'
 import './FloatingShapes.scss'
@@ -30,22 +30,37 @@ const randIntInRange = (from: number, to: number): number => {
   return randomValue + from
 }
 
-function getRandomShape(): React.Element<*> {
-  return Shapes[randIntInRange(0, Shapes.length)]
-}
+const getRandomShape = (): (() => React.Element<any>) => (
+  () => Shapes[randIntInRange(0, Shapes.length)]
+)
 
 type PropsType = {};
+
+type StateType = {
+  windowWidth: number,
+  windowHeight: number,
+  shapeElements: Array<React.Element<*>>,
+  resizing: boolean
+};
 
 type ShapeOptionsType = {
   x?: number,
   y?: number,
-  Shape?: React.Element<*>,
+  Shape?: React.Element<any>,
   size?: number,
   animationDuration?: number,
-  creator: string
+  creator?: string
 };
 
-class FloatingShapes extends React.Component {
+class FloatingShapes extends React.Component<PropsType, StateType> {
+  props: PropsType
+  state: StateType
+
+  onContainerClick: (event: SyntheticMouseEvent<*>) => void
+
+  static defaultProps = {
+
+  }
   // --- React Lifecycle Methods --- //
   constructor(props: PropsType) {
     super(props)
@@ -67,14 +82,16 @@ class FloatingShapes extends React.Component {
 
   // --- Event Handlers --- //
 
-  onContainerClick(clickEvent: SyntheticEvent) {
+  onContainerClick = (clickEvent: SyntheticMouseEvent<HTMLDivElement>) => {
     if (this.state.shapeElements.length > this.getMaximumNumberOfShapes()) {
       return
     }
 
+    const containerRect = clickEvent.currentTarget.getBoundingClientRect()
+
     this.addShapeToView(this.createShape({
-      x: clickEvent.nativeEvent.offsetX,
-      y: clickEvent.nativeEvent.offsetY,
+      x: clickEvent.clientX - containerRect.left,
+      y: clickEvent.clientY - containerRect.top,
       creator: 'user'
     }))
   }
@@ -105,10 +122,10 @@ class FloatingShapes extends React.Component {
     )
   }
 
-  getRandomScreenPosition(): { top: number, left: number } {
+  getRandomScreenPosition(): { x: number, y: number } {
     return {
-      top: randIntInRange(0, this.state.windowHeight),
-      left: randIntInRange(0, this.state.windowWidth)
+      x: randIntInRange(0, this.state.windowHeight),
+      y: randIntInRange(0, this.state.windowWidth)
     }
   }
 
@@ -258,6 +275,7 @@ class FloatingShapes extends React.Component {
           ${Math.random() > 0.5 ? 'color-1' : 'color-2'}
         `}
       >
+        { /* flow-disable-next-line */ }
         <Shape size={size} />
       </FloatingShape>
     )

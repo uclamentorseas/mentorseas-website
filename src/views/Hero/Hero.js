@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 
 import FloatingShapes from 'views/FloatingShapes'
 import AlternateLogo from 'components/AlternateLogo'
@@ -20,9 +20,7 @@ export default (): React.Element<*> => {
 
   return (
     <div
-      style={styles.hero}
       className='hero'
-      onClick={this.someoneClicked}
       role='presentation'
     >
 
