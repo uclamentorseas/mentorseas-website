@@ -31,7 +31,7 @@ const randIntInRange = (from: number, to: number): number => {
 }
 
 const getRandomShape = (): (() => React.Element<any>) => (
-  () => Shapes[randIntInRange(0, Shapes.length)]
+  Shapes[randIntInRange(0, Shapes.length)]
 )
 
 type PropsType = {};
