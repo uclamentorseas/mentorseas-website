@@ -1,38 +1,44 @@
-import React from 'react';
-import constants from '../constants';
-import './Cross.scss';
+// @flow
 
-export default function Cross(props) {
+import * as React from 'react'
+import constants from '../constants'
+import './Cross.scss'
 
-  const { STROKE_WIDTH_FACTOR } = constants;
+type PointType = {
+  x: number,
+  y: number
+};
 
-  const Point = (x, y) => ({ x: x, y: y });
+export default function Cross(props: ShapeProps): React.Element<*> {
+  const { STROKE_WIDTH_FACTOR } = constants
 
-  const length = props.size;
-  const strokeWidth = length * STROKE_WIDTH_FACTOR;
-  const strokeWidthRoot2 = strokeWidth * Math.sqrt(2);
-  const halfLength = length / 2;
+  const Point = (x: number, y: number): PointType => ({ x, y })
+
+  const length = props.size
+  const strokeWidth = length * STROKE_WIDTH_FACTOR
+  const strokeWidthRoot2 = strokeWidth * Math.sqrt(2)
+  const halfLength = length / 2
 
   const points = [
     Point(strokeWidthRoot2, 2 * strokeWidthRoot2),
     Point(2 * strokeWidthRoot2, strokeWidthRoot2),
     Point(halfLength, halfLength - strokeWidthRoot2),
-    Point(length -  2 * strokeWidthRoot2, strokeWidthRoot2),
+    Point(length - (2 * strokeWidthRoot2), strokeWidthRoot2),
     Point(length - strokeWidthRoot2, 2 * strokeWidthRoot2),
     Point(halfLength + strokeWidthRoot2, halfLength),
-    Point(length - strokeWidthRoot2, length - 2 * strokeWidthRoot2),
+    Point(length - strokeWidthRoot2, length - (2 * strokeWidthRoot2)),
     Point(length - (2 * strokeWidthRoot2), length - strokeWidthRoot2),
     Point(halfLength, halfLength + strokeWidthRoot2),
     Point(2 * strokeWidthRoot2, length - strokeWidthRoot2),
-    Point(strokeWidthRoot2, length - 2 * strokeWidthRoot2),
+    Point(strokeWidthRoot2, length - (2 * strokeWidthRoot2)),
     Point(halfLength - strokeWidthRoot2, halfLength)
-  ];
+  ]
 
-  let crossPath = `M${points[0].x},${points[0].y} `;
-  points.slice(1).forEach(point => {
-    crossPath = crossPath.concat(` L${point.x},${point.y}`);
-  });
-  crossPath = crossPath.concat(' Z');
+  let crossPath = `M${points[0].x},${points[0].y} `
+  points.slice(1).forEach((point: PointType) => {
+    crossPath = crossPath.concat(` L${point.x},${point.y}`)
+  })
+  crossPath = crossPath.concat(' Z')
 
   return (
     <svg
@@ -44,9 +50,9 @@ export default function Cross(props) {
     >
       <g className='fill' fill='none'>
         <g className='stroke' strokeWidth={strokeWidth}>
-            <path d={crossPath}/>
+          <path d={crossPath} />
         </g>
       </g>
     </svg>
-  );
+  )
 }

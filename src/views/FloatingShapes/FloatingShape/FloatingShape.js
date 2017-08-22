@@ -1,19 +1,20 @@
-import React from 'react';
-import Radium from 'radium';
+// @flow
 
-import './FloatingShape.scss';
+import * as React from 'react'
+import Radium from 'radium'
+import './FloatingShape.scss'
 
-class FloatingShape extends React.Component {
-  render() {
-    return (
-      <div
-        className='floating-shape'
-        {...this.props}
-      >
-        {this.props.children}
-      </div>
-    );
-  }
-}
+type PropsType = {
+  children: React.Element<*>
+};
 
-export default Radium(FloatingShape);
+const FloatingShape = (props: PropsType): React.Element<*> => (
+  <div
+    className='floating-shape'
+    {...props}
+  >
+    {props.children}
+  </div>
+)
+
+export default Radium(FloatingShape)

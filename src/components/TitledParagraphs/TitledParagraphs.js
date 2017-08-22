@@ -1,26 +1,36 @@
-import React from 'react';
+// @flow
 
-import './TitledParagraphs.scss';
+import * as React from 'react'
+import './TitledParagraphs.scss'
 
-export default function TitledParagraphs(props) {
-  return (
-    <div
-      className={`
-        titled-paragraphs
-        ${props.className}
-      `}
-    >
+type PropsType = {
+  className: string,
+  title: string,
+  paragraphs: Array<string>
+};
 
-      <div className='title'>{props.title}</div>
+export default (props: PropsType): React.Element<*> => (
+  <div
+    className={`
+      titled-paragraphs
+      ${props.className}
+    `}
+  >
 
-      <div className='paragraphs'>
-        {
-          props.paragraphs.map((paragraph) => (
-            <div key={paragraph} className='paragraph'>{paragraph}</div>
-          ))
-        }
-      </div>
+    <div className='title'>{props.title}</div>
 
+    <div className='paragraphs'>
+      {
+        props.paragraphs.map((paragraph: string): React.Element<*> => (
+          <div
+            key={paragraph}
+            className='paragraph'
+          >
+            {paragraph}
+          </div>
+        ))
+      }
     </div>
-  );
-}
+
+  </div>
+)

@@ -1,19 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// @flow
 
-export default class NavItem extends React.Component {
-  render() {
-    const {
-      path,
-      name
-    } = this.props.item;
-    
-    return (
-      <div className='hvr-grow nav-item' key={path} onClick={this.props.onClick}>
-        <Link to={path}>
-          {name.toUpperCase()}
-        </Link>
-      </div>
-    );
-  }
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+
+type PropsType = {
+  item: {
+    path: string,
+    name: string
+  },
+  onClick?: () => void
+};
+
+export default (props: PropsType) => {
+  const {
+    item,
+    onClick = null
+  } = props
+
+  return (
+    <div
+      className='hvr-grow nav-item'
+      key={item.path}
+      onClick={onClick}
+      role='link'
+      tabIndex='0'
+    >
+      <Link to={item.path}>
+        {item.name.toUpperCase()}
+      </Link>
+    </div>
+  )
 }

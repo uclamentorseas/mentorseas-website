@@ -1,1 +1,3 @@
-export { default } from './Squiggle';
+// @flow
+
+export { default } from './Squiggle'

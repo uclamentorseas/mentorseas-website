@@ -1,43 +1,45 @@
-import React from 'react';
+// @flow
 
-import './HomePage.scss';
-import copy from './copy';
-import Hero from 'views/Hero';
-import TitledParagraphs from 'components/TitledParagraphs';
-import { getSomeUclaImages } from 'images';
+import * as React from 'react'
 
-export default class HomePage extends React.Component {
-  render() {
+import Hero from 'views/Hero'
+import TitledParagraphs from 'components/TitledParagraphs'
+import { getSomeUclaImages } from 'images'
+import copy from './copy'
+import './HomePage.scss'
 
-    const uclaImages = getSomeUclaImages(copy.paragraphs.length);
+export default (): React.Element<*> => {
+  const uclaImages = getSomeUclaImages(copy.paragraphs.length)
 
-    return (
-      <div className='page home-page'>
+  return (
+    <div className='page home-page'>
 
-        <Hero />
+      <Hero />
 
-        <div className='home-page-contents'>
-          {
-            copy.paragraphs.map((p,i) => (
-              <div key={p.title} className='home-page-copy-row'>
+      <div className='home-page-contents'>
+        {
+          copy.paragraphs.map((
+            p: TitledParagraphsType,
+            i: number
+          ): React.Element<*> => (
+            <div key={p.title} className='home-page-copy-row'>
 
-                <div
-                  className='picture'
-                  style={{
-                    background: `url(${uclaImages[i]}) center/cover no-repeat`
-                  }}
-                />
+              <div
+                className='picture'
+                style={{
+                  background: `url(${uclaImages[i]}) center/cover no-repeat`
+                }}
+              />
 
-                <TitledParagraphs
-                  title={p.title}
-                  paragraphs={p.paragraphs}
-                />
+              <TitledParagraphs
+                title={p.title}
+                paragraphs={p.paragraphs}
+              />
 
-              </div>
-            ))
-          }
-        </div>
+            </div>
+          ))
+        }
       </div>
-    );
-  }
+    </div>
+  )
 }

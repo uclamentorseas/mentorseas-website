@@ -1,45 +1,46 @@
-import React from 'react';
-import constants from '../constants';
-import './Squiggle.scss';
+// @flow
 
-export default function Squiggle(props) {
+import * as React from 'react'
+import constants from '../constants'
+import './Squiggle.scss'
 
+export default (props: ShapeProps): React.Element<*> => {
   const {
     STROKE_WIDTH_FACTOR,
     SQUIGGLE
-  } = constants;
+  } = constants
 
-  const height = props.size / 5;
-  const strokeWidth = props.size * STROKE_WIDTH_FACTOR;
+  const height = props.size / 5
+  const strokeWidth = props.size * STROKE_WIDTH_FACTOR
 
-  const width = height * 5;
+  const width = height * 5
   // M: x-distance between trough and peak
-  const M = width / (SQUIGGLE.NUM_WAVES * 2);
+  const M = width / (SQUIGGLE.NUM_WAVES * 2)
   // N: control point distance from point
-  const N = M * SQUIGGLE.CURVINESS;
+  const N = M * SQUIGGLE.CURVINESS
 
   // Top height
-  const topHeight = strokeWidth / 2;
+  const topHeight = strokeWidth / 2
   // Bottom height
-  const bottomHeight = height - topHeight;
+  const bottomHeight = height - topHeight
 
   // Returns a Cubic bezier string from a bottom origin point
-  const bottomToTop = (originPoint) => (
+  const bottomToTop = (originPoint: number): string => (
     `C
-      ${(originPoint-1)*M + N},${bottomHeight}
-      ${originPoint*M - N},${topHeight}
-      ${originPoint*M},${topHeight}
+      ${((originPoint - 1) * M) + N},${bottomHeight}
+      ${(originPoint * M) - N},${topHeight}
+      ${(originPoint * M)},${topHeight}
     `
-  );
+  )
 
   // Returns a Cubic bezier string from a top origin point
-  const topToBottom = (originPoint) => (
+  const topToBottom = (originPoint: number): string => (
     `C
-      ${(originPoint-1)*M + N},${topHeight}
-      ${originPoint*M - N},${bottomHeight}
-      ${originPoint*M},${bottomHeight}
+      ${((originPoint - 1) * M) + N},${topHeight}
+      ${(originPoint * M) - N},${bottomHeight}
+      ${originPoint * M},${bottomHeight}
     `
-  );
+  )
 
   const squigglePath = [
     `M 0,${bottomHeight}`,
@@ -50,7 +51,7 @@ export default function Squiggle(props) {
     bottomToTop(5),
     topToBottom(6),
     bottomToTop(7)
-  ].join(' ');
+  ].join(' ')
 
   return (
     <svg
@@ -66,5 +67,5 @@ export default function Squiggle(props) {
         </g>
       </g>
     </svg>
-  );
+  )
 }

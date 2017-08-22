@@ -1,1 +1,3 @@
-export { default } from './Cross';
+// @flow
+
+export { default } from './Cross'

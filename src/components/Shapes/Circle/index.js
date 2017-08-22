@@ -1,1 +1,3 @@
-export { default } from './Circle';
+// @flow
+
+export { default } from './Circle'

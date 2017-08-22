@@ -1,15 +1,16 @@
-import React from 'react';
-import constants from '../constants';
-import './Circle.scss';
+// @flow
 
-export default function Circle(props) {
+import * as React from 'react'
+import constants from '../constants'
+import './Circle.scss'
 
-  const { STROKE_WIDTH_FACTOR } = constants;
+export default (props: ShapeProps): React.Element<*> => {
+  const { STROKE_WIDTH_FACTOR } = constants
 
-  const diameter = props.size;
-  const radius = diameter / 2;
+  const diameter = props.size
+  const radius = diameter / 2
 
-  const strokeWidth = diameter * STROKE_WIDTH_FACTOR;
+  const strokeWidth = diameter * STROKE_WIDTH_FACTOR
 
   return (
     <svg
@@ -20,15 +21,15 @@ export default function Circle(props) {
       xmlns='http://www.w3.org/2000/svg'
     >
       <g className='fill' fill='none'>
-          <g className='stroke' strokeWidth={strokeWidth}>
-              <circle
-                className='shape'
-                cx={radius}
-                cy={radius}
-                r={radius - strokeWidth}
-              />
-          </g>
+        <g className='stroke' strokeWidth={strokeWidth}>
+          <circle
+            className='shape'
+            cx={radius}
+            cy={radius}
+            r={radius - strokeWidth}
+          />
         </g>
+      </g>
     </svg>
-  );
+  )
 }

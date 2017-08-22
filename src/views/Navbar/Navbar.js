@@ -1,51 +1,67 @@
-import React from 'react';
-import NavItem from './NavItem';
-import NavLogo from './NavLogo';
+// @flow
 
-import {pages as navItems} from 'app';
+import * as React from 'react'
+import { pages } from 'app'
+import NavItem from './NavItem'
+import NavLogo from './NavLogo'
 
-import './Navbar.scss';
+import './Navbar.scss'
 
-export default class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
+type PropsType = {};
+
+type StateType = {
+  panelOpen: boolean
+};
+
+export default class Navbar extends React.Component<PropsType, StateType> {
+  navItems: Array<React.Element<typeof NavItem>>
+  panelItems: Array<React.Element<typeof NavItem>>
+
+  constructor(props: PropsType) {
+    super(props)
     this.state = {
       panelOpen: false
-    };
+    }
 
-    this.navItems = navItems.map(item => (
+    this.handleBurgerClick = this.handleBurgerClick.bind(this)
+
+    this.navItems = pages.map((page: PageType): React.Element<*> => (
       <NavItem
-        key={item.path}
-        item={item}
+        key={page.path}
+        item={page}
       />
-    ));
+    ))
 
-    this.panelItems = navItems.map(item => (
+    this.panelItems = pages.map((page: PageType): React.Element<*> => (
       <NavItem
-        key={item.path}
-        item={item}
-        onClick={this.closePanel.bind(this)}
+        key={page.path}
+        item={page}
+        onClick={this.closePanel}
       />
     ))
   }
 
+  handleBurgerClick = () => {
+    this.togglePanel()
+  }
+
   openPanel() {
-    this.setState({ panelOpen: true });
+    this.setState({ panelOpen: true })
   }
 
   closePanel() {
-    this.setState({ panelOpen: false });
+    this.setState({ panelOpen: false })
   }
 
   togglePanel() {
     if (this.state.panelOpen) {
-      this.closePanel();
+      this.closePanel()
     } else {
-      this.openPanel();
+      this.openPanel()
     }
   }
 
-  render() {
+  render(): React.Element<*> {
     return (
       <div className='navbar'>
         <NavLogo />
@@ -56,9 +72,11 @@ export default class Navbar extends React.Component {
 
         <div
           className={`navbar-hamburger ${this.state.panelOpen ? 'open' : 'closed'}`}
-          onClick={this.togglePanel.bind(this)}
+          onClick={this.handleBurgerClick}
+          role='button'
+          tabIndex='0'
         >
-          <div/><div/><div/>
+          <div /> <div /> <div />
         </div>
 
         <div
@@ -67,6 +85,6 @@ export default class Navbar extends React.Component {
           {this.panelItems}
         </div>
       </div>
-    );
+    )
   }
 }

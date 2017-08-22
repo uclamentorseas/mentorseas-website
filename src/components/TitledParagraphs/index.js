@@ -1,1 +1,1 @@
-export { default } from './TitledParagraphs';
+export { default } from './TitledParagraphs'

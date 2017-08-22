@@ -1,1 +1,1 @@
-export { default } from './StaffPage';
+export { default } from './StaffPage'

@@ -1,1 +1,3 @@
-export { default } from './Triangle';
+// @flow
+
+export { default } from './Triangle'
