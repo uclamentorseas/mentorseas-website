@@ -124,7 +124,12 @@ module.exports = {
       2,
       "comma"
     ],
-    "flowtype/require-parameter-type": 2,
+    "flowtype/require-parameter-type": [
+      2,
+      {
+        "excludeArrowFunctions": true
+      }
+    ],
     "flowtype/require-return-type": [
       1,
       "always",
