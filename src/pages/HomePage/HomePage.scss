@@ -10,6 +10,23 @@ $image-width-percentage: 40%;
     left: 0;
   }
 
+  .home-page-stanza-cal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 0px;
+    background-color: $color-royal-blue;
+    h1 {
+      color: white;
+      margin-bottom: 35px;
+    }
+    .stanzacal {
+      width: 100%;
+    }
+  }
+
   .home-page-copy-row {
     display: flex;
     flex-flow: row nowrap;

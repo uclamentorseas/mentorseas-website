@@ -4,6 +4,7 @@ import * as React from 'react'
 
 import Hero from 'views/Hero'
 import TitledParagraphs from 'components/TitledParagraphs'
+import StanzaCal from 'views/StanzaCal'
 import { getSomeUclaImages } from 'images'
 import copy from './copy'
 import './HomePage.scss'
@@ -15,6 +16,11 @@ export default (): React.Element<*> => {
     <div className='page home-page'>
 
       <Hero />
+
+      <div className='home-page-stanza-cal'>
+        <h1>Our Upcoming Events</h1>
+        <StanzaCal />
+      </div>
 
       <div className='home-page-contents'>
         {
