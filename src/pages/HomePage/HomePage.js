@@ -18,7 +18,6 @@ export default (): React.Element<*> => {
       <Hero />
 
       <div className='home-page-stanza-cal'>
-        <h1>Our Upcoming Events</h1>
         <StanzaCal />
       </div>
 
