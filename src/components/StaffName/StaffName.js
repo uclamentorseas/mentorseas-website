@@ -1,13 +1,14 @@
-import React from 'react'
+// @flow
 
+import * as React from 'react'
 import './StaffName.scss'
 
-export default class StaffName extends React.Component {
-  render() {
-    return (
-      <div className='staff-name'>
-        {this.props.name}
-      </div>
-    )
-  }
-}
+type PropsType = {
+  name: string
+};
+
+export default (props: PropsType): React.Element<*> => (
+  <div className='staff-name'>
+    {props.name}
+  </div>
+)

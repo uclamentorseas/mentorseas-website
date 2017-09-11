@@ -1,23 +1,20 @@
-import React from 'react'
+// @flow
+
+import * as React from 'react'
 import StaffCollection from 'components/StaffCollection'
 import './StaffSection.scss'
 
-export default class StaffSection extends React.Component {
-  render() {
-    const {
-      // sectionTitle,
-      staffType,
-      executive,
-      members
-    } = this.props
+type PropsType = {
+  staffType: string,
+  executive: Array<MemberDataType>,
+  members: Array<MemberDataType>
+};
 
-    return (
-      <div className={`${staffType} staff-section`}>
-        <StaffCollection
-          executive={executive}
-          members={members}
-        />
-      </div>
-    )
-  }
-}
+export default (props: PropsType): React.Element<*> => (
+  <div className={`${props.staffType} staff-section`}>
+    <StaffCollection
+      executive={props.executive}
+      members={props.members}
+    />
+  </div>
+)
