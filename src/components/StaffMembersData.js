@@ -1,6 +1,5 @@
 // @flow
 /* eslint no-param-reassign: ["error", { "props": false }] */
-/* eslint-disable global-require */
 
 const staffMembers = {
   executive: [
@@ -192,10 +191,8 @@ Object.keys(staffMembers).forEach((memberType: MemberDataType) => {
 
     user.images = {}
 
-    /* no-dynamic-require */
     // Load regular image
     user.images.regular = require(`pages/StaffPage/images/${imageId}.jpg`)
-    /* no-dynamic-require */
   })
 })
 
