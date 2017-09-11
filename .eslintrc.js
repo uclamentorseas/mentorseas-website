@@ -96,6 +96,7 @@ module.exports = {
         }
       }
     ],
+    'react/require-default-props': [0],
 
     // JSX rules
     'jsx-quotes': [0],
