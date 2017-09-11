@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import "./StaffName.scss";
+import './StaffName.scss'
 
 export default class StaffName extends React.Component {
   render() {
@@ -8,6 +8,6 @@ export default class StaffName extends React.Component {
       <div className='staff-name'>
         {this.props.name}
       </div>
-    );
+    )
   }
 }

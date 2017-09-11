@@ -1,40 +1,31 @@
-import React from 'react';
+// @flow
 
-import "./StaffMajor.scss";
+import * as React from 'react'
+import './StaffMajor.scss'
 
-export default class StaffMajor extends React.Component {
-  render() {
-    function determineMajorColor (major) {
-      switch (major) {
-        case 'Computer Science':
-          return '#293d59';
-        case 'Mechanical Engineering':
-          return '#0093AF';
-        case 'Bioengineering':
-          return '#4786a4';
-        case 'Chemical Engineering':
-          return '#6ea9a1';
-        case 'CS & E':
-          return '#1D2951';
-        case 'C & EE':
-          return '#89CFF0';
-        case 'Electrical Engineering':
-          return '#9dc699';
-        case 'Aerospace Engineering':
-          return '#203b6a';
-        default:
-          return;
-      }
-    }
+type PropsType = {
+  major: string
+};
 
-    const styles = {
-      backgroundColor: determineMajorColor(this.props.major)
-    };
-
-    return (
-      <div className='staff-major' style={styles}>
-        {this.props.major}
-      </div>
-    );
+export default (props: PropsType): React.Element<*> => {
+  const majorColors = {
+    'Computer Science': '#293d59',
+    'Mechanical Engineering': '#0093AF',
+    Bioengineering: '#4786a4',
+    'Chemical Engineering': '#6ea9a1',
+    'CS & E': '#1D2951',
+    'C & EE': '#89CFF0',
+    'Electrical Engineering': '#9dc699',
+    'Aerospace Engineering': '#203b6a'
   }
+
+  const styles = {
+    backgroundColor: majorColors[props.major]
+  }
+
+  return (
+    <div className='staff-major' style={styles}>
+      {props.major}
+    </div>
+  )
 }

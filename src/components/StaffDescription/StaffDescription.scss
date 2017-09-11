@@ -10,12 +10,20 @@
   text-align: center;
 }
 
-.staff-description-position {
-  margin-top: 15px;
+.staff-description-block {
+  margin-top: 10px;
   color: $color-cream;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 
-  .position-content {
+  .block-title {
+
+  }
+
+  .block-content {
     font-weight: $font-style-body;
+    font-size: $font-size-small - 2px;
   }
 }
 

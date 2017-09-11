@@ -1,1 +1,1 @@
-export { default } from './StaffCollection';
+export { default } from './StaffCollection'

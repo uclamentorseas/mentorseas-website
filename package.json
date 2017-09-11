@@ -8,6 +8,7 @@
     "test": "yarn && yarn lint && yarn flow",
     "deploy": "yarn && yarn test && yarn build&&gh-pages -d build",
     "lint": "eslint src/",
+    "lint-fix": "eslint --fix src/",
     "flow": "flow status",
     "precommit": "yarn test",
     "prepush": "yarn test"

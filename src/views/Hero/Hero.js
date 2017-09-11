@@ -33,9 +33,9 @@ export default (): React.Element<*> => {
 
       <div className='hero-text-overlay'>
         <AlternateLogo />
-          <div className='subtitle'>
-            {'Engineering + Mentorship'}
-          </div>
+        <div className='subtitle'>
+          {'The premier mentorship organization for UCLA Engineering.'}
+        </div>
 
       </div>
 

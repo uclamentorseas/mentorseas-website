@@ -1,25 +1,24 @@
-import React from 'react';
+// @flow
 
-import './SlideOutPanel.scss';
+import * as React from 'react'
+import './SlideOutPanel.scss'
 
-export default class SlideOutPanel extends React.Component {
-  render() {
-    const {
-      isOpen,
-      children,
-      direction,
-      className
-    } = this.props;
+type PropsType = {
+  isOpen: boolean,
+  children: ReactElement,
+  className: string,
+  direction: string
+};
 
-    let panelClass = 'panel'
-    panelClass += ` ${direction}`
-    panelClass += isOpen ? ' go' : ''
-    panelClass += ` ${className}`
+export default (props: PropsType): React.Element<*> => {
+  let panelClass = 'panel'
+  panelClass += ` ${props.direction}`
+  panelClass += props.isOpen ? ' go' : ''
+  panelClass += ` ${props.className}`
 
-    return (
-      <div className={panelClass} style={{direction}}>
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div className={panelClass} >
+      {props.children}
+    </div>
+  )
 }
