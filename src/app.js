@@ -11,6 +11,7 @@ import 'scss/General.scss'
 import {
   HomePage,
   StaffPage
+  // PhotosPage
 } from 'pages'
 
 const pages = [
@@ -26,6 +27,12 @@ const pages = [
     name: 'Our Staff',
     component: StaffPage
   }
+  // {
+  //   path: '/photos',
+  //   exactPath: true,
+  //   name: 'Photos',
+  //   component: PhotosPage
+  // }
 ]
 
 const styleRootStyles = {

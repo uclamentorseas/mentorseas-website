@@ -1,73 +1,86 @@
-import React from 'react';
+// @flow
 
-import StaffName from 'components/StaffName';
-import StaffMajor from 'components/StaffMajor';
-import StaffImage from 'components/StaffImage';
-import StaffDescription from 'components/StaffDescription';
-import SlideOutPanel from 'components/SlideOutPanel';
-//import Arrow from 'components/Arrow'; no longer used
+import * as React from 'react'
+import StaffName from 'components/StaffName'
+import StaffMajor from 'components/StaffMajor'
+import StaffImage from 'components/StaffImage'
+import StaffDescription from 'components/StaffDescription'
+import SlideOutPanel from 'components/SlideOutPanel'
 
-import './StaffCard.scss';
+import './StaffCard.scss'
 
-class StaffCard extends React.Component {
-  constructor(props) {
-    super();
+type StateType = {
+  showPanel: boolean
+};
+
+type PropsType = {
+  name: MemberDataNameType,
+  position: string,
+  major: string,
+  involvement: string,
+  restaurant: string,
+  description: string,
+  images: string,
+  links: string
+};
+
+class StaffCard extends React.Component<PropsType, StateType> {
+  props: PropsType
+  state: StateType
+
+  constructor() {
+    super()
     this.state = {
       showPanel: false
-    };
-    this.showPanel = this.showPanel.bind(this);
-    this.hidePanel = this.hidePanel.bind(this);
+    }
+    this.showPanel = this.showPanel.bind(this)
+    this.hidePanel = this.hidePanel.bind(this)
   }
 
   showPanel() {
     if (!this.state.showPanel) {
-      this.setState ({
+      this.setState({
         showPanel: !this.state.showPanel
-      });
+      })
     }
   }
 
   hidePanel() {
-    this.setState ({
+    this.setState({
       showPanel: !this.state.showPanel
-    });
+    })
   }
 
-  render() {
-    const {
-      name,
-      position,
-      major,
-      description,
-      images,
-      links
-    } = this.props;
-
-    const {
-      showPanel
-    } = this.state;
-
+  render(): React.Element<*> {
     return (
-      <div className='staff-card-wrapper' style={!showPanel ? {'cursor': 'pointer'} : {}} onClick={this.showPanel}>
+      <div
+        className='staff-card-wrapper'
+        role="button"
+        tabIndex="0"
+        style={!this.state.showPanel ? { cursor: 'pointer' } : {}}
+        onClick={this.showPanel}
+      >
         <SlideOutPanel
           className='staff-panel'
           direction='slideDown'
-          isOpen={showPanel}
+          isOpen={this.state.showPanel}
         >
           <StaffDescription
-            position={position}
-            description={description}
-            links={links}
+            position={this.props.position}
+            involvement={this.props.involvement}
+            restaurant={this.props.restaurant}
+            description={this.props.description}
+            links={this.props.links}
             onClick={this.hidePanel}
           />
         </SlideOutPanel>
 
-        <StaffImage images={images}/>
-        <StaffMajor major={major} />
-        <StaffName name={name} />
+        <StaffImage images={this.props.images} />
+        <StaffMajor major={this.props.major} />
+        <StaffName name={this.props.name} />
       </div>
     )
   }
 }
 
-export default StaffCard;
+export default StaffCard

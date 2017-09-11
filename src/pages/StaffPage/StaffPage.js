@@ -21,13 +21,14 @@ export default class StaffPage extends React.Component {
     return (
       <div className='staff-page page'>
         <div className='page-contents'>
-          <div className='container'>
+          <div className='staff-container'>
             <div className='staff-header staff-section'>
               <SectionHeader title='Meet Our Staff' subtitle=''/>
             </div>
 
             <StaffSection
               staffType='staff-regular'
+              executive={staff.executive}
               members={staff.staffMember.sort(sortMembers)}
             />
 

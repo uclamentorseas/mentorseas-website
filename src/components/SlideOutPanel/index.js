@@ -1,1 +1,1 @@
-export { default } from './SlideOutPanel';
+export { default } from './SlideOutPanel'
