@@ -28,19 +28,6 @@ const staffMembers = {
       }
     }
   ],
-  faculty: [
-    {
-      name: { first: 'UCLA', last: 'Advisor' },
-      position: 'Faculty Advisor',
-      major: '',
-      involvement: 'Society of Women Engineers, American Society of Mechanical Engineers',
-      restaurant: 'Gushi',
-      description: 'This is our faculty advisor.',
-      links: {
-        personal: 'http://www.seasoasa.ucla.edu/counselors/'
-      }
-    }
-  ],
   staffMember: [
     {
       name: { first: 'Shawn', last: 'Lo' },
