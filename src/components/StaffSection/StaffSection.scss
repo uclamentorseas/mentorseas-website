@@ -1,0 +1,13 @@
+@import '~scss/Variables';
+
+.staff-section {
+  font-family: $font-family;
+  font-weight: bold;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  .staff-section-title {
+    text-align: center;
+    color: $color-royal-blue;
+  }
+}

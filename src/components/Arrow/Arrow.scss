@@ -1,0 +1,53 @@
+@import '~scss/Variables';
+
+.arrows {
+  cursor: pointer;
+  width: 60px;
+	height: 72px;
+  position: absolute;
+  margin-left: 75px;
+}
+
+.arrow-down {
+	width: 60px;
+	height: 72px;
+}
+
+.arrow-down path {
+  stroke: white;
+	fill: transparent;
+	stroke-width: 1px;
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrow-down path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari Chrome */
+}
+
+.arrow-down path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari Chrome */
+}
+
+.arrow-down path.a3 {
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
