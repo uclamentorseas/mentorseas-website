@@ -30,7 +30,7 @@ const randIntInRange = (from: number, to: number): number => {
   return randomValue + from
 }
 
-const getRandomShape = (): (() => React.Element<any>) => (
+const getRandomShape = (): (() => React.Element<*>) => (
   Shapes[randIntInRange(0, Shapes.length)]
 )
 
@@ -46,10 +46,11 @@ type StateType = {
 type ShapeOptionsType = {
   x?: number,
   y?: number,
-  Shape?: React.Element<any>,
+  Shape?: React.Element<*>,
   size?: number,
   animationDuration?: number,
-  creator?: string
+  creator?: string,
+  key: string
 };
 
 class FloatingShapes extends React.Component<PropsType, StateType> {
@@ -92,7 +93,8 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
     this.addShapeToView(this.createShape({
       x: clickEvent.clientX - containerRect.left,
       y: clickEvent.clientY - containerRect.top,
-      creator: 'user'
+      creator: 'user',
+      key: `user-shape-${this.state.shapeElements.length + 1}`
     }))
   }
 
@@ -239,7 +241,8 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
         shapesToRender.push(this.createShape({
           x: randX,
-          y: randY
+          y: randY,
+          key: `shape-${i}-${j}`
         }))
       }
     }
@@ -254,7 +257,8 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
       Shape = getRandomShape(),
       size = this.getShapeSize(),
       animationDuration = this.getRandomDuration(),
-      creator = 'automatic'
+      creator = 'automatic',
+      key
     } = options
 
     // We want to spawn the shape so its CENTER is at the specified coordinates
@@ -262,7 +266,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
     return (
       <FloatingShape
-        key={`(${x}, ${y})`}
+        key={key}
         style={this.getShapeStyles({
           x: centerX,
           y: centerY,
