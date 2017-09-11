@@ -4,7 +4,7 @@ import * as React from 'react'
 import './StaffImage.scss'
 
 type PropsType = {
-  images: Array<MemberDataImagesType>
+  images: MemberDataImagesType
 };
 
 export default (props: PropsType): React.Element<*> => (

@@ -33,11 +33,9 @@ class StaffCard extends React.Component<PropsType, StateType> {
     this.state = {
       showPanel: false
     }
-    this.showPanel = this.showPanel.bind(this)
-    this.hidePanel = this.hidePanel.bind(this)
   }
 
-  showPanel() {
+  showPanel = () => {
     if (!this.state.showPanel) {
       this.setState({
         showPanel: !this.state.showPanel
@@ -45,7 +43,7 @@ class StaffCard extends React.Component<PropsType, StateType> {
     }
   }
 
-  hidePanel() {
+  hidePanel = () => {
     this.setState({
       showPanel: !this.state.showPanel
     })

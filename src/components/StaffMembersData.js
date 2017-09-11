@@ -171,14 +171,15 @@ const staffMembers = {
   ]
 }
 
-Object.keys(staffMembers).forEach((memberType: MemberDataType) => {
-  staffMembers[memberType].forEach((user: MemberDataNameType) => {
+Object.keys(staffMembers).forEach((memberType: string) => {
+  staffMembers[memberType].forEach((user: MemberDataType) => {
     const { first, last } = user.name
     const imageId = `${first.toLowerCase()}-${last.toLowerCase()}`
 
     user.images = {}
 
     // Load regular image
+    // flow-disable-next-line
     user.images.regular = require(`pages/StaffPage/images/${imageId}.jpg`)
   })
 })
