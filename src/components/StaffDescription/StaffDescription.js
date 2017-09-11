@@ -8,7 +8,7 @@ type PropsType = {
   involvement: string,
   restaurant: string,
   links: Array<string>,
-  onClick: func
+  onClick: () => void
 };
 
 export default (props: PropsType): React.Element<*> => {

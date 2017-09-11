@@ -5,7 +5,7 @@ import './SlideOutPanel.scss'
 
 type PropsType = {
   isOpen: boolean,
-  children: ReactElement,
+  children: Array<React.Element<*>>,
   className: string,
   direction: string
 };
