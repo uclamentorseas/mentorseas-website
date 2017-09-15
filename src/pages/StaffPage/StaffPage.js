@@ -1,40 +1,39 @@
-import React from 'react';
+// @flow
 
-import SectionHeader from 'components/SectionHeader';
-import StaffSection from 'components/StaffSection';
+import * as React from 'react'
 
-import "./StaffPage.scss";
+import PageHeader from 'components/PageHeader'
+import StaffSection from 'components/StaffSection'
+import staff from 'components/StaffMembersData'
+import './StaffPage.scss'
 
-import staff from 'components/StaffMembersData';
+export default (): React.Element<*> => {
+  getMemberID(m: MemberDataNameType): string {
+    return (`${m.name.first}_${m.name.last}`)
+  }
 
-export default class StaffPage extends React.Component {
-  render() {
+  sortMembers(a: , b: ) {
+    if (getMemberID(a) < getMemberID(b)) return -1
+    if (getMemberID(a) > getMemberID(b)) return 1
+    return 0
+  }
 
-    function getMemberID(m) { return m.name.first + '_' + m.name.last; }
+  return (
+    <div className='staff-page page'>
+      <div className='page-contents'>
+        <div className='staff-container'>
+          <div className='staff-header staff-section'>
+            <PageHeader title='Meet Our Staff' subtitle='' />
+          </div>
 
-    function sortMembers(a, b) {
-      if (getMemberID(a) < getMemberID(b)) return -1;
-      if (getMemberID(a) > getMemberID(b)) return 1;
-      return 0;
-    }
-
-    return (
-      <div className='staff-page page'>
-        <div className='page-contents'>
-          <div className='staff-container'>
-            <div className='staff-header staff-section'>
-              <SectionHeader title='Meet Our Staff' subtitle=''/>
-            </div>
-
-            <StaffSection
-              staffType='staff-regular'
-              executive={staff.executive}
-              members={staff.staffMember.sort(sortMembers)}
-            />
+          <StaffSection
+            staffType='staff-regular'
+            executive={staff.executive}
+            members={staff.staffMember.sort(sortMembers)}
+          />
 
         </div>
       </div>
     </div>
-    );
-  }
+  )
 }
