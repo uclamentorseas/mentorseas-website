@@ -1,6 +1,6 @@
 @import '~scss/Variables';
 
-.section-header {
+.page-header {
   @media (max-width: $breakpoint_small - 1) {
     font-size: $font-size-medium;
   }
@@ -9,13 +9,14 @@
   }
   color: $color-royal-blue;
   text-align: center;
-  margin-top: 25px;
-  width: 100%;
+  margin-top: 20px;
   .title {
     font-weight: bold;
   }
 }
 
-.title-header {
-  overflow: hidden;
+.page-header-img {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
 }
