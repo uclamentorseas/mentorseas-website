@@ -8,11 +8,9 @@ import staff from 'components/StaffMembersData'
 import './StaffPage.scss'
 
 export default (): React.Element<*> => {
-  getMemberID(m: MemberDataNameType): string {
-    return (`${m.name.first}_${m.name.last}`)
-  }
+  const getMemberID = (m: MemberDataType) => (`${m.name.first}_${m.name.last}`)
 
-  sortMembers(a: , b: ) {
+  const sortMembers = (a: MemberDataType, b: MemberDataType): number => {
     if (getMemberID(a) < getMemberID(b)) return -1
     if (getMemberID(a) > getMemberID(b)) return 1
     return 0
