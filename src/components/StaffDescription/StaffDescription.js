@@ -7,7 +7,7 @@ type PropsType = {
   position: string,
   involvement: string,
   restaurant: string,
-  links: Array<string>,
+  links: { [string]: string },
   onClick: () => void
 };
 
@@ -40,7 +40,7 @@ export default (props: PropsType): React.Element<*> => {
   </div>) : null
 
   const email = links.email ? (<div className='icon-wrapper'>
-    <a href={links.email}>
+    <a href={`mailto:${links.email}`}>
       <i className='fa fa-envelope fa-2x' />
     </a>
   </div>) : null
