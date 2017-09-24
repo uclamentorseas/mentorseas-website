@@ -37,10 +37,11 @@ const getRandomShape = (): (() => React.Element<*>) => (
 type PropsType = {};
 
 type StateType = {
-  windowWidth: number,
-  windowHeight: number,
+  containerWidth: number,
+  containerHeight: number,
   shapeElements: Array<React.Element<*>>,
-  resizing: boolean
+  resizing: boolean,
+  numRenders: number
 };
 
 type ShapeOptionsType = {
@@ -56,6 +57,7 @@ type ShapeOptionsType = {
 class FloatingShapes extends React.Component<PropsType, StateType> {
   props: PropsType
   state: StateType
+  container: ?HTMLDivElement
 
   onContainerClick: (event: SyntheticMouseEvent<*>) => void
 
@@ -67,18 +69,20 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
     super(props)
 
     this.state = {
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
+      containerWidth: this.container ? this.container.offsetWidth : 0,
+      containerHeight: this.container ? this.container.offsetHeight : 0,
       shapeElements: [],
-      resizing: false
+      resizing: false,
+      // Required in order to keep Radium keyframes working
+      numRenders: 0
     }
 
     this.onContainerClick = this.onContainerClick.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    this.adjustToResize()
     window.addEventListener('resize', this.adjustToResize.bind(this))
-    this.setState({ shapeElements: this.createInitialShapes() })
   }
 
   // --- Event Handlers --- //
@@ -100,24 +104,31 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
   // --- Getter Methods --- //
 
+  getContainerDimensions(): { width: number, height: number } {
+    return {
+      width: this.container ? this.container.offsetWidth : 0,
+      height: this.container ? this.container.offsetHeight : 0
+    }
+  }
+
   getMaximumNumberOfShapes(): number {
     const initialCount = this.getNumberOfInitialShapes()
     return Math.floor(initialCount * (1 + MAX_USER_SHAPES_RATIO))
   }
 
   getNumberOfInitialShapes(): number {
-    const windowArea = this.state.windowWidth * this.state.windowHeight
+    const windowArea = this.state.containerWidth * this.state.containerHeight
     const shapeArea = this.getShapeSize() ** 2
     return Math.ceil((windowArea / shapeArea) * SHAPES_DENSITY)
   }
 
   getShapeSize(): number {
     return SHAPE_SIZE_FACTOR *
-      Math.max(this.state.windowWidth, this.state.windowHeight)
+      Math.max(this.state.containerWidth, this.state.containerHeight)
   }
 
   getRandomDuration(): number {
-    const baseDuration = (1 / FLOAT_SPEED) * this.state.windowWidth
+    const baseDuration = (1 / FLOAT_SPEED) * this.state.containerWidth
     return randIntInRange(
       baseDuration * (1 - FLOAT_SPEED_VARIANCE),
       baseDuration * (1 + FLOAT_SPEED_VARIANCE)
@@ -126,19 +137,19 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
   getRandomScreenPosition(): { x: number, y: number } {
     return {
-      x: randIntInRange(0, this.state.windowHeight),
-      y: randIntInRange(0, this.state.windowWidth)
+      x: randIntInRange(0, this.state.containerHeight),
+      y: randIntInRange(0, this.state.containerWidth)
     }
   }
 
   getAppearBuffer(): number {
-    return (this.getShapeSize() / this.state.windowWidth) * 1.2
+    return (this.getShapeSize() / this.state.containerWidth) * 1.2
   }
 
   getAnimationDelayFor(left: number, duration: number): number {
-    const { windowWidth } = this.state
-    const animationWidth = windowWidth * (1 + this.getAppearBuffer())
-    const animationLeft = (windowWidth * this.getAppearBuffer()) + left
+    const { containerWidth } = this.state
+    const animationWidth = containerWidth * (1 + this.getAppearBuffer())
+    const animationLeft = (containerWidth * this.getAppearBuffer()) + left
     return -(animationLeft / animationWidth) * duration
   }
 
@@ -179,27 +190,33 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   // --- Modification Methods --- //
 
   adjustToResize() {
-    this.setState({ resizing: true })
-
     const checkDimensions = (width: number, height: number) => {
-      if (window.innerWidth === width && window.innerHeight === height) {
+      const containerDims = this.getContainerDimensions()
+      if (
+        containerDims.width === width &&
+        containerDims.height === height
+      ) {
         this.setState({
           resizing: false,
-          windowWidth: window.innerWidth,
-          windowHeight: window.innerHeight
+          containerWidth: containerDims.width,
+          containerHeight: containerDims.height
         }, () => {
-          // Only create initial shapes once window dimensions in state
-          // have been updated
           this.setState({ shapeElements: this.createInitialShapes() })
         })
       }
     }
 
-    // Check if innerWidth and innerHeight have stayed constant for some time
-    setTimeout(
-      checkDimensions.bind(null, window.innerWidth, window.innerHeight),
-      RESIZE_WAIT_TIME
-    )
+    this.setState({ resizing: true }, () => {
+      // Check if innerWidth and innerHeight have stayed constant for some time
+      const containerDims = this.getContainerDimensions()
+      setTimeout(
+        checkDimensions.bind(
+          this,
+          containerDims.width,
+          containerDims.height,
+        ), RESIZE_WAIT_TIME
+      )
+    })
   }
 
   createInitialShapes(): Array<React.Element<*>> {
@@ -210,18 +227,18 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
     // random coordinates
     const numHorizontalShapes = Math.ceil(
       Math.sqrt(
-        (this.state.windowWidth / this.state.windowHeight) * numShapes
+        (this.state.containerWidth / this.state.containerHeight) * numShapes
       )
     )
 
     const numVerticalShapes = Math.ceil(
       Math.sqrt(
-        (this.state.windowHeight / this.state.windowWidth) * numShapes
+        (this.state.containerHeight / this.state.containerWidth) * numShapes
       )
     )
 
-    const columnSize = this.state.windowWidth / (numHorizontalShapes - 1)
-    const rowSize = this.state.windowHeight / (numVerticalShapes - 1)
+    const columnSize = this.state.containerWidth / (numHorizontalShapes - 1)
+    const rowSize = this.state.containerHeight / (numVerticalShapes - 1)
 
     const STRAY_FROM_CENTER = 0.5
 
@@ -242,11 +259,12 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
         shapesToRender.push(this.createShape({
           x: randX,
           y: randY,
-          key: `shape-${i}-${j}`
+          key: `shape-${this.state.numRenders}-${i}-${j}`
         }))
       }
     }
 
+    this.setState({ numRenders: this.state.numRenders + 1 })
     return shapesToRender
   }
 
@@ -298,6 +316,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
       <div
         className='floating-shapes'
         onClick={this.onContainerClick}
+        ref={(div: ?HTMLDivElement) => { this.container = div }}
         role='presentation'
       >
         { !this.state.resizing && this.state.shapeElements }

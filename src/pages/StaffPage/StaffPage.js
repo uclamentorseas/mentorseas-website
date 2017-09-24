@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import PageHeader from 'components/PageHeader'
+import FloatingShapes from 'views/FloatingShapes'
 import StaffSection from 'components/StaffSection'
 import staff from 'components/StaffMembersData'
 import './StaffPage.scss'
@@ -21,7 +22,10 @@ export default (): React.Element<*> => {
       <div className='page-contents'>
         <div className='staff-container'>
           <div className='staff-header staff-section'>
-            <PageHeader title='Meet Our Staff' subtitle='' />
+            <FloatingShapes />
+            <div className='staff-header-text'>
+              <h1>Meet Our Staff!</h1>
+            </div>
           </div>
 
           <StaffSection
