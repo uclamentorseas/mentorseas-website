@@ -13,7 +13,7 @@ const staffMembers = {
       links: {
         linkedin: 'https://www.linkedin.com/in/nathan-long-2997a6103/',
         facebook: 'https://www.facebook.com/nathanlong832',
-        email: 'mailto:nathanlong832@gmail.com'
+        email: 'nathanlong832@gmail.com'
       }
     },
     {
@@ -24,7 +24,7 @@ const staffMembers = {
       restaurant: 'Gushi',
       description: 'Hey there! I\'m a 3rd year Mechanical Engineering major. I like to do yoga, try new foods, and watch lots of YouTube. I was also a New Student Advisor in the summer, and I\'m stoked to be meet you fellow Bruins!',
       links: {
-        email: 'mailto:pcynthiavo@gmail.com'
+        email: 'pcynthiavo@gmail.com'
       }
     }
   ],
@@ -38,7 +38,7 @@ const staffMembers = {
       description: 'Hi! My name is Shawn and I\'m a fourth year Electrical Engineer from the Bay Area. In my free time, I like to listen to music, play video games, and play music-themed video games. I also enjoy dancing; I\'m currently leadership on VSU Modern, one of the competitive dance teams on campus, and I\'m an alumni director of Foundations Choreography, a beginner dance organization. I\'ve also been involved with IEEE\'s projects, feel free to ask me about anything!',
       links: {
         facebook: 'https://www.facebook.com/shawnnanigans',
-        email: 'mailto:shawnlo.me@gmail.com'
+        email: 'shawnlo.me@gmail.com'
       }
     },
     {
@@ -49,7 +49,7 @@ const staffMembers = {
       restaurant: 'Gushi',
       description: 'I am a C&EE Senior. I also am the Mentorship Chair for the ASCE at UCLA Student Chapter. I love ALL sports, skateboarding, sneakers, Smash Bros, Supreme, Pokemon, anything else Nintendo, and, of course, anything UCLA.',
       links: {
-        email: 'mailto:fparas96@gmail.com',
+        email: 'fparas96@gmail.com',
         linkedin: 'https://www.linkedin.com/in/francis-paras-b99812104'
       }
     },
@@ -64,7 +64,7 @@ const staffMembers = {
         personal: 'http://www.bibekg.com',
         linkedin: 'http://www.linkedin.com/in/bibekgg',
         facebook: 'http://www.facebook.com/bibekgg',
-        email: 'mailto:bibekg@ucla.edu'
+        email: 'bibekg@ucla.edu'
       }
     },
     {
@@ -78,7 +78,7 @@ const staffMembers = {
         personal: 'http://www.simonzh.com',
         linkedin: 'http://www.linkedin.com/in/zhousimon',
         facebook: 'https://www.facebook.com/siimon.zhou',
-        email: 'mailto:simon.zhou@ucla.edu'
+        email: 'simon.zhou@ucla.edu'
       }
     },
     {
@@ -91,7 +91,7 @@ const staffMembers = {
       links: {
         linkedin: 'https://www.linkedin.com/in/akhil-harapanahalli-a1b920115/',
         facebook: 'https://www.facebook.com/akhil.harapanahalli',
-        email: 'mailto:akhilhara@gmail.com'
+        email: 'akhilhara@gmail.com'
       }
     },
     {
@@ -117,7 +117,7 @@ const staffMembers = {
       description: 'I am a CS student from the Bay Area (Los Altos), who is trying to figure it out. Constantly thinking about the intersection of things and existential questions. Please feel free to reach out!',
       links: {
         linkedin: 'http://www.linkedin.com/in/monilpatel21',
-        email: 'mailto:monilpat@gmail.com'
+        email: 'monilpat@gmail.com'
       }
     },
     {
@@ -129,7 +129,7 @@ const staffMembers = {
       description: 'I\'m a second year majoring in aerospace engineering and it\'s my first time on the MentorSEAS board. I\'ve participated in other organizations on campus and I\'m excited to apply my leadership skills. In my free time, I like to play soccer and guitar, listen to music, read and workout.',
       links: {
         linkedin: 'http://www.linkedin.com/in/juan-pablo-almanza-soto-0a21a1146',
-        email: 'mailto:jpalmanzasoto@ucla.edu'
+        email: 'jpalmanzasoto@ucla.edu'
       }
     },
     {
@@ -141,7 +141,7 @@ const staffMembers = {
       description: 'Hi! I am a Junior at UCLA studying BioEngineering. I am currently the Internal Vice President of the Engineering society at UCLA and the Recruitment Director of Sigma Eta Pi. I am super excited to work with all the Mentors and Mentees at MentorSEAS.',
       links: {
         linkedin: 'https://www.linkedin.com/in/sumanakaluvai/',
-        email: 'mailto:sumanakaluvai@gmail.com'
+        email: 'sumanakaluvai@gmail.com'
       }
     },
     {
@@ -153,7 +153,7 @@ const staffMembers = {
       description: 'I am a third-year Mechanical Engineer. I aim to be versatile and adaptable in order to do my best and provide an impact wherever I go. I am always curious and try to dedicate at least one hour everyday to learn variety of subjects.',
       links: {
         linkedin: 'https://www.linkedlin.com/in/hyunsjang614/',
-        email: 'mailto:hyunsjang614@gmail.com'
+        email: 'hyunsjang614@gmail.com'
       }
     },
     {
@@ -165,7 +165,7 @@ const staffMembers = {
       description: 'I\'m a 4th year Civil and Environmental Engineering major who loves music, food, and people.',
       links: {
         facebook: 'https://www.facebook.com/stephan.ahn',
-        email: 'mailto:sahn1995@gmail.com'
+        email: 'sahn1995@gmail.com'
       }
     }
   ]
