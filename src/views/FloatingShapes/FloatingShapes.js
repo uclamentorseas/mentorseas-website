@@ -6,22 +6,8 @@ import Shapes from 'components/Shapes'
 import './FloatingShapes.scss'
 import FloatingShape from './FloatingShape'
 
-// Pixels/second measure of shape animation speed
-const FLOAT_SPEED = 48
 const FLOAT_SPEED_VARIANCE = 0.05
-
-// 0: no shapes,
-// 1: enough shapes to completely fill the screen if placed side-by-side
-const SHAPES_DENSITY = 0.25
-
-// Percentage of max(screenwidth, screenheight)
-const SHAPE_SIZE_FACTOR = 0.1
-
-// Multiple of initial number of shapes that may be added via user clicks
 const MAX_USER_SHAPES_RATIO = 0.75
-
-// Number of milliseconds to wait before spawning shapes after resize
-const RESIZE_WAIT_TIME = 300
 
 // Returns random value in range [from, to)
 const randIntInRange = (from: number, to: number): number => {
@@ -34,7 +20,12 @@ const getRandomShape = (): (() => React.Element<*>) => (
   Shapes[randIntInRange(0, Shapes.length)]
 )
 
-type PropsType = {};
+type PropsType = {
+  density: number,
+  speed: number,
+  shapeSize: number,
+  allowClickShapes: boolean
+};
 
 type StateType = {
   containerWidth: number,
@@ -58,12 +49,19 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   props: PropsType
   state: StateType
   container: ?HTMLDivElement
-
   onContainerClick: (event: SyntheticMouseEvent<*>) => void
 
   static defaultProps = {
-
+    // 0: no shapes, 1: shapes fill screen
+    density: 0.25,
+    // Pixels/second measure of shape animation speed
+    speed: 48,
+    // Percentage of max(screenwidth, screenheight)
+    shapeSize: 0.1,
+    // Whether to allow new shapes to be created via user clicks
+    allowClickShapes: true
   }
+
   // --- React Lifecycle Methods --- //
   constructor(props: PropsType) {
     super(props)
@@ -88,7 +86,10 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   // --- Event Handlers --- //
 
   onContainerClick = (clickEvent: SyntheticMouseEvent<HTMLDivElement>) => {
-    if (this.state.shapeElements.length > this.getMaximumNumberOfShapes()) {
+    if (
+      this.state.shapeElements.length >= this.getMaximumNumberOfShapes() ||
+      !this.props.allowClickShapes
+    ) {
       return
     }
 
@@ -119,16 +120,16 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   getNumberOfInitialShapes(): number {
     const windowArea = this.state.containerWidth * this.state.containerHeight
     const shapeArea = this.getShapeSize() ** 2
-    return Math.ceil((windowArea / shapeArea) * SHAPES_DENSITY)
+    return Math.ceil((windowArea / shapeArea) * this.props.density)
   }
 
   getShapeSize(): number {
-    return SHAPE_SIZE_FACTOR *
+    return this.props.shapeSize *
       Math.max(this.state.containerWidth, this.state.containerHeight)
   }
 
   getRandomDuration(): number {
-    const baseDuration = (1 / FLOAT_SPEED) * this.state.containerWidth
+    const baseDuration = (1 / this.props.speed) * this.state.containerWidth
     return randIntInRange(
       baseDuration * (1 - FLOAT_SPEED_VARIANCE),
       baseDuration * (1 + FLOAT_SPEED_VARIANCE)
@@ -214,7 +215,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
           this,
           containerDims.width,
           containerDims.height,
-        ), RESIZE_WAIT_TIME
+        ), 300
       )
     })
   }
