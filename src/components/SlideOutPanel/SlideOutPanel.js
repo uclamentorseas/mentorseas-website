@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react'
+import classNames from 'classnames'
 import './SlideOutPanel.scss'
 
 type PropsType = {
@@ -11,10 +12,12 @@ type PropsType = {
 };
 
 export default (props: PropsType): React.Element<*> => {
-  let panelClass = 'panel'
-  panelClass += ` ${props.direction}`
-  panelClass += props.isOpen ? ' go' : ''
-  panelClass += ` ${props.className}`
+  const panelClass = classNames({
+    panel: true,
+    [props.direction]: true,
+    go: props.isOpen,
+    [props.className]: props.className
+  })
 
   return (
     <div className={panelClass} >
