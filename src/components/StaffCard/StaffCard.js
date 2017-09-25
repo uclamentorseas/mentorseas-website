@@ -52,10 +52,9 @@ class StaffCard extends React.Component<PropsType, StateType> {
   render(): React.Element<*> {
     return (
       <div
-        className='staff-card-wrapper'
+        className='staff-card'
         role="button"
         tabIndex="0"
-        style={!this.state.showPanel ? { cursor: 'pointer' } : {}}
         onClick={this.showPanel}
       >
         <SlideOutPanel

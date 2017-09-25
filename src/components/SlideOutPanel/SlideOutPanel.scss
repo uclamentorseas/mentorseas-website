@@ -2,6 +2,22 @@
 
 .panel {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: transform .3s ease;
+  transform: translate3d(0,-200vh,0);
+  cursor: auto;
+
+  &.open {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+
+  &.closed {
+    pointer-events: none;
+  }
 }
 
 .slideRight{
@@ -39,7 +55,7 @@
 
 .slideDown{
   opacity: 0;
-  transition: transform .3s ease, opacity .3s;
+  transition: all .3s ease;
   transform: translate3d(0,-200vh,0);
   -webkit-transform: translate3d(0,-200vh,0);
 }

@@ -15,7 +15,7 @@ export default (props: PropsType): React.Element<*> => {
   const panelClass = classNames({
     panel: true,
     [props.direction]: true,
-    go: props.isOpen,
+    [props.isOpen ? 'open' : 'closed']: true,
     [props.className]: props.className
   })
 
