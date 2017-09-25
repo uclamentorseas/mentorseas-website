@@ -1,5 +1,7 @@
 // @flow
 /* eslint no-param-reassign: ["error", { "props": false }] */
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
 
 const staffMembers = {
   executive: [
@@ -55,10 +57,10 @@ const staffMembers = {
     },
     {
       name: { first: 'Bibek', last: 'Ghimire' },
-      position: 'Co-Web Director / Outreach',
-      major: 'CS & E',
-      involvement: 'Society of Women Engineers, American Society of Mechanical Engineers',
-      restaurant: 'Gushi',
+      position: 'Co-Web Director',
+      major: 'Computer Science',
+      involvement: 'The Coding School, Creative Labs, Thought Lounge',
+      restaurant: 'Ike\'s Sandwiches',
       description: 'A nomadic 3rd year Computer Science major indigenous to Northern California whose current obsessions include web development, playing guitar, and pondering his life\'s purpose. A fickle creature, he is subject to change this bio by the next time you see it.',
       links: {
         personal: 'http://www.bibekg.com',
