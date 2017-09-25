@@ -18,34 +18,37 @@ export default (props: PropsType): React.Element<*> => {
 
   return (
     <div className='staff-collection'>
-      { executive.map((
-        m: MemberDataType
-      ): React.Element<*> => (
-        <StaffCard
-          key={`${m.name.first}_${m.name.last}`}
-          images={m.images}
-          name={m.name.first}
-          position={m.position}
-          involvement={m.involvement}
-          restaurant={m.restaurant}
-          major={m.major}
-          description={m.description}
-          links={m.links}
-        />)
-      )}
-      { members.map((
-        m: MemberDataType
-      ): React.Element<*> => (
-        <StaffCard
-          key={`${m.name.first}_${m.name.last}`}
-          images={m.images}
-          name={m.name.first}
-          position={m.position}
-          major={m.major}
-          description={m.description}
-          links={m.links}
-        />)
-      )}
+      {
+        executive.map(m => (
+          <StaffCard
+            key={`${m.name.first}_${m.name.last}`}
+            images={m.images}
+            name={m.name.first}
+            position={m.position}
+            involvement={m.involvement}
+            restaurant={m.restaurant}
+            major={m.major}
+            description={m.description}
+            links={m.links}
+          />
+        ))
+      }
+
+      {
+        members.map(m => (
+          <StaffCard
+            key={`${m.name.first}_${m.name.last}`}
+            images={m.images}
+            name={m.name.first}
+            position={m.position}
+            involvement={m.involvement}
+            restaurant={m.restaurant}
+            major={m.major}
+            description={m.description}
+            links={m.links}
+          />
+        ))
+      }
     </div>
   )
 }
