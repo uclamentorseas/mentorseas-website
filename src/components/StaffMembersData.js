@@ -87,7 +87,7 @@ const staffMembers = {
       name: { first: 'Akhil', last: 'Harapanahalli' },
       position: 'Mentorship Director',
       major: 'Bioengineering',
-      involvement: '',
+      involvement: 'Special Olympics',
       restaurant: 'Ike\'s',
       description: 'Hey all! My name is Akhil Harapanahalli, and I\'m a junior Bioengineering major. My academic and career interests are in research, where I love to study biomarker discovery. Some of my other passions are playing basketball and volunteering for Special Olympics. Looking forward to working with you!',
       links: {
