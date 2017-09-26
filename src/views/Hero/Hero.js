@@ -31,13 +31,12 @@ export default (): React.Element<*> => {
 
       <FloatingShapes />
 
-
       <div className='hero-text-overlay'>
         <AlternateLogo />
-
         <div className='subtitle'>
-          {'Welcome to the family. 😀'}
+          {'Welcome to the family! 😄'}
         </div>
+
       </div>
 
     </div>
