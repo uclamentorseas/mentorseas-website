@@ -1,0 +1,21 @@
+@import '~scss/Variables';
+
+.page-header {
+  @media (max-width: $breakpoint_small - 1) {
+    font-size: $font-size-medium;
+  }
+  @media (min-width: $breakpoint_small) {
+    font-size: $font-size-large;
+  }
+  color: $color-royal-blue;
+  text-align: center;
+  .title {
+    font-weight: bold;
+  }
+}
+
+.page-header-img {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+}
