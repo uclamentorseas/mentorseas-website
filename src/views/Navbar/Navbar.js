@@ -16,6 +16,7 @@ type StateType = {
 export default class Navbar extends React.Component<PropsType, StateType> {
   navItems: Array<React.Element<typeof NavItem>>
   panelItems: Array<React.Element<typeof NavItem>>
+  handleBurgerClick: () => void
 
   constructor(props: PropsType) {
     super(props)
@@ -41,7 +42,7 @@ export default class Navbar extends React.Component<PropsType, StateType> {
     ))
   }
 
-  handleBurgerClick = () => {
+  handleBurgerClick() {
     this.togglePanel()
   }
 
