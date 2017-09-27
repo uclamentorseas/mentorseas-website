@@ -315,6 +315,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   }
 }
 
+// flow-disable-next-line
 FloatingShapes.defaultProps = {
   // 0: no shapes, 1: shapes fill screen
   density: 0.25,
