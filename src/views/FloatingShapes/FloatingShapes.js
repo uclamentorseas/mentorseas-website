@@ -51,17 +51,6 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   container: ?HTMLDivElement
   onContainerClick: (event: SyntheticMouseEvent<*>) => void
 
-  static defaultProps = {
-    // 0: no shapes, 1: shapes fill screen
-    density: 0.25,
-    // Pixels/second measure of shape animation speed
-    speed: 48,
-    // Percentage of max(screenwidth, screenheight)
-    shapeSize: 0.1,
-    // Whether to allow new shapes to be created via user clicks
-    allowClickShapes: true
-  }
-
   // --- React Lifecycle Methods --- //
   constructor(props: PropsType) {
     super(props)
@@ -85,7 +74,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
   // --- Event Handlers --- //
 
-  onContainerClick = (clickEvent: SyntheticMouseEvent<HTMLDivElement>) => {
+  onContainerClick(clickEvent: SyntheticMouseEvent<HTMLDivElement>) {
     if (
       this.state.shapeElements.length >= this.getMaximumNumberOfShapes() ||
       !this.props.allowClickShapes
@@ -324,6 +313,17 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
       </div>
     )
   }
+}
+
+FloatingShapes.defaultProps = {
+  // 0: no shapes, 1: shapes fill screen
+  density: 0.25,
+  // Pixels/second measure of shape animation speed
+  speed: 48,
+  // Percentage of max(screenwidth, screenheight)
+  shapeSize: 0.1,
+  // Whether to allow new shapes to be created via user clicks
+  allowClickShapes: true
 }
 
 export default Radium(FloatingShapes)
