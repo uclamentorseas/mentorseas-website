@@ -17,6 +17,7 @@ export default class Navbar extends React.Component<PropsType, StateType> {
   navItems: Array<React.Element<typeof NavItem>>
   panelItems: Array<React.Element<typeof NavItem>>
   handleBurgerClick: () => void
+  togglePanel: () => void
 
   constructor(props: PropsType) {
     super(props)
@@ -25,6 +26,7 @@ export default class Navbar extends React.Component<PropsType, StateType> {
     }
 
     this.handleBurgerClick = this.handleBurgerClick.bind(this)
+    this.togglePanel = this.togglePanel.bind(this)
 
     this.navItems = pages.map((page: PageType): React.Element<*> => (
       <NavItem
@@ -37,7 +39,7 @@ export default class Navbar extends React.Component<PropsType, StateType> {
       <NavItem
         key={page.path}
         item={page}
-        onClick={this.closePanel}
+        onClick={this.togglePanel}
       />
     ))
   }
