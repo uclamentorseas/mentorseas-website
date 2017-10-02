@@ -20,18 +20,5 @@
       background-color: $color-black;
       z-index: 0;
     }
-
-    .staff-header-text {
-      pointer-events:none;
-      position: relative;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      background-color: $color-royal-blue;
-      padding: 0px 30px;
-      font-weight: bold;
-    }
   }
 }

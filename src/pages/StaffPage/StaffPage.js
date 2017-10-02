@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import FloatingShapes from 'views/FloatingShapes'
+import SectionHeader from 'components/SectionHeader'
 import StaffSection from 'components/StaffSection'
 import staff from 'components/StaffMembersData'
 import './StaffPage.scss'
@@ -22,9 +23,7 @@ export default (): React.Element<*> => {
         <div className='staff-container'>
           <div className='staff-header staff-section'>
             <FloatingShapes allowClickShapes={false} />
-            <div className='staff-header-text'>
-              <h1>Meet Our Staff!</h1>
-            </div>
+            <SectionHeader title='Meet Our Staff' />
           </div>
 
           <StaffSection
