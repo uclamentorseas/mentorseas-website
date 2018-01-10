@@ -169,6 +169,18 @@ const staffMembers = {
         facebook: 'https://www.facebook.com/stephan.ahn',
         email: 'sahn1995@gmail.com'
       }
+    },
+    {
+      name: { first: 'Ellen', last: 'Tran' },
+      position: 'Treasurer',
+      major: '',
+      involvement: '',
+      restaurant: '',
+      description: '',
+      links: {
+        facebook: '',
+        email: ''
+      }
     }
   ]
 }
