@@ -173,13 +173,12 @@ const staffMembers = {
     {
       name: { first: 'Ellen', last: 'Tran' },
       position: 'Treasurer',
-      major: '',
-      involvement: '',
-      restaurant: '',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
       description: '',
       links: {
-        facebook: '',
-        email: ''
+        email: 'eltran64@gmail.com'
       }
     }
   ]
