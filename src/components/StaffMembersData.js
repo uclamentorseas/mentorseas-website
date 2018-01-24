@@ -170,6 +170,40 @@ const staffMembers = {
         email: 'sahn1995@gmail.com'
       }
     },
+    // FRESHMAN REPRESENTATIVES
+    {
+      name: { first: 'Ellen', last: 'Tran' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
+    {
+      name: { first: 'Ellen', last: 'Tran' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
+    {
+      name: { first: 'Ellen', last: 'Tran' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
     {
       name: { first: 'Ellen', last: 'Tran' },
       position: 'Treasurer',
