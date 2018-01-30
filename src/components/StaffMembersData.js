@@ -181,6 +181,66 @@ const staffMembers = {
         email: 'eltran64@gmail.com'
       }
     }
+  ],
+  representatives:
+  [
+    {
+      name: { first: 'Steven', last: 'Huang' },
+      position: 'Freshmen Representative',
+      major: 'Mechanical Engineering',
+      involvement: 'Super Mileage Vehicle, Grace on Campus',
+      restaurant: 'Chik-fil-A',
+      description: '',
+      links: {
+        email: 'stevenfhuang@gmail.com',
+        facebook: 'https://www.facebook.com/steven.fu.huang'
+      }
+    },
+    // to do...
+    {
+      name: { first: 'Tanvi', last: 'Pati' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
+    {
+      name: { first: 'Tammie', last: 'Yang' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
+    {
+      name: { first: 'Gabriele', last: 'Isidoro' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    },
+    {
+      name: { first: 'Sameer', last: 'Khan' },
+      position: 'Treasurer',
+      major: 'Mechanical Engineering',
+      involvement: 'ASME, GME',
+      restaurant: 'Gushi',
+      description: '',
+      links: {
+        email: 'eltran64@gmail.com'
+      }
+    }
   ]
 }
 
