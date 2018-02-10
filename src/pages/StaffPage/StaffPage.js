@@ -16,6 +16,8 @@ export default (): React.Element<*> => {
     return 0
   }
 
+  console.log(staff)
+
   return (
     <div className='staff-page page'>
       <div className='page-contents'>
@@ -26,6 +28,7 @@ export default (): React.Element<*> => {
             staffType='staff-regular'
             executive={staff.executive}
             members={staff.staffMember.sort(sortMembers)}
+            representatives={staff.representatives.sort(sortMembers)}
           />
 
         </div>

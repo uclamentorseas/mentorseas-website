@@ -182,63 +182,67 @@ const staffMembers = {
       }
     }
   ],
-  representatives:
-  [
-    {
-      name: { first: 'Steven', last: 'Huang' },
-      position: 'Freshmen Representative',
-      major: 'Mechanical Engineering',
-      involvement: 'Super Mileage Vehicle, Grace on Campus',
-      restaurant: 'Chik-fil-A',
-      description: '',
-      links: {
-        email: 'stevenfhuang@gmail.com',
-        facebook: 'https://www.facebook.com/steven.fu.huang'
-      }
-    },
-    // to do...
+  representatives: [
+    // {
+    //   name: { first: 'Steven', last: 'Huang' },
+    //   position: 'Freshmen Representative',
+    //   major: 'Mechanical Engineering',
+    //   involvement: 'Super Mileage Vehicle, Grace on Campus',
+    //   restaurant: 'Chik-fil-A',
+    //   description: '',
+    //   links: {
+    //     email: 'stevenfhuang@gmail.com',
+    //     facebook: 'https://www.facebook.com/steven.fu.huang'
+    //   }
+    // },
     {
       name: { first: 'Tanvi', last: 'Pati' },
-      position: 'Treasurer',
-      major: 'Mechanical Engineering',
-      involvement: 'ASME, GME',
-      restaurant: 'Gushi',
+      position: 'Freshman Representative',
+      major: 'Electrical Engineering',
+      involvement: 'IEEE OPS, IEEE WATT',
+      restaurant: 'Emporium Thai',
       description: '',
       links: {
-        email: 'eltran64@gmail.com'
+        email: 'tanvipati@gmail.com',
+        facebook: 'https://www.facebook.com/100017063255193',
+        linkedin: 'http://linkedin.com/in/tanvi-pati-313668142'
       }
     },
     {
       name: { first: 'Tammie', last: 'Yang' },
-      position: 'Treasurer',
-      major: 'Mechanical Engineering',
+      position: 'Freshman Representative',
+      major: 'Electrical Engineering',
       involvement: 'ASME, GME',
-      restaurant: 'Gushi',
+      restaurant: 'FEAST',
       description: '',
       links: {
-        email: 'eltran64@gmail.com'
+        linkedin: 'https://www.linkedin.com/in/tammieyang',
+        email: 'tammieyang2@gmail.com'
       }
     },
     {
       name: { first: 'Gabriele', last: 'Isidoro' },
-      position: 'Treasurer',
-      major: 'Mechanical Engineering',
-      involvement: 'ASME, GME',
-      restaurant: 'Gushi',
+      position: 'Transfer Representative',
+      major: 'Electrical Engineering',
+      involvement: 'IEEE, Italian Club',
+      restaurant: 'In-N-Out',
       description: '',
       links: {
-        email: 'eltran64@gmail.com'
+        facebook: 'facebook.com/gabriele.isidoro.5',
+        email: 'gabri.isidoro@gmail.com',
+        linkedin: 'linkedin.com/in/gabrieleisidoro'
       }
     },
     {
       name: { first: 'Sameer', last: 'Khan' },
-      position: 'Treasurer',
+      position: 'Transfer Representative',
       major: 'Mechanical Engineering',
-      involvement: 'ASME, GME',
-      restaurant: 'Gushi',
+      involvement: 'Bruin Racing, MSA, IM Basketball',
+      restaurant: 'Rubio\'s',
       description: '',
       links: {
-        email: 'eltran64@gmail.com'
+        email: 'sameerk9595@gmail.com',
+        facebook: 'https://www.facebook.com/profile.php?id=100016076949627'
       }
     }
   ]
