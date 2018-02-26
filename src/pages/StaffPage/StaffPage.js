@@ -16,8 +16,6 @@ export default (): React.Element<*> => {
     return 0
   }
 
-  console.log(staff)
-
   return (
     <div className='staff-page page'>
       <div className='page-contents'>

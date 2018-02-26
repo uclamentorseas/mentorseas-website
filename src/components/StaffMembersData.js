@@ -233,18 +233,18 @@ const staffMembers = {
         linkedin: 'linkedin.com/in/gabrieleisidoro'
       }
     },
-    {
-      name: { first: 'Sameer', last: 'Khan' },
-      position: 'Transfer Representative',
-      major: 'Mechanical Engineering',
-      involvement: 'Bruin Racing, MSA, IM Basketball',
-      restaurant: 'Rubio\'s',
-      description: '',
-      links: {
-        email: 'sameerk9595@gmail.com',
-        facebook: 'https://www.facebook.com/profile.php?id=100016076949627'
-      }
-    }
+    // {
+    //   name: { first: 'Sameer', last: 'Khan' },
+    //   position: 'Transfer Representative',
+    //   major: 'Mechanical Engineering',
+    //   involvement: 'Bruin Racing, MSA, IM Basketball',
+    //   restaurant: 'Rubio\'s',
+    //   description: '',
+    //   links: {
+    //     email: 'sameerk9595@gmail.com',
+    //     facebook: 'https://www.facebook.com/profile.php?id=100016076949627'
+    //   }
+    // }
   ]
 }
 
