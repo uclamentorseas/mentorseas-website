@@ -10,7 +10,8 @@ import 'scss/General.scss'
 
 import {
   HomePage,
-  StaffPage
+  StaffPage,
+  OrganizationsPage
   // PhotosPage
 } from 'pages'
 
@@ -26,6 +27,12 @@ const pages = [
     exactPath: true,
     name: 'Our Staff',
     component: StaffPage
+  },
+  {
+    path: '/organizations',
+    exactPath: true,
+    name: 'Organizations',
+    component: OrganizationsPage
   }
   // {
   //   path: '/photos',

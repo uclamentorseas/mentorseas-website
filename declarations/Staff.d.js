@@ -19,4 +19,4 @@ type MemberDataType = {
   description?: string,
   links?: { [string]: string},
   images?: MemberDataImagesType,
-}
+};

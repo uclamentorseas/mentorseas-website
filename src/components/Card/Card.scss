@@ -1,0 +1,35 @@
+@import '~scss/Variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  border-radius: 2px;
+  width: $card-width;
+  height: $card-height;
+  overflow: hidden;
+  margin: 15px;
+  outline: 0;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.2), 0 1px 8px 0 rgba(0,0,0,.12);
+  transition: all 200ms ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .card-img {
+    display: block;
+  }
+
+  .card-name {
+    height: 100%;
+    padding: 5px 0;
+    font-family: $font-family;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: $color-navy-blue;
+  }
+}

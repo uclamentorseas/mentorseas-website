@@ -26,6 +26,7 @@ export default (): React.Element<*> => {
             staffType='staff-regular'
             executive={staff.executive}
             members={staff.staffMember.sort(sortMembers)}
+            representatives={staff.representatives.sort(sortMembers)}
           />
 
         </div>

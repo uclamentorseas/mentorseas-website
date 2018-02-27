@@ -7,7 +7,8 @@ import './StaffSection.scss'
 type PropsType = {
   staffType: string,
   executive: Array<MemberDataType>,
-  members: Array<MemberDataType>
+  members: Array<MemberDataType>,
+  representatives: Array<MemberDataType>
 };
 
 export default (props: PropsType): React.Element<*> => (
@@ -15,6 +16,7 @@ export default (props: PropsType): React.Element<*> => (
     <StaffCollection
       executive={props.executive}
       members={props.members}
+      representatives={props.representatives}
     />
   </div>
 )
