@@ -232,7 +232,7 @@ const staffMembers = {
         email: 'gabri.isidoro@gmail.com',
         linkedin: 'linkedin.com/in/gabrieleisidoro'
       }
-    },
+    }
     // {
     //   name: { first: 'Sameer', last: 'Khan' },
     //   position: 'Transfer Representative',

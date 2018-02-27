@@ -1,11 +1,13 @@
 // @flow
 
+/* eslint-disable */
+
 import * as React from 'react'
 import './SearchBar.scss'
 
 type PropsType = {
   handleChange: func
-}
+};
 
 class SearchBar extends React.Component<PropsType, StateType> {
   constructor(props) {
@@ -13,7 +15,7 @@ class SearchBar extends React.Component<PropsType, StateType> {
     this.state = {
       showClear: false,
       allowSearch: false,
-      searchInput: '',
+      searchInput: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.clearSearch = this.clearSearch.bind(this)
@@ -34,12 +36,12 @@ class SearchBar extends React.Component<PropsType, StateType> {
     const clearStyle = this.state.searchInput ? { visibility: 'visible' } : { visibility: 'hidden' }
     const labelStyle = this.state.searchInput ? {
       fontSize: '12px',
-      top: '5px',
+      top: '5px'
     } : {}
 
     return (
       <div className="search-bar-div">
-        
+
 
         {/* <SearchBarForm action=''>
           <SearchBarInput value={this.state.searchInput} onChange={this.handleChange} name='q' aria-required='true' />
