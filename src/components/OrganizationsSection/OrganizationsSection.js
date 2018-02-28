@@ -8,9 +8,9 @@ import './OrganizationsSection.scss'
 
 export default (): React.Element<*> => {
   const {
-    ALL,
-    CSEE,
-    ME// computer science and electrical
+    ALL, // all orgs
+    CSEE, // CS and EE
+    ME // Mechanical Engineering
   } = organizations
 
   // console.log(computerScience)
@@ -18,7 +18,7 @@ export default (): React.Element<*> => {
   return (
     <div className='organizations-section'>
       {
-        ALL.map(m => (
+        ALL.map((m: OrganizationsDataType)  => (
           <Card
             key={m.name}
             name={m.name}
@@ -29,7 +29,7 @@ export default (): React.Element<*> => {
         ))
       }
       {
-        CSEE.map(m => (
+        CSEE.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
             name={m.name}
@@ -40,7 +40,7 @@ export default (): React.Element<*> => {
         ))
       }
       {
-        ME.map(m => (
+        ME.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
             name={m.name}

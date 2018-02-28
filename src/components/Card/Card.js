@@ -5,7 +5,7 @@ import './Card.scss'
 
 type PropsType = {
   name: string,
-  images: string,
+  images: OrganizationsDataImagesType,
   link: string
 };
 

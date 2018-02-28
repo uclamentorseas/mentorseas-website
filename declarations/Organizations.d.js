@@ -8,7 +8,7 @@ type OrganizationsDataImagesType = {
 type OrganizationsDataType = {
   name: string,
   abbreviation: string,
-  links?: {
+  links: {
     [string]: string
   },
   images?: OrganizationsDataImagesType,
