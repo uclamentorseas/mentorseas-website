@@ -198,6 +198,33 @@ const organizations = {
         website: 'http://www.asmebruins.com/',
         facebook: 'https://www.facebook.com/uclaasme/'
       }
+    }
+  ],
+  CHEME: [
+    {
+      name: 'American Institute of Chemical Engineers',
+      abbreviation: 'aiche',
+      links: {
+        website: 'http://www.aicheucla.com/'
+      }
+    }
+  ],
+  BIOE: [
+    {
+      name: 'Biomedical Engineering Society',
+      abbreviation: 'bmes',
+      links: {
+        website: 'http://bmes.seas.ucla.edu/'
+      }
+    }
+  ],
+  CIVE: [
+    {
+      name: 'American Society of Civil Engineers',
+      abbreviation: 'asce',
+      links: {
+        website: 'http://www.ascebruins.org/'
+      }
     },
     {
       name: 'More Coming Soon...',

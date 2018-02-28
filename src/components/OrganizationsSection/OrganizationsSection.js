@@ -8,16 +8,19 @@ import './OrganizationsSection.scss'
 
 export default (): React.Element<*> => {
   const {
-    ALL, // all orgs
-    CSEE, // CS and EE
-    ME // Mechanical Engineering
+    ALL,
+    CSEE,
+    ME,
+    CHEME,
+    BIOE,
+    CIVE
   } = organizations
 
   // console.log(computerScience)
   // console.log((computerScience.links).website)
   return (
     <div className='organizations-section'>
-      {
+      { // ALL ENGINEERING MAJORS
         ALL.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
@@ -28,7 +31,7 @@ export default (): React.Element<*> => {
           />
         ))
       }
-      {
+      { // COMPUTER SCIENCE AND ELECTRICAL ENGINEERING
         CSEE.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
@@ -39,7 +42,7 @@ export default (): React.Element<*> => {
           />
         ))
       }
-      {
+      { // MECHANICAL ENGINEERING
         ME.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
@@ -47,6 +50,39 @@ export default (): React.Element<*> => {
             images={m.images}
             link={m.links.website}
             major='ME'
+          />
+        ))
+      }
+      { // CHEMICAL ENGINEERING
+        CHEME.map((m: OrganizationsDataType) => (
+          <Card
+            key={m.name}
+            name={m.name}
+            images={m.images}
+            link={m.links.website}
+            major='CHEME'
+          />
+        ))
+      }
+      { // BIOENGINEERING
+        BIOE.map((m: OrganizationsDataType) => (
+          <Card
+            key={m.name}
+            name={m.name}
+            images={m.images}
+            link={m.links.website}
+            major='CHEME'
+          />
+        ))
+      }
+      { // CIVIL ENGINEERING
+        CIVE.map((m: OrganizationsDataType) => (
+          <Card
+            key={m.name}
+            name={m.name}
+            images={m.images}
+            link={m.links.website}
+            major='CHEME'
           />
         ))
       }
