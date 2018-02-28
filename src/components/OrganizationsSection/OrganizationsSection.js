@@ -18,7 +18,7 @@ export default (): React.Element<*> => {
   return (
     <div className='organizations-section'>
       {
-        ALL.map((m: OrganizationsDataType)  => (
+        ALL.map((m: OrganizationsDataType) => (
           <Card
             key={m.name}
             name={m.name}

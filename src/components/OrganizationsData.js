@@ -6,6 +6,13 @@
 const organizations = {
   ALL: [
     {
+      name: 'Bruin Entrepreneurs',
+      abbreviation: 'be',
+      links: {
+        website: 'http://www.bruinentrepreneurs.org/'
+      }
+    },
+    {
       name: 'American Indian Science & Engineering Society',
       abbreviation: 'aises',
       links: {
@@ -130,6 +137,13 @@ const organizations = {
       }
     },
     {
+      name: 'IEEE WATT',
+      abbreviation: 'ieee-watt',
+      links: {
+        website: 'http://www.ieeewatt.ucla.edu/'
+      }
+    },
+    {
       name: 'Linux Users Group',
       abbreviation: 'lug',
       links: {
@@ -186,7 +200,7 @@ const organizations = {
       }
     },
     {
-      name: 'More Coming Soon',
+      name: 'More Coming Soon...',
       abbreviation: 'more',
       links: {
         website: 'http://mentorship.seas.ucla.edu/#/'
