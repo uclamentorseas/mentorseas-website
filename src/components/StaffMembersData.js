@@ -219,20 +219,20 @@ const staffMembers = {
         linkedin: 'https://www.linkedin.com/in/tammieyang',
         email: 'tammieyang2@gmail.com'
       }
-    },
-    {
-      name: { first: 'Gabriele', last: 'Isidoro' },
-      position: 'Transfer Representative',
-      major: 'Electrical Engineering',
-      involvement: 'IEEE, Italian Club',
-      restaurant: 'In-N-Out',
-      description: '',
-      links: {
-        facebook: 'facebook.com/gabriele.isidoro.5',
-        email: 'gabri.isidoro@gmail.com',
-        linkedin: 'linkedin.com/in/gabrieleisidoro'
-      }
     }
+    // {
+    //   name: { first: 'Gabriele', last: 'Isidoro' },
+    //   position: 'Transfer Representative',
+    //   major: 'Electrical Engineering',
+    //   involvement: 'IEEE, Italian Club',
+    //   restaurant: 'In-N-Out',
+    //   description: '',
+    //   links: {
+    //     facebook: 'facebook.com/gabriele.isidoro.5',
+    //     email: 'gabri.isidoro@gmail.com',
+    //     linkedin: 'https://linkedin.com/in/gabrieleisidoro'
+    //   }
+    // }
     // {
     //   name: { first: 'Sameer', last: 'Khan' },
     //   position: 'Transfer Representative',

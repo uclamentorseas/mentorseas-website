@@ -13,7 +13,8 @@ type PropsType = {
 export default (props: PropsType): React.Element<*> => {
   const {
     executive,
-    members
+    members,
+    representatives
   } = props
 
   return (
@@ -36,6 +37,22 @@ export default (props: PropsType): React.Element<*> => {
 
       {
         members.map(m => (
+          <StaffCard
+            key={`${m.name.first}_${m.name.last}`}
+            images={m.images}
+            name={m.name.first}
+            position={m.position}
+            involvement={m.involvement}
+            restaurant={m.restaurant}
+            major={m.major}
+            description={m.description}
+            links={m.links}
+          />
+        ))
+      }
+
+      {
+        representatives.map(m => (
           <StaffCard
             key={`${m.name.first}_${m.name.last}`}
             images={m.images}
