@@ -39,6 +39,8 @@ export default (): React.Element<*> => {
               <TitledParagraphs
                 title={p.title}
                 paragraphs={p.paragraphs}
+                button={p.button}
+                buttonLink={p.buttonLink}
               />
 
             </div>

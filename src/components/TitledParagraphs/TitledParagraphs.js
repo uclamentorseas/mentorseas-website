@@ -6,7 +6,9 @@ import './TitledParagraphs.scss'
 type PropsType = {
   className: string,
   title: string,
-  paragraphs: Array<string>
+  paragraphs: Array<string>,
+  button: string,
+  buttonLink: string
 };
 
 export default (props: PropsType): React.Element<*> => (
@@ -29,6 +31,14 @@ export default (props: PropsType): React.Element<*> => (
             {paragraph}
           </div>
         ))
+      }
+      {
+        props.button && (
+          <a target='_blank' href={props.buttonLink}>
+            <button className='btn draw-border'>
+              {props.button}
+            </button>
+          </a>)
       }
     </div>
 

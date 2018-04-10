@@ -1,10 +1,18 @@
 export default {
   paragraphs: [
+    // {
+    //   title: 'What is mentorSEAS?',
+    //   paragraphs: [
+    //     'mentorSEAS is the official mentorship program for the UCLA Henry Samueli School of Engineering and Applied Science. Our goal is to help guide incoming engineering freshmen and transfers through their first years at UCLA.'
+    //   ]
+    // },
     {
-      title: 'What is mentorSEAS?',
+      title: 'Become a Mentor!',
       paragraphs: [
-        'mentorSEAS is the official mentorship program for the UCLA Henry Samueli School of Engineering and Applied Science. Our goal is to help guide incoming engineering freshmen and transfers through their first years at UCLA.'
-      ]
+        'Interested in becoming a mentor for the 2018-2019 academic year? Applications will be posted by the end of Week 4, but please express interest below.'
+      ],
+      button: 'Interest Form',
+      buttonLink: 'https://www.tinyurl.com/mentorseas'
     },
     {
       title: 'How do I get a mentor?',
