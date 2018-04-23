@@ -34,7 +34,7 @@ export default (props: PropsType): React.Element<*> => (
       }
       {
         props.button && (
-          <a target='_blank' href={props.buttonLink}>
+          <a href={props.buttonLink}>
             <button className='btn draw-border'>
               {props.button}
             </button>

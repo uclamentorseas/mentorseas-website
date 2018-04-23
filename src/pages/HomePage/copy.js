@@ -9,10 +9,10 @@ export default {
     {
       title: 'Become a Mentor!',
       paragraphs: [
-        'Interested in becoming a mentor for the 2018-2019 academic year? Applications will be posted by the end of Week 4, but please express interest below.'
+        'Interested in becoming a mentor for the 2018-2019 academic year? Applications are live now!'
       ],
-      button: 'Interest Form',
-      buttonLink: 'https://www.tinyurl.com/mentorseas'
+      button: 'Become a Mentor!',
+      buttonLink: '/#signup'
     },
     {
       title: 'How do I get a mentor?',

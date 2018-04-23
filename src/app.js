@@ -11,8 +11,8 @@ import 'scss/General.scss'
 import {
   HomePage,
   StaffPage,
-  OrganizationsPage
-  // PhotosPage
+  OrganizationsPage,
+  SignUpPage
 } from 'pages'
 
 const pages = [
@@ -33,6 +33,12 @@ const pages = [
     exactPath: true,
     name: 'Organizations',
     component: OrganizationsPage
+  },
+  {
+    path: '/signup',
+    exactPath: true,
+    name: 'Sign Up',
+    component: SignUpPage
   }
   // {
   //   path: '/photos',
