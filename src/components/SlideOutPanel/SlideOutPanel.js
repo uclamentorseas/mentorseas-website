@@ -9,7 +9,7 @@ type PropsType = {
   children: Array<React.Element<*>>,
   className: string,
   direction: string
-};
+}
 
 export default (props: PropsType): React.Element<*> => {
   const panelClass = classNames({
@@ -19,9 +19,5 @@ export default (props: PropsType): React.Element<*> => {
     [props.className]: props.className
   })
 
-  return (
-    <div className={panelClass} >
-      {props.children}
-    </div>
-  )
+  return <div className={panelClass}>{props.children}</div>
 }

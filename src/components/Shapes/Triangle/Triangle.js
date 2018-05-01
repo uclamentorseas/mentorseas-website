@@ -15,28 +15,23 @@ export default (props: ShapeProps): React.Element<*> => {
   const x1 = 0.5 * length
   const y1 = strokeWidth * root5
 
-  const x2 = length - ((strokeWidth * (1 + root5)) / 2)
+  const x2 = length - strokeWidth * (1 + root5) / 2
   const y2 = length - strokeWidth
 
-  const x3 = ((strokeWidth * (1 + root5)) / 2)
+  const x3 = strokeWidth * (1 + root5) / 2
   const y3 = length - strokeWidth
 
   return (
     <svg
-      className='triangle shape'
+      className="triangle shape"
       viewBox={`0 0 ${length} ${length}`}
       width={`${length}px`}
       height={`${length}px`}
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <g className='fill' fill='none'>
-        <g className='stroke' strokeWidth={strokeWidth}>
-          <path
-            x={strokeWidth}
-            y={strokeWidth}
-            className='shape'
-            d={`M${x1},${y1} L${x2},${y2} L${x3},${y3} Z`}
-          />
+      <g className="fill" fill="none">
+        <g className="stroke" strokeWidth={strokeWidth}>
+          <path x={strokeWidth} y={strokeWidth} className="shape" d={`M${x1},${y1} L${x2},${y2} L${x3},${y3} Z`} />
         </g>
       </g>
     </svg>

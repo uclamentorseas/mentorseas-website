@@ -9,25 +9,14 @@ type PropsType = {
     name: string
   },
   onClick?: () => void
-};
+}
 
 export default (props: PropsType) => {
-  const {
-    item,
-    onClick = null
-  } = props
+  const { item, onClick = null } = props
 
   return (
-    <div
-      className='hvr-grow nav-item'
-      key={item.path}
-      onClick={onClick}
-      role='link'
-      tabIndex='0'
-    >
-      <Link to={item.path}>
-        {item.name.toUpperCase()}
-      </Link>
+    <div className="hvr-grow nav-item" key={item.path} onClick={onClick} role="link" tabIndex="0">
+      <Link to={item.path}>{item.name.toUpperCase()}</Link>
     </div>
   )
 }

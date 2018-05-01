@@ -7,7 +7,7 @@ import './Cross.scss'
 type PointType = {
   x: number,
   y: number
-};
+}
 
 export default function Cross(props: ShapeProps): React.Element<*> {
   const { STROKE_WIDTH_FACTOR } = constants
@@ -23,14 +23,14 @@ export default function Cross(props: ShapeProps): React.Element<*> {
     Point(strokeWidthRoot2, 2 * strokeWidthRoot2),
     Point(2 * strokeWidthRoot2, strokeWidthRoot2),
     Point(halfLength, halfLength - strokeWidthRoot2),
-    Point(length - (2 * strokeWidthRoot2), strokeWidthRoot2),
+    Point(length - 2 * strokeWidthRoot2, strokeWidthRoot2),
     Point(length - strokeWidthRoot2, 2 * strokeWidthRoot2),
     Point(halfLength + strokeWidthRoot2, halfLength),
-    Point(length - strokeWidthRoot2, length - (2 * strokeWidthRoot2)),
-    Point(length - (2 * strokeWidthRoot2), length - strokeWidthRoot2),
+    Point(length - strokeWidthRoot2, length - 2 * strokeWidthRoot2),
+    Point(length - 2 * strokeWidthRoot2, length - strokeWidthRoot2),
     Point(halfLength, halfLength + strokeWidthRoot2),
     Point(2 * strokeWidthRoot2, length - strokeWidthRoot2),
-    Point(strokeWidthRoot2, length - (2 * strokeWidthRoot2)),
+    Point(strokeWidthRoot2, length - 2 * strokeWidthRoot2),
     Point(halfLength - strokeWidthRoot2, halfLength)
   ]
 
@@ -42,14 +42,14 @@ export default function Cross(props: ShapeProps): React.Element<*> {
 
   return (
     <svg
-      className='cross shape'
+      className="cross shape"
       viewBox={`0 0 ${length} ${length}`}
       width={`${length}px`}
       height={`${length}px`}
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <g className='fill' fill='none'>
-        <g className='stroke' strokeWidth={strokeWidth}>
+      <g className="fill" fill="none">
+        <g className="stroke" strokeWidth={strokeWidth}>
           <path d={crossPath} />
         </g>
       </g>

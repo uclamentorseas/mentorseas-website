@@ -11,7 +11,7 @@ import './StaffCard.scss'
 
 type StateType = {
   showPanel: boolean
-};
+}
 
 type PropsType = {
   name: MemberDataNameType,
@@ -22,7 +22,7 @@ type PropsType = {
   description: string,
   images: string,
   links: string
-};
+}
 
 class StaffCard extends React.Component<PropsType, StateType> {
   props: PropsType
@@ -56,17 +56,8 @@ class StaffCard extends React.Component<PropsType, StateType> {
 
   render(): React.Element<*> {
     return (
-      <div
-        className='staff-card'
-        role="button"
-        tabIndex="0"
-        onClick={this.showPanel}
-      >
-        <SlideOutPanel
-          className='staff-panel'
-          direction='slideDown'
-          isOpen={this.state.showPanel}
-        >
+      <div className="staff-card" role="button" tabIndex="0" onClick={this.showPanel}>
+        <SlideOutPanel className="staff-panel" direction="slideDown" isOpen={this.state.showPanel}>
           <StaffDescription
             position={this.props.position}
             involvement={this.props.involvement}

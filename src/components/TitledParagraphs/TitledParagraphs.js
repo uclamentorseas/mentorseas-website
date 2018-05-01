@@ -9,7 +9,7 @@ type PropsType = {
   paragraphs: Array<string>,
   button: string,
   buttonLink: string
-};
+}
 
 export default (props: PropsType): React.Element<*> => (
   <div
@@ -18,29 +18,19 @@ export default (props: PropsType): React.Element<*> => (
       ${props.className}
     `}
   >
+    <div className="title">{props.title}</div>
 
-    <div className='title'>{props.title}</div>
-
-    <div className='paragraphs'>
-      {
-        props.paragraphs.map((paragraph: string): React.Element<*> => (
-          <div
-            key={paragraph}
-            className='paragraph'
-          >
-            {paragraph}
-          </div>
-        ))
-      }
-      {
-        props.button && (
-          <a href={props.buttonLink}>
-            <button className='btn draw-border'>
-              {props.button}
-            </button>
-          </a>)
-      }
+    <div className="paragraphs">
+      {props.paragraphs.map((paragraph: string): React.Element<*> => (
+        <div key={paragraph} className="paragraph">
+          {paragraph}
+        </div>
+      ))}
+      {props.button && (
+        <a href={props.buttonLink}>
+          <button className="btn draw-border">{props.button}</button>
+        </a>
+      )}
     </div>
-
   </div>
 )

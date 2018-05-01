@@ -6,13 +6,10 @@ import './FloatingShape.scss'
 
 type PropsType = {
   children: React.Element<*>
-};
+}
 
 const FloatingShape = (props: PropsType): React.Element<*> => (
-  <div
-    className='floating-shape'
-    {...props}
-  >
+  <div className="floating-shape" {...props}>
     {props.children}
   </div>
 )

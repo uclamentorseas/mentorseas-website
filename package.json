@@ -6,9 +6,11 @@
     "start": "yarn && node scripts/start.js",
     "build": "yarn && node scripts/build.js",
     "test": "yarn && yarn lint && yarn flow",
-    "deploy": "yarn && yarn test && yarn build&&gh-pages -d build",
+    "transfer": "scp -r build/* simonz@lnxsrv09.seas.ucla.edu:/usr/public/www/mentorship",
+    "deploy": "yarn build && yarn transfer",
     "lint": "eslint src/",
     "lint-fix": "eslint --fix src/",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "flow": "flow status",
     "prepush": "yarn test"
   },
@@ -63,25 +65,25 @@
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0 || ^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.53.1",
     "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "node-sass": "^4.5.3",
+    "prettier": "^1.12.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"
   },
   "jest": {
     "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "setupFiles": ["<rootDir>/config/polyfills.js"],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js?(x)", "<rootDir>/src/**/?(*.)(spec|test).js?(x)"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
@@ -101,9 +103,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "eslintIgnore": [
-    "src/pages/StaffPage/StaffPage.js",
-    "src/components/StaffMember"
-  ],
-  "homepage": "http://mentorship.seas.ucla.edu"
+  "eslintIgnore": ["src/pages/StaffPage/StaffPage.js", "src/components/StaffMember"],
+  "homepage": "http://mentorship.seas.ucla.edu",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "printWidth": 120,
+    "tabWidth": 2
+  }
 }

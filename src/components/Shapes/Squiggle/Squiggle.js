@@ -5,10 +5,7 @@ import constants from '../constants'
 import './Squiggle.scss'
 
 export default (props: ShapeProps): React.Element<*> => {
-  const {
-    STROKE_WIDTH_FACTOR,
-    SQUIGGLE
-  } = constants
+  const { STROKE_WIDTH_FACTOR, SQUIGGLE } = constants
 
   const height = props.size / 5
   const strokeWidth = props.size * STROKE_WIDTH_FACTOR
@@ -25,22 +22,20 @@ export default (props: ShapeProps): React.Element<*> => {
   const bottomHeight = height - topHeight
 
   // Returns a Cubic bezier string from a bottom origin point
-  const bottomToTop = (originPoint: number): string => (
+  const bottomToTop = (originPoint: number): string =>
     `C
-      ${((originPoint - 1) * M) + N},${bottomHeight}
-      ${(originPoint * M) - N},${topHeight}
-      ${(originPoint * M)},${topHeight}
+      ${(originPoint - 1) * M + N},${bottomHeight}
+      ${originPoint * M - N},${topHeight}
+      ${originPoint * M},${topHeight}
     `
-  )
 
   // Returns a Cubic bezier string from a top origin point
-  const topToBottom = (originPoint: number): string => (
+  const topToBottom = (originPoint: number): string =>
     `C
-      ${((originPoint - 1) * M) + N},${topHeight}
-      ${(originPoint * M) - N},${bottomHeight}
+      ${(originPoint - 1) * M + N},${topHeight}
+      ${originPoint * M - N},${bottomHeight}
       ${originPoint * M},${bottomHeight}
     `
-  )
 
   const squigglePath = [
     `M 0,${bottomHeight}`,
@@ -55,14 +50,14 @@ export default (props: ShapeProps): React.Element<*> => {
 
   return (
     <svg
-      className='squiggle shape'
+      className="squiggle shape"
       width={`${width}px`}
       height={`${height}px`}
       viewBox={`0 0 ${width} ${height}`}
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <g className='fill' fill='none'>
-        <g className='stroke' strokeWidth={strokeWidth}>
+      <g className="fill" fill="none">
+        <g className="stroke" strokeWidth={strokeWidth}>
           <path d={squigglePath} />
         </g>
       </g>
