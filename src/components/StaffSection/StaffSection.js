@@ -9,14 +9,10 @@ type PropsType = {
   executive: Array<MemberDataType>,
   members: Array<MemberDataType>,
   representatives: Array<MemberDataType>
-};
+}
 
 export default (props: PropsType): React.Element<*> => (
   <div className={`${props.staffType} staff-section`}>
-    <StaffCollection
-      executive={props.executive}
-      members={props.members}
-      representatives={props.representatives}
-    />
+    <StaffCollection executive={props.executive} members={props.members} representatives={props.representatives} />
   </div>
 )

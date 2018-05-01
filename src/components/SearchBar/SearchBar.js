@@ -5,7 +5,7 @@ import './SearchBar.scss'
 
 type PropsType = {
   handleChange: func
-};
+}
 
 class SearchBar extends React.Component<PropsType, StateType> {
   constructor(props) {
@@ -19,7 +19,6 @@ class SearchBar extends React.Component<PropsType, StateType> {
     this.clearSearch = this.clearSearch.bind(this)
   }
 
-
   clearSearch(e) {
     this.setState({ searchInput: '' })
     this.props.handleChange(e.target.value)
@@ -32,15 +31,15 @@ class SearchBar extends React.Component<PropsType, StateType> {
 
   render() {
     const clearStyle = this.state.searchInput ? { visibility: 'visible' } : { visibility: 'hidden' }
-    const labelStyle = this.state.searchInput ? {
-      fontSize: '12px',
-      top: '5px'
-    } : {}
+    const labelStyle = this.state.searchInput
+      ? {
+          fontSize: '12px',
+          top: '5px'
+        }
+      : {}
 
     return (
       <div className="search-bar-div">
-
-
         {/* <SearchBarForm action=''>
           <SearchBarInput value={this.state.searchInput} onChange={this.handleChange} name='q' aria-required='true' />
           <SearchBarLabel for='search-field' style={labelStyle}>Search for a Friend...</SearchBarLabel>

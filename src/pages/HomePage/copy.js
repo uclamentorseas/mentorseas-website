@@ -8,16 +8,14 @@ export default {
     // },
     {
       title: 'Become a Mentor!',
-      paragraphs: [
-        'Interested in becoming a mentor for the 2018-2019 academic year? Applications will be posted by the end of Week 4, but please express interest below.'
-      ],
-      button: 'Interest Form',
-      buttonLink: 'https://www.tinyurl.com/mentorseas'
+      paragraphs: ['Interested in becoming a mentor for the 2018-2019 academic year? Applications are live now!'],
+      button: 'Become a Mentor!',
+      buttonLink: '/#signup'
     },
     {
       title: 'How do I get a mentor?',
       paragraphs: [
-        'You will be given one automatically! Every single incoming engineering student is assigned a mentor from their major. This mentor can give you a upperclassman\'s perspective on the best ways to navigate your exciting first year of college.'
+        "You will be given one automatically! Every single incoming engineering student is assigned a mentor from their major. This mentor can give you a upperclassman's perspective on the best ways to navigate your exciting first year of college."
       ]
     },
     {

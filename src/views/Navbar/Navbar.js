@@ -7,11 +7,11 @@ import NavLogo from './NavLogo'
 
 import './Navbar.scss'
 
-type PropsType = {};
+type PropsType = {}
 
 type StateType = {
   panelOpen: boolean
-};
+}
 
 export default class Navbar extends React.Component<PropsType, StateType> {
   navItems: Array<React.Element<typeof NavItem>>
@@ -28,19 +28,10 @@ export default class Navbar extends React.Component<PropsType, StateType> {
     this.handleBurgerClick = this.handleBurgerClick.bind(this)
     this.togglePanel = this.togglePanel.bind(this)
 
-    this.navItems = pages.map((page: PageType): React.Element<*> => (
-      <NavItem
-        key={page.path}
-        item={page}
-      />
-    ))
+    this.navItems = pages.map((page: PageType): React.Element<*> => <NavItem key={page.path} item={page} />)
 
     this.panelItems = pages.map((page: PageType): React.Element<*> => (
-      <NavItem
-        key={page.path}
-        item={page}
-        onClick={this.togglePanel}
-      />
+      <NavItem key={page.path} item={page} onClick={this.togglePanel} />
     ))
   }
 
@@ -66,27 +57,21 @@ export default class Navbar extends React.Component<PropsType, StateType> {
 
   render(): React.Element<*> {
     return (
-      <div className='navbar'>
+      <div className="navbar">
         <NavLogo />
 
-        <div className='navbar-tabs'>
-          {this.navItems}
-        </div>
+        <div className="navbar-tabs">{this.navItems}</div>
 
         <div
           className={`navbar-hamburger ${this.state.panelOpen ? 'open' : 'closed'}`}
           onClick={this.handleBurgerClick}
-          role='button'
-          tabIndex='0'
+          role="button"
+          tabIndex="0"
         >
           <div /> <div /> <div />
         </div>
 
-        <div
-          className={`nav-panel ${this.state.panelOpen ? 'open' : 'closed'}`}
-        >
-          {this.panelItems}
-        </div>
+        <div className={`nav-panel ${this.state.panelOpen ? 'open' : 'closed'}`}>{this.panelItems}</div>
       </div>
     )
   }

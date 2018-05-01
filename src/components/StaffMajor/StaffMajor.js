@@ -5,7 +5,7 @@ import './StaffMajor.scss'
 
 type PropsType = {
   major: string
-};
+}
 
 export default (props: PropsType): React.Element<*> => {
   const majorColors: { [string]: { bg: string, text: string } } = {
@@ -21,16 +21,12 @@ export default (props: PropsType): React.Element<*> => {
   }
 
   const styles = {
-    backgroundColor: majorColors[props.major] ?
-      majorColors[props.major].bg :
-      majorColors.default.bg,
-    color: majorColors[props.major] ?
-      majorColors[props.major].text :
-      majorColors.default.text
+    backgroundColor: majorColors[props.major] ? majorColors[props.major].bg : majorColors.default.bg,
+    color: majorColors[props.major] ? majorColors[props.major].text : majorColors.default.text
   }
 
   return (
-    <div className='staff-major' style={styles}>
+    <div className="staff-major" style={styles}>
       {props.major}
     </div>
   )

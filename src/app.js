@@ -8,12 +8,7 @@ import Footer from 'views/Footer'
 
 import 'scss/General.scss'
 
-import {
-  HomePage,
-  StaffPage,
-  OrganizationsPage
-  // PhotosPage
-} from 'pages'
+import { HomePage, StaffPage, OrganizationsPage, SignUpPage } from 'pages'
 
 const pages = [
   {
@@ -33,6 +28,12 @@ const pages = [
     exactPath: true,
     name: 'Organizations',
     component: OrganizationsPage
+  },
+  {
+    path: '/signup',
+    exactPath: true,
+    name: 'Sign Up',
+    component: SignUpPage
   }
   // {
   //   path: '/photos',
@@ -51,35 +52,23 @@ export { pages }
 
 export default (): React.Element<*> => (
   <StyleRoot style={styleRootStyles}>
-    <div className='app'>
-
-      <div className='page_wrapper'>
-
+    <div className="app">
+      <div className="page_wrapper">
         <Navbar />
 
         <Switch>
-          {
-            pages.map((page: PageType): React.Element<*> => (
-              page.exactPath ?
-                <Route
-                  key={page.path}
-                  exact
-                  path={page.path}
-                  component={page.component}
-                /> :
-                <Route
-                  key={page.path}
-                  path={page.path}
-                  component={page.component}
-                />
-            ))
-          }
+          {pages.map(
+            (page: PageType): React.Element<*> =>
+              page.exactPath ? (
+                <Route key={page.path} exact path={page.path} component={page.component} />
+              ) : (
+                <Route key={page.path} path={page.path} component={page.component} />
+              )
+          )}
         </Switch>
 
         <Footer />
-
       </div>
-
     </div>
   </StyleRoot>
 )

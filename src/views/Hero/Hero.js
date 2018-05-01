@@ -19,26 +19,15 @@ export default (): React.Element<*> => {
   }
 
   return (
-    <div
-      className='hero'
-      role='presentation'
-    >
-
-      <div
-        style={styles.background}
-        className='background'
-      />
+    <div className="hero" role="presentation">
+      <div style={styles.background} className="background" />
 
       <FloatingShapes />
 
-      <div className='hero-text-overlay'>
+      <div className="hero-text-overlay">
         <AlternateLogo />
-        <div className='subtitle'>
-          {'Welcome to the family! 😄'}
-        </div>
-
+        <div className="subtitle">{'Welcome to the family! 😄'}</div>
       </div>
-
     </div>
   )
 }

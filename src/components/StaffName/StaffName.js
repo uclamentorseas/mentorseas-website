@@ -5,10 +5,6 @@ import './StaffName.scss'
 
 type PropsType = {
   name: string
-};
+}
 
-export default (props: PropsType): React.Element<*> => (
-  <div className='staff-name'>
-    {props.name}
-  </div>
-)
+export default (props: PropsType): React.Element<*> => <div className="staff-name">{props.name}</div>
