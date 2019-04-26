@@ -8,7 +8,7 @@ export default {
     // },
     {
       title: 'Become a Mentor!',
-      paragraphs: ['Interested in becoming a mentor for the 2018-2019 academic year? Applications are live now!'],
+      paragraphs: ['Interested in becoming a mentor for the 2019-2020 academic year? Applications are live now!'],
       button: 'Become a Mentor!',
       buttonLink: '/#signup'
     },
