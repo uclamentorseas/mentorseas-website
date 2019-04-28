@@ -1,4 +1,4 @@
-@import '~scss/Variables';
+@import '~/scss/Variables';
 
 .page_wrapper {
   position: relative;
@@ -11,14 +11,17 @@
   height: 100%;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   width: 100%;
   height: 100%;
   font-family: $font-family;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 

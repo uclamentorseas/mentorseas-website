@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import Radium from 'radium'
-import Shapes from 'components/Shapes'
+import Shapes from '~/components/Shapes'
 import './FloatingShapes.scss'
 import FloatingShape from './FloatingShape'
 

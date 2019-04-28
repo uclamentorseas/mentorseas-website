@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import header from 'pages/StaffPage/images/header.svg'
+import header from '~/pages/StaffPage/images/header.svg'
 import './PageHeader.scss'
 
 export default (): React.Element<*> => (

@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 
-import Hero from 'views/Hero'
-import TitledParagraphs from 'components/TitledParagraphs'
-// import StanzaCal from 'views/StanzaCal'
+import Hero from '~/views/Hero'
+import TitledParagraphs from '~/components/TitledParagraphs'
+// import StanzaCal from '~/views/StanzaCal'
 import { getSomeUclaImages } from 'images'
 import copy from './copy'
 import './HomePage.scss'

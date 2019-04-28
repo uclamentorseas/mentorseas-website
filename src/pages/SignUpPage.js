@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import SectionHeader from 'components/SectionHeader'
-import { Title, Subtitle, Text } from 'components/typography'
+import SectionHeader from '~/components/SectionHeader'
+import { Title, Subtitle, Text } from '~/components/typography'
 import { colors } from 'styles'
-import myEngImage from 'images/myeng.jpg'
+import myEngImage from '~/images/myeng.jpg'
 
 const TextWrapper = styled.div`
   background-color: ${colors.cream};

@@ -1,6 +1,6 @@
 // @flow
 
-import { randomSort } from 'utilities/sort'
+import { randomSort } from '~/utilities/sort'
 
 import ucla1 from './ucla1.jpg'
 import ucla2 from './ucla2.jpg'

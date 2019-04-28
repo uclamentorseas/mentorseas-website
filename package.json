@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "yarn && node scripts/start.js",
-    "build": "yarn && node scripts/build.js",
+    "start": "yarn && parcel ./src/index.html",
+    "build": "yarn && parcel build ./src/index.html -d build/",
     "test": "yarn && yarn lint && yarn flow",
     "transfer": "scp -r build/* simonz@lnxsrv09.seas.ucla.edu:/usr/public/www/mentorship",
     "deploy": "yarn build && yarn transfer",
@@ -15,75 +15,62 @@
     "prepush": "yarn test"
   },
   "dependencies": {
+    "app": "^0.1.0",
     "autoprefixer": "7.1.1",
-    "babel-core": "6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-jest": "20.0.3",
-    "babel-loader": "7.0.0",
-    "babel-preset-react-app": "^3.0.1",
-    "babel-runtime": "6.23.0",
-    "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "classnames": "^2.2.5",
+    "components": "^0.1.0",
     "dotenv": "4.0.0",
     "eslint-config-react-app": "^1.0.5",
-    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "1.7.1",
     "eslint-plugin-flowtype": "2.34.0",
-    "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
     "fs-extra": "3.0.1",
-    "html-webpack-plugin": "2.29.0",
+    "images": "^3.0.2",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
+    "pages": "^0.0.16",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.6",
     "promise": "7.1.1",
     "radium": "^0.19.4",
     "react": "^15.6.1",
-    "react-dev-utils": "^3.0.2",
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.9",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "styled-components": "^3.2.6",
-    "sw-precache-webpack-plugin": "0.11.3",
+    "styles": "^0.2.1",
     "url-loader": "0.5.9",
-    "webpack": "2.6.1",
-    "webpack-dev-server": "2.5.0",
-    "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "2.0.3"
+    "views": "^1.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-module-resolver": "^2.7.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-flow": "^6.23.0",
-    "css-loader": "^0.28.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^3.19.0 || ^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.53.1",
-    "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
-    "node-sass": "^4.5.3",
+    "parcel-bundler": "^1.12.3",
     "prettier": "^1.12.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2"
+    "sass": "^1.19.0"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
-    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js?(x)", "<rootDir>/src/**/?(*.)(spec|test).js?(x)"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
@@ -91,19 +78,27 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
-  },
-  "babel": {
-    "presets": ["react-app"]
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "eslintIgnore": ["src/pages/StaffPage/StaffPage.js", "src/components/StaffMember"],
+  "eslintIgnore": [
+    "src/pages/StaffPage/StaffPage.js",
+    "src/components/StaffMember"
+  ],
   "homepage": "http://mentorship.seas.ucla.edu",
   "prettier": {
     "singleQuote": true,

@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
-import organizations from 'components/OrganizationsData'
-import Card from 'components/Card'
+import organizations from '~/components/OrganizationsData'
+import Card from '~/components/Card'
 import './OrganizationsSection.scss'
 
 export default (): React.Element<*> => {

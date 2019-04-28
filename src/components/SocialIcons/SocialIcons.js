@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import 'scss/fa/font-awesome.scss'
+import '~/scss/fa/font-awesome.scss'
 import './SocialIcons.scss'
 
 export default (): React.Element<*> => (
