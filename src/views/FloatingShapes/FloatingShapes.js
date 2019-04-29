@@ -106,7 +106,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   getNumberOfInitialShapes(): number {
     const windowArea = this.state.containerWidth * this.state.containerHeight
     const shapeArea = this.getShapeSize() ** 2
-    return Math.ceil(windowArea / shapeArea * this.props.density)
+    return Math.ceil((windowArea / shapeArea) * this.props.density)
   }
 
   getShapeSize(): number {
@@ -114,7 +114,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   }
 
   getRandomDuration(): number {
-    const baseDuration = 1 / this.props.speed * this.state.containerWidth
+    const baseDuration = (1 / this.props.speed) * this.state.containerWidth
     return randIntInRange(baseDuration * (1 - FLOAT_SPEED_VARIANCE), baseDuration * (1 + FLOAT_SPEED_VARIANCE))
   }
 
@@ -126,7 +126,7 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
   }
 
   getAppearBuffer(): number {
-    return this.getShapeSize() / this.state.containerWidth * 1.2
+    return (this.getShapeSize() / this.state.containerWidth) * 1.2
   }
 
   getAnimationDelayFor(left: number, duration: number): number {
@@ -205,9 +205,11 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
 
     // First, determine all the shape locations using a stratified sample of
     // random coordinates
-    const numHorizontalShapes = Math.ceil(Math.sqrt(this.state.containerWidth / this.state.containerHeight * numShapes))
+    const numHorizontalShapes = Math.ceil(
+      Math.sqrt((this.state.containerWidth / this.state.containerHeight) * numShapes)
+    )
 
-    const numVerticalShapes = Math.ceil(Math.sqrt(this.state.containerHeight / this.state.containerWidth * numShapes))
+    const numVerticalShapes = Math.ceil(Math.sqrt((this.state.containerHeight / this.state.containerWidth) * numShapes))
 
     const columnSize = this.state.containerWidth / (numHorizontalShapes - 1)
     const rowSize = this.state.containerHeight / (numVerticalShapes - 1)
@@ -218,14 +220,14 @@ class FloatingShapes extends React.Component<PropsType, StateType> {
       for (let j = 0; j < numVerticalShapes; j += 1) {
         const columnCenter = (i + 0.5) * columnSize
         const randX = randIntInRange(
-          columnCenter - columnSize / 2 * STRAY_FROM_CENTER,
-          columnCenter + columnSize / 2 * STRAY_FROM_CENTER
+          columnCenter - (columnSize / 2) * STRAY_FROM_CENTER,
+          columnCenter + (columnSize / 2) * STRAY_FROM_CENTER
         )
 
         const rowCenter = (j + 0.5) * rowSize
         const randY = randIntInRange(
-          rowCenter - rowSize / 2 * STRAY_FROM_CENTER,
-          rowCenter + rowSize / 2 * STRAY_FROM_CENTER
+          rowCenter - (rowSize / 2) * STRAY_FROM_CENTER,
+          rowCenter + (rowSize / 2) * STRAY_FROM_CENTER
         )
 
         shapesToRender.push(

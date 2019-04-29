@@ -23,7 +23,7 @@ export default (props: PropsType): React.Element<*> => {
 
   const facebook = links.facebook ? (
     <div className="icon-wrapper">
-      <a target="_blank" href={links.facebook}>
+      <a target="_blank" rel="noopener noreferrer" href={links.facebook}>
         <i className="fa fa-facebook fa-2x" />
       </a>
     </div>
@@ -31,7 +31,7 @@ export default (props: PropsType): React.Element<*> => {
 
   const linkedin = links.linkedin ? (
     <div className="icon-wrapper">
-      <a target="_blank" href={links.linkedin}>
+      <a target="_blank" rel="noopener noreferrer" href={links.linkedin}>
         <i className="fa fa-linkedin fa-2x" />
       </a>
     </div>
@@ -39,7 +39,7 @@ export default (props: PropsType): React.Element<*> => {
 
   const github = links.github ? (
     <div className="icon-wrapper">
-      <a target="_blank" href={links.github}>
+      <a target="_blank" rel="noopener noreferrer" href={links.github}>
         <i className="fa fa-github fa-2x" />
       </a>
     </div>
@@ -55,7 +55,7 @@ export default (props: PropsType): React.Element<*> => {
 
   const personal = links.personal ? (
     <div className="icon-wrapper">
-      <a target="_blank" href={links.personal}>
+      <a target="_blank" rel="noopener noreferrer" href={links.personal}>
         <i className="fa fa-id-card-o fa-2x" />
       </a>
     </div>

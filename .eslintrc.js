@@ -92,7 +92,8 @@ module.exports = {
     'flowtype/valid-syntax': 1,
 
     // Import rules
-    'import/no-dynamic-require': 1
+    'import/no-dynamic-require': 1,
+    'import/no-absolute-path': 0
   },
   settings: {
     'import/resolver': {

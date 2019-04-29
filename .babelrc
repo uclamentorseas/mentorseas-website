@@ -1,4 +1,13 @@
 {
   "presets": ["@babel/preset-flow", "@babel/preset-react", ["@babel/preset-env", { "modules": false }]],
-  "plugins": ["@babel/plugin-transform-flow-strip-types", "@babel/plugin-proposal-class-properties"]
+  "plugins": [
+    "@babel/plugin-transform-flow-strip-types",
+    "@babel/plugin-proposal-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
+  ]
 }

@@ -15,10 +15,10 @@ export default (props: ShapeProps): React.Element<*> => {
   const x1 = 0.5 * length
   const y1 = strokeWidth * root5
 
-  const x2 = length - strokeWidth * (1 + root5) / 2
+  const x2 = length - (strokeWidth * (1 + root5)) / 2
   const y2 = length - strokeWidth
 
-  const x3 = strokeWidth * (1 + root5) / 2
+  const x3 = (strokeWidth * (1 + root5)) / 2
   const y3 = length - strokeWidth
 
   return (
