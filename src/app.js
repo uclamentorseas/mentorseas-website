@@ -10,6 +10,8 @@ import '/scss/General.scss'
 
 import { HomePage, StaffPage, OrganizationsPage, SignUpPage } from '/pages'
 
+console.log('test-1')
+
 const pages = [
   {
     path: '/',

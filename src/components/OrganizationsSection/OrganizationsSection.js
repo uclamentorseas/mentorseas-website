@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import organizations from '/components/OrganizationsData'
+import organizations from '/data/organizations'
 import Card from '/components/Card'
 import './OrganizationsSection.scss'
 

@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import SectionHeader from '/components/SectionHeader'
 import StaffSection from '/components/StaffSection'
-import staff from '/components/StaffMembersData'
+import staff from '/data/staff'
 import './StaffPage.scss'
 
 export default (): React.Element<*> => {
