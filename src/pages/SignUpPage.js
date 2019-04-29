@@ -24,13 +24,17 @@ const TutorialImage = styled.img`
 `
 
 export default function SignUpPage(): React.Element<*> {
+  const today = new Date()
+  const theYear = today.getFullYear()
+  const schoolYearString = `${theYear}-${theYear + 1}`
+
   return (
     <div className="page">
       <div className="page-contents">
         <SectionHeader allowClickShapes={false} title="Become a Mentor!" background={colors.mint} />
 
         <TextWrapper>
-          <Title color={colors.red}>Sign up to become a 2019-2020 mentorSEAS mentor!</Title>
+          <Title color={colors.red}>{`Sign up to become a ${schoolYearString} mentorSEAS mentor!`}</Title>
           <Subtitle>{"It only takes a few minutes and it's as easy as 1, 2, 3..."}</Subtitle>
 
           <StepsWrapper>
