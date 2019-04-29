@@ -5,14 +5,12 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "yarn && parcel build ./src/index.html -d build/",
-    "test": "yarn && yarn lint && yarn flow",
     "transfer": "scp -r build/* simonz@lnxsrv09.seas.ucla.edu:/usr/public/www/mentorship",
     "deploy": "yarn build && yarn transfer",
     "lint": "eslint src/",
     "lint-fix": "eslint --fix src/",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "flow": "flow status",
-    "prepush": "yarn test"
+    "flow": "flow status"
   },
   "dependencies": {
     "eslint-config-react-app": "^1.0.5",
