@@ -10,9 +10,11 @@
 
 `yarn start`: Start the local development server.
 
-`yarn build`: Build a webpack bundle to the `build` folder that is ready to be published to the web.
+`yarn build`: Build the application bundle using parcel-bundler to the `build` folder that is ready to be published to the web.
 
-`yarn test`: Run tests (we don't really have any at the moment).
+`yarn transfer`: Transfers the built app (from `yarn build`) to SEASnet to be served from mentorship.seas.ucla.edu. This is currently authenticated through Simon Zhou's SEASnet account so you'll need his SEASnet password to authorize this action.
+
+`yarn deploy`: Runs `yarn build` then `yarn transfer`
 
 
 ## Project Structure
@@ -55,12 +57,14 @@ import App, { pages } from 'app'
 
 ### Other Notes
 
-* We are using Webpack's module-resolver feature, allowing us to declare our `import` statements relative to the `src` folder, meaning that no matter which file you are in, you can write clean imports like:
+* We are using Parcel's aboslute module resolution feature, allowing us to declare our `import` statements relative to the project entry folder, meaning that no matter which file you are in, you can write clean imports like:
 
 ```js
-import Foo from 'components/foo'
+import Foo from '/components/Foo'
 ```
-and
+
+instead of
+
 ```js
-import HomePage from 'pages/HomePage'
+import Foo from '../../../../components/Foo'
 ```

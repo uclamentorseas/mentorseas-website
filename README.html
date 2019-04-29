@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>MentorSEAS Website</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="mentorseas-website">MentorSEAS Website</h1>
+<h2 id="set-up">Set-up</h2>
+<ol>
+<li>Make sure you have <a href="https://yarnpkg.com/en/">yarn</a> installed on your computer.</li>
+<li>In the project directory, run <code>yarn install</code> to install all project dependencies.</li>
+<li>You're all set!</li>
+</ol>
+<h2 id="commands">Commands</h2>
+<p><code>yarn start</code>: Start the local development server.</p>
+<p><code>yarn build</code>: Build the application bundle using parcel-bundler to the <code>build</code> folder that is ready to be published to the web.</p>
+<p><code>yarn transfer</code>: Transfers the built app (from <code>yarn build</code>) to SEASnet to be served from <a href="http://mentorship.seas.ucla.edu">mentorship.seas.ucla.edu</a>. This is currently authenticated through Simon Zhou's SEASnet account so you'll need his SEASnet password to authorize this action.</p>
+<p><code>yarn deploy</code>: Runs <code>yarn build</code> then <code>yarn transfer</code></p>
+<h2 id="project-structure">Project Structure</h2>
+<p><em>I've only listed files/directories that are particularly important to understanding the overall project</em></p>
+<pre><code><div>config/
+  webpack.config.dev.js
+  webpack.config.prod.js
+public/
+scripts/
+src/
+  components/
+  pages/
+    HomePage/
+    StaffPage/
+  views/
+  app.js
+  index.js
+</div></code></pre>
+<p>There is a three-tiered hierarchy of React components, in order from smallest to largest.</p>
+<ol>
+<li><strong>components</strong> -- small &amp; reusable React components used to build other components</li>
+<li><strong>views</strong> -- specific features/views that are composed of the smaller components</li>
+<li><strong>pages</strong> -- the pages that are rendered at different routes, composed of views and components</li>
+</ol>
+<ul>
+<li><code>src/app.js</code> default exports a <code>Switch</code> component that routes between the site's pages, which are exported as <code>{ pages }</code> from <code>src/app.js</code> as well. As such, the following import is possible.</li>
+</ul>
+<pre><code class="language-js"><div><span class="hljs-keyword">import</span> App, { pages } <span class="hljs-keyword">from</span> <span class="hljs-string">'app'</span>
+</div></code></pre>
+<ul>
+<li>
+<p><code>src/index.js</code> imports the <code>Switch</code> from <code>src/app.js</code> and renders it into the DOM</p>
+</li>
+<li>
+<p>The contents of a page directory should be absolutely minimal. For example,  <code>src/pages/HomePage</code> should be limited to:</p>
+<ul>
+<li>index.js</li>
+<li>HomePage.js</li>
+<li>HomePage.scss</li>
+<li>a very limited number of other items directly pertinent to the page</li>
+</ul>
+</li>
+</ul>
+<h3 id="other-notes">Other Notes</h3>
+<ul>
+<li>We are using Parcel's aboslute module resolution feature, allowing us to declare our <code>import</code> statements relative to the project entry folder, meaning that no matter which file you are in, you can write clean imports like:</li>
+</ul>
+<pre><code class="language-js"><div><span class="hljs-keyword">import</span> Foo <span class="hljs-keyword">from</span> <span class="hljs-string">'/components/Foo'</span>
+</div></code></pre>
+<p>instead of</p>
+<pre><code class="language-js"><div><span class="hljs-keyword">import</span> Foo <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../../components/Foo'</span>
+</div></code></pre>
+
+    </body>
+    </html>
