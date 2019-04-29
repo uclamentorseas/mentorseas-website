@@ -267,7 +267,7 @@ Object.keys(staffMembers).forEach((memberType: string) => {
 
     // Load regular image
     // flow-disable-next-line
-    user.images.regular = require(`pages/StaffPage/images/${imageId}.jpg`)
+    user.images.regular = `/member-images/${imageId}.jpg`
   })
 })
 

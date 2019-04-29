@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
-import SectionHeader from '~/components/SectionHeader'
-import OrganizationsSection from '~/components/OrganizationsSection'
+import SectionHeader from '/components/SectionHeader'
+import OrganizationsSection from '/components/OrganizationsSection'
 import './OrganizationsPage.scss'
 
 export default (): React.Element<*> => (

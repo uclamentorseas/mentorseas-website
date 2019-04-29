@@ -1,4 +1,4 @@
-@import '~scss/Variables';
+@import '/scss/Variables';
 
 .staff-image {
   width: 210px;
@@ -10,34 +10,32 @@
   width: 100%;
 }
 
-
-
-  // @media (min-width: $bpoint_sm) {
-  //
-  //   .member_card_row {
-  //     flex-direction: row;
-  //     .member_description {
-  //       padding-left: 20px;
-  //       padding-right: 20px;
-  //     }
-  //   }
-  // }
-  //
-  // @media (max-width: $bpoint_sm - 1) {
-  //
-  //   .member_image {
-  //     display: flex;
-  //     justify-content: center;
-  //
-  //     .member_image_background {
-  //       display: flex;
-  //     }
-  //
-  //     .member_card_row {
-  //       flex-direction: column;
-  //       .member_description {
-  //         padding-top: 20px;
-  //       }
-  //     }
-  //
-  //   }
+// @media (min-width: $bpoint_sm) {
+//
+//   .member_card_row {
+//     flex-direction: row;
+//     .member_description {
+//       padding-left: 20px;
+//       padding-right: 20px;
+//     }
+//   }
+// }
+//
+// @media (max-width: $bpoint_sm - 1) {
+//
+//   .member_image {
+//     display: flex;
+//     justify-content: center;
+//
+//     .member_image_background {
+//       display: flex;
+//     }
+//
+//     .member_card_row {
+//       flex-direction: column;
+//       .member_description {
+//         padding-top: 20px;
+//       }
+//     }
+//
+//   }

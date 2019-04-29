@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 
-import FloatingShapes from '~/views/FloatingShapes'
-import AlternateLogo from '~/components/AlternateLogo'
-import uclaImage from '~/images/ucla-aerial.jpg'
+import FloatingShapes from '/views/FloatingShapes'
+import AlternateLogo from '/components/AlternateLogo'
+import uclaImage from '/images/ucla-aerial.jpg'
 import './Hero.scss'
 
 export default (): React.Element<*> => {

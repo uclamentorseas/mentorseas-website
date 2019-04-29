@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 
-import SectionHeader from '~/components/SectionHeader'
-import StaffSection from '~/components/StaffSection'
-import staff from '~/components/StaffMembersData'
+import SectionHeader from '/components/SectionHeader'
+import StaffSection from '/components/StaffSection'
+import staff from '/components/StaffMembersData'
 import './StaffPage.scss'
 
 export default (): React.Element<*> => {

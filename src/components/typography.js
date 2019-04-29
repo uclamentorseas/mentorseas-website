@@ -1,7 +1,7 @@
 // @flow
 
 import styled from 'styled-components'
-import { breakpoints, colors } from 'styles'
+import { breakpoints, colors } from '/styles'
 
 export const Header = styled.div`
   text-align: center;

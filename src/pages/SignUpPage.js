@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import SectionHeader from '~/components/SectionHeader'
-import { Title, Subtitle, Text } from '~/components/typography'
-import { colors } from 'styles'
-import myEngImage from '~/images/myeng.jpg'
+import SectionHeader from '/components/SectionHeader'
+import { Title, Subtitle, Text } from '/components/typography'
+import { colors } from '/styles'
+import myEngImage from '/images/myeng.jpg'
 
 const TextWrapper = styled.div`
   background-color: ${colors.cream};
@@ -30,7 +30,7 @@ export default function SignUpPage(): React.Element<*> {
         <SectionHeader allowClickShapes={false} title="Become a Mentor!" background={colors.mint} />
 
         <TextWrapper>
-          <Title color={colors.red}>Sign up to become a 2018-2019 mentorSEAS mentor!</Title>
+          <Title color={colors.red}>Sign up to become a 2019-2020 mentorSEAS mentor!</Title>
           <Subtitle>{"It only takes a few minutes and it's as easy as 1, 2, 3..."}</Subtitle>
 
           <StepsWrapper>
@@ -55,7 +55,8 @@ export default function SignUpPage(): React.Element<*> {
                 href="https://ccle.ucla.edu/mod/feedback/view.php?id=1983190"
               >
                 survey on CCLE
-              </a>, which is also linked to on myEngineering.
+              </a>
+              , which is also linked to on myEngineering.
             </Text>
           </StepsWrapper>
           <Text size={18}>

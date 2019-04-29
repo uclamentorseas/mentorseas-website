@@ -1,4 +1,4 @@
-@import '~scss/Variables';
+@import '/scss/Variables';
 
 $shape_opacity: 0.3;
 $shape_opacity_on_hover: 0.8;
@@ -6,11 +6,15 @@ $shape_opacity_on_hover: 0.8;
 .floating-shape {
   position: absolute;
 
-  .shape .stroke { transition: stroke 1.0s ease; }
+  .shape .stroke {
+    transition: stroke 1s ease;
+  }
 
   &.color-1 {
     .shape {
-      .stroke { stroke: rgba($color-mint, $shape_opacity); }
+      .stroke {
+        stroke: rgba($color-mint, $shape_opacity);
+      }
     }
 
     &:hover {

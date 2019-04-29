@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import StaffCollection from '~/components/StaffCollection'
+import StaffCollection from '/components/StaffCollection'
 import './StaffSection.scss'
 
 type PropsType = {

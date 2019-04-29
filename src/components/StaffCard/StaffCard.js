@@ -1,11 +1,11 @@
 // @flow
 
 import * as React from 'react'
-import StaffName from '~/components/StaffName'
-import StaffMajor from '~/components/StaffMajor'
-import StaffImage from '~/components/StaffImage'
-import StaffDescription from '~/components/StaffDescription'
-import SlideOutPanel from '~/components/SlideOutPanel'
+import StaffName from '/components/StaffName'
+import StaffMajor from '/components/StaffMajor'
+import StaffImage from '/components/StaffImage'
+import StaffDescription from '/components/StaffDescription'
+import SlideOutPanel from '/components/SlideOutPanel'
 
 import './StaffCard.scss'
 

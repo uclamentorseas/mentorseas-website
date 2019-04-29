@@ -1,16 +1,4 @@
 {
-  "presets": [
-    "react",
-    [ "es2015", { "modules": false }]
-  ],
-  "plugins": [
-    ["module-resolver", {
-      "root": ["./src"],
-      "alias": {
-        "test": "./test",
-      }
-    }],
-    "transform-class-properties",
-    "transform-exponentiation-operator"
-  ]
+  "presets": ["@babel/preset-flow", "@babel/preset-react", ["@babel/preset-env", { "modules": false }]],
+  "plugins": ["@babel/plugin-transform-flow-strip-types", "@babel/plugin-proposal-class-properties"]
 }

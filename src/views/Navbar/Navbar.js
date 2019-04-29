@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import { pages } from 'app'
+import { pages } from '/app'
 import NavItem from './NavItem'
 import NavLogo from './NavLogo'
 
@@ -30,9 +30,9 @@ export default class Navbar extends React.Component<PropsType, StateType> {
 
     this.navItems = pages.map((page: PageType): React.Element<*> => <NavItem key={page.path} item={page} />)
 
-    this.panelItems = pages.map((page: PageType): React.Element<*> => (
-      <NavItem key={page.path} item={page} onClick={this.togglePanel} />
-    ))
+    this.panelItems = pages.map(
+      (page: PageType): React.Element<*> => <NavItem key={page.path} item={page} onClick={this.togglePanel} />
+    )
   }
 
   handleBurgerClick() {

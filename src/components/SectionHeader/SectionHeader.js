@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import FloatingShapes from '~/views/FloatingShapes'
+import FloatingShapes from '/views/FloatingShapes'
 import './SectionHeader.scss'
 
 type PropsType = {

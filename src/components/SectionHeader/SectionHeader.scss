@@ -1,4 +1,4 @@
-@import '~scss/Variables';
+@import '/scss/Variables';
 
 .section-header {
   padding: 0px;
@@ -21,7 +21,7 @@
     z-index: 0;
   }
   .section-header-title {
-    pointer-events:none;
+    pointer-events: none;
     position: relative;
     text-align: center;
     display: flex;

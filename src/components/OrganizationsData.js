@@ -243,7 +243,7 @@ Object.keys(organizations).forEach((orgType: string) => {
     org.images = {}
     // Load regular image
     // flow-disable-next-line
-    org.images.regular = require(`pages/OrganizationsPage/images/${imageId}.jpg`)
+    org.images.regular = `/org-images/${imageId}.jpg`
   })
 })
 

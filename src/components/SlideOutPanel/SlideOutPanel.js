@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react'
-import classNames from 'classnames'
 import './SlideOutPanel.scss'
 
 type PropsType = {
@@ -11,13 +10,8 @@ type PropsType = {
   direction: string
 }
 
-export default (props: PropsType): React.Element<*> => {
-  const panelClass = classNames({
-    panel: true,
-    [props.direction]: true,
-    [props.isOpen ? 'open' : 'closed']: true,
-    [props.className]: props.className
-  })
-
-  return <div className={panelClass}>{props.children}</div>
-}
+export default (props: PropsType): React.Element<*> => (
+  <div className={`panel ${props.direction} ${props.isOpen ? 'open' : 'closed'} ${props.className}`}>
+    {props.children}
+  </div>
+)
