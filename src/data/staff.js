@@ -190,6 +190,17 @@ const staffMembers = {
       links: {
         email: 'eltran64@gmail.com'
       }
+    },
+    {
+      name: { first: 'Prithvi', last: 'Kannan' },
+      position: 'Director of Coding',
+      major: 'Computer Science',
+      involvement: 'Bruin Consulting',
+      restaurant: 'BPlate',
+      description: '',
+      links: {
+        email: 'prithvi.kannan@gmail.com'
+      }
     }
   ],
   representatives: [
