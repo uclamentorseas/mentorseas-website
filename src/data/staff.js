@@ -10,7 +10,7 @@ const staffMembers = {
       position: 'Advisor',
       major: 'Computer Science',
       involvement: 'Bruin Consulting, Undergrad Business Society',
-      restaurant: "Westwood Thai Cafe",
+      restaurant: 'Westwood Thai Cafe',
       description:
         "Hi!",
       links: {
