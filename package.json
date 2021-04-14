@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "parcel ./src/index.html",
+    "start": "npx parcel ./src/index.html",
     "build": "yarn && parcel build ./src/index.html -d build/",
     "transfer": "scp -r build/* simonz@lnxsrv09.seas.ucla.edu:/usr/public/www/mentorship",
     "deploy": "yarn build && yarn transfer",
+    "newdeploy": "gh-pages -d build",
     "lint": "eslint src/",
     "lint-fix": "eslint --fix src/",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
@@ -47,6 +48,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.53.1",
+    "gh-pages": "^3.1.0",
     "husky": "^0.14.3",
     "json5": "^2.1.0",
     "parcel-bundler": "^1.12.3",
@@ -61,7 +63,7 @@
     "src/pages/StaffPage/StaffPage.js",
     "src/components/StaffMember"
   ],
-  "homepage": "http://mentorship.seas.ucla.edu",
+  "homepage": "https://prithvikannan.github.io/mentorseas-website/",
   "prettier": {
     "singleQuote": true,
     "semi": false,
