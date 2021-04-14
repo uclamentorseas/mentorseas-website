@@ -11,8 +11,7 @@ const staffMembers = {
       major: 'Computer Science',
       involvement: 'Bruin Consulting, Undergrad Business Society',
       restaurant: 'Westwood Thai Cafe',
-      description:
-        'Hi!',
+      description: 'Hi!',
       links: {
         linkedin: 'https://www.linkedin.com/in/prithvikannan/',
         facebook: 'https://www.facebook.com/prithvi.kannan.94',
