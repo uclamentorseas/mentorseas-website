@@ -30,9 +30,9 @@ export default class Navbar extends React.Component<PropsType, StateType> {
 
     this.navItems = pages.map((page: PageType): React.Element<*> => <NavItem key={page.path} item={page} />)
 
-    this.panelItems = pages.map(
-      (page: PageType): React.Element<*> => <NavItem key={page.path} item={page} onClick={this.togglePanel} />
-    )
+    this.panelItems = pages.map((page: PageType): React.Element<*> => (
+      <NavItem key={page.path} item={page} onClick={this.togglePanel} />
+    ))
   }
 
   handleBurgerClick() {

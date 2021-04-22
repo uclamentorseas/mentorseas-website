@@ -57,13 +57,12 @@ export default (): React.Element<*> => (
         <Navbar />
 
         <Switch>
-          {pages.map(
-            (page: PageType): React.Element<*> =>
-              page.exactPath ? (
-                <Route key={page.path} exact path={page.path} component={page.component} />
-              ) : (
-                <Route key={page.path} path={page.path} component={page.component} />
-              )
+          {pages.map((page: PageType): React.Element<*> =>
+            page.exactPath ? (
+              <Route key={page.path} exact path={page.path} component={page.component} />
+            ) : (
+              <Route key={page.path} path={page.path} component={page.component} />
+            )
           )}
         </Switch>
 

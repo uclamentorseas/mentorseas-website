@@ -21,13 +21,11 @@ export default (props: PropsType): React.Element<*> => (
     <div className="title">{props.title}</div>
 
     <div className="paragraphs">
-      {props.paragraphs.map(
-        (paragraph: string): React.Element<*> => (
-          <div key={paragraph} className="paragraph">
-            {paragraph}
-          </div>
-        )
-      )}
+      {props.paragraphs.map((paragraph: string): React.Element<*> => (
+        <div key={paragraph} className="paragraph">
+          {paragraph}
+        </div>
+      ))}
       {props.button && (
         <a href={props.buttonLink}>
           <button className="btn draw-border">{props.button}</button>
