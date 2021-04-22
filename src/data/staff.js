@@ -6,17 +6,16 @@
 const staffMembers = {
   executive: [
     {
-      name: { first: 'Nathan', last: 'Long' },
-      position: 'President',
-      major: 'Mechanical Engineering',
-      involvement: 'Biomechatronics Lab, UCLA RecTech',
-      restaurant: "Ralph's Bar",
-      description:
-        'Hi! My name is Nathan and I am a 3rd year Mechanical Engineering major. I am also the President of MentorSEAS for the 17/18 academic year! Whether you are a mentee or mentor, feel free to contact me anytime!',
+      name: { first: 'Prithvi', last: 'Kannan' },
+      position: 'Advisor',
+      major: 'Computer Science',
+      involvement: 'Bruin Consulting, Undergrad Business Society',
+      restaurant: 'Westwood Thai Cafe',
+      description: 'Hi!',
       links: {
-        linkedin: 'https://www.linkedin.com/in/nathan-long-2997a6103/',
-        facebook: 'https://www.facebook.com/nathanlong832',
-        email: 'nathanlong832@gmail.com'
+        linkedin: 'https://www.linkedin.com/in/prithvikannan/',
+        facebook: 'https://www.facebook.com/prithvi.kannan.94',
+        email: 'prithvi.kannan@gmail.com'
       }
     },
     {
