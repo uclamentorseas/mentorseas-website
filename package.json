@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npx parcel ./src/index.html",
-    "build": "yarn && parcel build ./src/index.html -d build/",
+    "build": "yarn && npx parcel build ./src/index.html -d build/",
     "transfer": "scp -r build/* simonz@lnxsrv09.seas.ucla.edu:/usr/public/www/mentorship",
     "deploy": "yarn build && yarn transfer",
     "newdeploy": "gh-pages -d build",
