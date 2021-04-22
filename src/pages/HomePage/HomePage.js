@@ -21,20 +21,18 @@ export default (): React.Element<*> => {
       </div> */}
 
       <div className="home-page-contents">
-        {copy.paragraphs.map(
-          (p: TitledParagraphsType, i: number): React.Element<*> => (
-            <div key={p.title} className="home-page-copy-row">
-              <div
-                className="picture"
-                style={{
-                  background: `url(${uclaImages[i]}) center/cover no-repeat`
-                }}
-              />
+        {copy.paragraphs.map((p: TitledParagraphsType, i: number): React.Element<*> => (
+          <div key={p.title} className="home-page-copy-row">
+            <div
+              className="picture"
+              style={{
+                background: `url(${uclaImages[i]}) center/cover no-repeat`
+              }}
+            />
 
-              <TitledParagraphs title={p.title} paragraphs={p.paragraphs} button={p.button} buttonLink={p.buttonLink} />
-            </div>
-          )
-        )}
+            <TitledParagraphs title={p.title} paragraphs={p.paragraphs} button={p.button} buttonLink={p.buttonLink} />
+          </div>
+        ))}
       </div>
     </div>
   )
